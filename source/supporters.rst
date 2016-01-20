@@ -1,0 +1,4 @@
+Styrktaraðilar
+==============
+
+Styrktaraðilar hér
