@@ -1,0 +1,539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Minecraft API &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
+    <link rel="up" title="Dagur 1" href="intro.html" />
+    <link rel="next" title="Dagur 2" href="../day2/intro.html" />
+    <link rel="prev" title="Breytur" href="variables.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="minecraft-api">
+<h1>Minecraft API<a class="headerlink" href="#minecraft-api" title="Permalink to this headline">¶</a></h1>
+<p>Minecraft Pi er Python tól sem kemur uppsett á Raspberry Pi (RasPi hér eftir). Við skulum skoða þau Minecraft tólin og aðgerðir þeirra.</p>
+<p>Sótt héðan: <a class="reference external" href="http://www.stuffaboutcode.com/p/minecraft-api-reference.html">http://www.stuffaboutcode.com/p/minecraft-api-reference.html</a></p>
+<span class="target" id="module-minecraft"></span><dl class="class">
+<dt id="minecraft.Minecraft">
+<em class="property">class </em><code class="descclassname">minecraft.</code><code class="descname">Minecraft</code><a class="headerlink" href="#minecraft.Minecraft" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasi með aðgerðum sem við getum notað til að stýra leiknum.</p>
+<dl class="method">
+<dt id="minecraft.Minecraft.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>address = &quot;localhost&quot;</em>, <em>port = 4711</em><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.Minecraft.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function installs a <cite>handler</cite> for every signal known by the <cite>signal</cite> module.  See the section <cite>about-signals</cite> for more information.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>&#8220;Create connection to Minecraft (address, port) =&gt; Minecraft object&#8221;</p>
+<p>#use default address and port
+mc = minecraft.Minecraft.create()
+#specify ip address and port
+mc = minecraft.Minecraft.create(&#8220;192.168.1.1&#8221;, 4711)</p>
+<p>.getBlock(x,y,z)
+&#8220;Get block (x,y,z) =&gt; id:int&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#retrieves the block type for the block at 0,0,0
+blockType = mc.getBlock(0,0,0)</p>
+<p>.getBlocks(x0,y0,z0,x1,y1,z1)
+&#8220;Get a cuboid of blocks (x0,y0,z0,x1,y1,z1) =&gt; [id:int]&#8221;
+Available on RaspberryJuice
+#get the block id&#8217;s in a cuboid
+blocks = mc.getBlocks(-1,-1,-1,1,1,1)</p>
+<p>.getBlockWithData(x,y,z)
+&#8220;Get block with data (x,y,z) =&gt; Block&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#retrieves a block object for the block at 0,0,0
+blockObj = mc.getBlockWithData(0,0,0)</p>
+<p>.setBlock(x,y,z)
+&#8220;Set block (x,y,z,id,[data])&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#sets a block at an x, y, z co-ordinate to a particular type
+mc.setBlock(0,0,0,block.DIRT.id)
+#sets a block to a particular type and &#8216;subtype&#8217;
+mc.setblock(0,0,0,block.WOOD.id, 1)</p>
+<p>.setBlocks(x0,y0,z0,x1,y1,z1,blockType, blockData)
+&#8220;Set a cuboid of blocks (x0,y0,z0,x1,y1,z1,id,[data])&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#sets many blocks at a time, filling the gap between 2 sets of x, y, z co-ordinates
+mc.setBlocks(-1, -1, -1, 1, 1, 1, block.STONE.id)</p>
+<p>.getHeight(x,z)
+&#8220;Get the height of the world (x,z) =&gt; int&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#find the y (vertical) of an x, z co-ordinate which represents the &#8216;highest&#8217; (non-air) block
+y = mc.getHeight(0,0)</p>
+<p>.getPlayerEntityIds()
+&#8220;Get the entity ids of the connected players =&gt; [id:int]&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#get the entity id&#8217;s of the players connected to the game
+entityIds = mc.getPlayerEntityIds()</p>
+<p>.getPlayerEntityId(playerName)
+&#8220;Get the entity id for a named player =&gt; [id:int]&#8221;
+Available on RaspberryJuice
+#get the entity id of a name player &#8216;martinohanlon&#8217;
+entityId = mc.getPlayerEntityId(&#8220;martinohanlon&#8221;)
+print entityId</p>
+<p>.saveCheckpoint()
+&#8220;Save a checkpoint that can be used for restoring the world&#8221;
+Available on Minecraft: Pi Edition
+mc.saveCheckpoint()</p>
+<p>.restoreCheckpoint()
+&#8220;Restore the world state to the checkpoint&#8221;
+Available on Minecraft: Pi Edition
+mc.restoreCheckpoint()</p>
+<p>.postToChat(message)
+&#8220;Post a message to the game chat&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#write &#8216;Hello Minecraft World&#8217; to the chat window
+mc.postToChat(&#8220;Hello Minecraft World&#8221;)</p>
+<p>.setting(setting, status)
+&#8220;Set a world setting (setting, status). keys: world_immutable, nametags_visible&#8221;
+Available on Minecraft: Pi Edition
+#change world immutable to True
+mc.setting(&#8220;world_immutable&#8221;, True)
+#change nametags_visible setting to False
+mc.setting(&#8220;nametags_visible&#8221;, False)</p>
+<p>Minecraft.player
+.getPos()
+&#8220;Gets the player&#8217;s position in the world as a Vec3 of floats (decimal numbers), if the player is in the middle of a block x.5 is returned&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#get players position as floats
+playerPos = mc.player.getPos()</p>
+<p>.setPos(x,y,z)
+&#8220;Moves the player to a position in the world by passing co-ordinates ([x,y,z])&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#set the players position as floats
+mc.player.setPos(0.0,0.0,0.0)</p>
+<p>.getTilePos()
+&#8220;Gets the position of the &#8216;tile&#8217; the player is currently on.&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#get the position of the tile the players is on
+playerTile = mc.player.getTilePos()</p>
+<p>.setTilePos(x,y,z)
+&#8220;Move the player to a tile position in the world by passing co-ordinates ([x,y,z])&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#set the position of the tile the player is on
+mc.player.setTilePos(0,0,0)</p>
+<p>.setting(setting, status)
+&#8220;Set a player setting (setting, status). keys: autojump&#8221;
+Available on Minecraft: Pi Edition
+#change the autojump setting to True
+mc.player.setting(&#8220;autojump&#8221;, True)</p>
+<p>.getRotation()
+&#8220;Get the rotational angle (0 to 360) for the player =&gt; [angle:float]&#8221;
+Available on RaspberryJuice
+#get the rotation of the player
+angle = mc.player.getRotation()
+print angle</p>
+<p>.getPitch()
+&#8220;Get the pitch angle (-90 to 90) for the player =&gt; [pitch:float]&#8221;
+Available on RaspberryJuice
+#get the pitch for the player
+pitch = mc.player.getPitch()
+print pitch</p>
+<p>.getDirection()
+&#8220;Get unit vector of x,y,z for the player&#8217;s direction =&gt; [Vec3]&#8221;
+Available on RaspberryJuice
+#get the player&#8217;s direction
+direction = mc.player.getDirection()
+print direction</p>
+<p>Minecraft.entity
+The entity functions are used in conjunction with the .getPlayerEntityIds() function to interact with the entity (or players) in a game.  Entity functions are useful for multiplayer games.</p>
+<p>#get the entity id&#8217;s of the players connected to the game
+entityIds = mc.getPlayerEntityIds()
+1stEntityId = entityIds[0]
+2ndEntityId = entityIds[1]</p>
+<p>.getPos(entityId)
+&#8220;Gets an entities position in the world as a Vec3 of floats (decimal numbers), if the entity is in the middle of a block x.5 is returned&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#get first entity position as floats
+entityPos = mc.entity.getPos(entityId)</p>
+<p>.setPos(entityId,x,y,z)
+&#8220;Moves the entity to a position in the world by passing co-ordinates ([x,y,z])&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#set the players position as floats
+mc.player.setPos(entityId,0.0,0.0,0.0)</p>
+<p>.getTilePos(entityId)
+&#8220;Gets the position of the &#8216;tile&#8217; the entity is currently on.&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#get the position of the tile the entity is on
+entityTile = mc.entity.getTilePos(entityId)</p>
+<p>.setTilePos(entityId, x,y,z)
+&#8220;Move the entity to a tile position in the world by passing co-ordinates ([x,y,z])&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#set the position of the tile the entity is on
+mc.player.setTilePos(entityId,0,0,0)</p>
+<p>.getRotation(entityId)
+&#8220;Get the rotational angle (0 to 360) for an entity =&gt; [angle:float]&#8221;
+Available on RaspberryJuice
+#get the rotation of an entity
+angle = mc.entity.getRotation(entityId)
+print angle</p>
+<p>.getPitch(entityId)
+&#8220;Get the pitch angle (-90 to 90) for an entity =&gt; [pitch:float]&#8221;
+Available on RaspberryJuice
+#get the pitch for an entity
+pitch = mc.entity.getPitch(entityId)
+print pitch</p>
+<p>.getDirection(entityId)
+&#8220;Get unit vector of x,y,z for an entities direction =&gt; [Vec3]&#8221;
+Available on RaspberryJuice
+#get and entities direction
+direction = mc.entity.getDirection(entityId)
+print direction</p>
+<p>Minecraft.camera
+.setNormal(entityId)
+&#8220;Set camera mode to normal Minecraft view ([entityId])&#8221;
+Available on Minecraft: Pi Edition
+#set camera mode to normal for a specific player
+mc.camera.setNormal(entityId)</p>
+<p>.setFixed()
+&#8220;Set camera mode to fixed view&#8221;
+Available on Minecraft: Pi Edition
+#set camera mode to fixed
+mc.camera.setFixed()</p>
+<p>.setFollow(entityId)
+&#8220;Set camera mode to follow an entity ([entityId])&#8221;
+Available on Minecraft: Pi Edition
+#set camera mode to follow for a specific player
+mc.camera.setFollow(entityId)</p>
+<p>.setPos(x,y,z)
+&#8220;Set camera entity position (x,y,z)&#8221;
+Available on Minecraft: Pi Edition
+#set camera position to a specific position of x, y, z
+mc.camera.setPos(0,0,0)</p>
+<p>Minecraft.events
+.pollBlockHits()
+&#8220;Block Hits (Only triggered by sword) =&gt; [BlockEvent]&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#get block event hits that have occured since the last time the function was run
+blockEvents = mc.events.pollBlockHits()</p>
+<p>.clearAll()
+&#8220;Clear all old events&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#clear all events that have happened since the events where last got
+mc.events.clearAll()</p>
+<p>Block
+&#8220;The definition of a Block in Minecraft, used to describe a block type and (if applicable) its data; also contains constants for the blocks type id&#8217;s, e.g. BLOCK.AIR.id&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+#create block of a specific type
+blockObj = block.Block(id)
+#create a block of a specific type and apply a data value
+blockObj = block.Block(id, data)</p>
+<p>.id
+&#8220;The id (or type) of block&#8221;</p>
+<p>AIR                 = Block(0)
+STONE               = Block(1)
+GRASS               = Block(2)
+DIRT                = Block(3)
+COBBLESTONE         = Block(4)
+WOOD_PLANKS         = Block(5)
+SAPLING             = Block(6)
+BEDROCK             = Block(7)
+WATER_FLOWING       = Block(8)
+WATER               = WATER_FLOWING
+WATER_STATIONARY    = Block(9)
+LAVA_FLOWING        = Block(10)
+LAVA                = LAVA_FLOWING
+LAVA_STATIONARY     = Block(11)
+SAND                = Block(12)
+GRAVEL              = Block(13)
+GOLD_ORE            = Block(14)
+IRON_ORE            = Block(15)
+COAL_ORE            = Block(16)
+WOOD                = Block(17)
+LEAVES              = Block(18)
+GLASS               = Block(20)
+LAPIS_LAZULI_ORE    = Block(21)
+LAPIS_LAZULI_BLOCK  = Block(22)
+SANDSTONE           = Block(24)
+BED                 = Block(26)
+COBWEB              = Block(30)
+GRASS_TALL          = Block(31)
+WOOL                = Block(35)
+FLOWER_YELLOW       = Block(37)
+FLOWER_CYAN         = Block(38)
+MUSHROOM_BROWN      = Block(39)
+MUSHROOM_RED        = Block(40)
+GOLD_BLOCK          = Block(41)
+IRON_BLOCK          = Block(42)
+STONE_SLAB_DOUBLE   = Block(43)
+STONE_SLAB          = Block(44)
+BRICK_BLOCK         = Block(45)
+TNT                 = Block(46)
+BOOKSHELF           = Block(47)
+MOSS_STONE          = Block(48)
+OBSIDIAN            = Block(49)
+TORCH               = Block(50)
+FIRE                = Block(51)
+STAIRS_WOOD         = Block(53)
+CHEST               = Block(54)
+DIAMOND_ORE         = Block(56)
+DIAMOND_BLOCK       = Block(57)
+CRAFTING_TABLE      = Block(58)
+FARMLAND            = Block(60)
+FURNACE_INACTIVE    = Block(61)
+FURNACE_ACTIVE      = Block(62)
+DOOR_WOOD           = Block(64)
+LADDER              = Block(65)
+STAIRS_COBBLESTONE  = Block(67)
+DOOR_IRON           = Block(71)
+REDSTONE_ORE        = Block(73)
+SNOW                = Block(78)
+ICE                 = Block(79)
+SNOW_BLOCK          = Block(80)
+CACTUS              = Block(81)
+CLAY                = Block(82)
+SUGAR_CANE          = Block(83)
+FENCE               = Block(85)
+GLOWSTONE_BLOCK     = Block(89)
+BEDROCK_INVISIBLE   = Block(95)
+STONE_BRICK         = Block(98)
+GLASS_PANE          = Block(102)
+MELON               = Block(103)
+FENCE_GATE          = Block(107)
+GLOWING_OBSIDIAN    = Block(246)
+NETHER_REACTOR_CORE = Block(247)</p>
+<p>.data
+&#8220;The data (or sub-type) of a block&#8221;</p>
+<p>Data Values of blocks:
+WOOL:
+0: White
+1: Orange
+2: Magenta
+3: Light Blue
+4: Yellow
+5: Lime
+6: Pink
+7: Grey
+8: Light grey
+9: Cyan
+10: Purple
+11: Blue
+12: Brown
+13: Green
+14: Red
+15:Black</p>
+<p>WOOD:
+0: Oak (up/down)
+1: Spruce (up/down)
+2: Birch (up/down)
+(below not on Pi)
+3: Jungle (up/down)
+4: Oak (east/west)
+5: Spruce (east/west)
+6: Birch (east/west)
+7: Jungle (east/west)
+8: Oak (north/south)
+9: Spruce (north/south)
+10: Birch (north/south)
+11: Jungle (north/south)
+12: Oak (only bark)
+13: Spruce (only bark)
+14: Birch (only bark)
+15: Jungle (only bark)</p>
+<p>WOOD_PLANKS (Not on Pi):
+0: Oak
+1: Spruce
+2: Birch
+3: Jungle</p>
+<p>SAPLING:
+0: Oak
+1: Spruce
+2: Birch
+3: Jungle (Not on Pi)</p>
+<p>GRASS_TALL:
+0: Shrub
+1: Grass
+2: Fern
+3: Grass (color affected by biome) (Not on Pi)</p>
+<p>TORCH:
+1: Pointing east
+2: Pointing west
+3: Pointing south
+4: Pointing north
+5: Facing up</p>
+<p>STONE_BRICK:
+0: Stone brick
+1: Mossy stone brick
+2: Cracked stone brick
+3: Chiseled stone brick</p>
+<p>STONE_SLAB / STONE_SLAB_DOUBLE:
+0: Stone
+1: Sandstone
+2: Wooden
+3: Cobblestone
+4: Brick
+5: Stone Brick
+Below - not on Pi
+6: Nether Brick
+7: Quartz</p>
+<p>Not on Pi
+SNOW_BLOCK:
+0-7: Height of snow, 0 being the lowest, 7 being the highest.</p>
+<p>TNT:
+0: Inactive
+1: Ready to explode</p>
+<p>LEAVES:
+1: Oak leaves
+2: Spruce leaves
+3: Birch leaves</p>
+<p>SANDSTONE:
+0: Sandstone
+1: Chiseled sandstone
+2: Smooth sandstone</p>
+<p>STAIRS_[COBBLESTONE, WOOD]:
+0: Ascending east
+1: Ascending west
+2: Ascending south
+3: Ascending north
+4: Ascending east (upside down)
+5: Ascending west (upside down)
+6: Ascending south (upside down)
+7: Ascending north (upside down)</p>
+<p>LADDERS, CHESTS, FURNACES, FENCE_GATE:
+2: Facing north
+3: Facing south
+4: Facing west
+5: Facing east</p>
+<p>[WATER, LAVA]_STATIONARY:
+0-7: Level of the water, 0 being the highest, 7 the lowest</p>
+<p>NETHER_REACTOR_CORE:
+0: Unused
+1: Active
+2: Stopped / used up</p>
+<p>BlockEvent
+&#8220;The definition of a BlockEvent in Minecraft, used to describe an event in Minecraft affecting blocks; returned by the Minecraft.events.pollBlockHits() method.&#8221;</p>
+<p>blockEvent = mc.events.pollBlockHits()</p>
+<p>.type
+&#8220;Type of block event; there is only 1 event currently implemented BlockEvent.HIT&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+blockEventType = blockEvent.type</p>
+<p>BlockEvent types:
+0: BlockEvent.HIT</p>
+<p>.pos
+&#8220;The position of the block where the event occured, i.e. the block which was hit.  .pos returns a Vec3 object of x,y,z co-ordinates&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+blockEventPos = BlockEvent.pos</p>
+<p>.face
+&#8220;The face of the block where the event occured&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+blockEventFace = BlockEvent.face</p>
+<p>.entityId
+&#8220;entityId of the player who caused the block event, i.e. the player who hit the block&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+blockEventPlayer - BlockEvent.entityId
+Vec3
+&#8220;The definition of a 3 part vector in Minecraft, i.e. a set of x, y, z co-ordinates; x and z are the horizontal positions, y the vertical&#8221;</p>
+<p>position = vec3.Vec(0,0,0)</p>
+<p>.x
+&#8220;x position&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+xPos = position.x
+.y
+&#8220;y position&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+yPos = position.y
+.z
+&#8220;z position&#8221;
+Available on Minecraft: Pi EditionAvailable on RaspberryJuice
+zPos = position.z</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supporters.html">Styrktaraðilar</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../seminar.html">Námskeið</a><ul>
+  <li><a href="intro.html">Dagur 1</a><ul>
+      <li>Previous: <a href="variables.html" title="previous chapter">Breytur</a></li>
+      <li>Next: <a href="../day2/intro.html" title="next chapter">Dagur 2</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/seminar/day1/minecraft-api.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Jón Levy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../../_sources/seminar/day1/minecraft-api.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
