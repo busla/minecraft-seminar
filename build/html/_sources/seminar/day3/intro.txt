@@ -7,6 +7,9 @@ Dagur 3
     :maxdepth: 1
     :titlesonly:
     
-    expressions
-    setting-blocks
-    traceback
+    while-loops
+    for-loops
+    lists
+    dictionaries
+    get-block
+    set-block

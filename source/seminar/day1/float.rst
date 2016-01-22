@@ -1,4 +1,0 @@
-Float
-===============
-
-Þetta er kynningartexti

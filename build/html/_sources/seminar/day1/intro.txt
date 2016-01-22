@@ -7,8 +7,10 @@ Dagur 1
     :maxdepth: 1
     :titlesonly:
     
-    float
-    import-modules
     python-shell
-    strings
-    integer
+    import-modules    
+    post-to-chat
+    variables
+    minecraft-api
+    
+    

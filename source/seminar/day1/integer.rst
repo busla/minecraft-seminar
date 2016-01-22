@@ -1,4 +1,0 @@
-Integer
-=======
-
-Þetta er kynningartexti

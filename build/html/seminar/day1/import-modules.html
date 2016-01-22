@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Import &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
+    <title>Verkfærin okkar &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
     <link rel="up" title="Dagur 1" href="intro.html" />
-    <link rel="next" title="Python skelin" href="python-shell.html" />
-    <link rel="prev" title="Float" href="float.html" />
+    <link rel="next" title="Post to chat" href="post-to-chat.html" />
+    <link rel="prev" title="Python skelin" href="python-shell.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -40,9 +40,60 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="import">
-<h1>Import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h1>
-<p>Þetta er kynningartexti</p>
+  <div class="section" id="verkfaerin-okkar">
+<h1>Verkfærin okkar<a class="headerlink" href="#verkfaerin-okkar" title="Permalink to this headline">¶</a></h1>
+<p><strong>Verkfæri forritunarmála</strong></p>
+<p>Það má líkja forritunarmálum við smiði. Þeir nota allskyns tól og tæki til að smíða hús. Krana, gröfur, ýtur, naglabyssur, hamra og fleira. Öll þessi tól geta framkvæmt mismunandi aðgerðir. Sum þeirra lyfta, önnur toga, skera, negla, o.s.f.v. Mörg þessara tóla</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Það má segja að þessi tól og tæki séu <em>klasar</em> af aðgerðum.</p>
+</div>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p>Tól = module</p>
+<p>Klasi = class</p>
+<p class="last">Aðgerð = function</p>
+</div>
+<div class="admonition-todo admonition" id="index-2">
+<p class="first admonition-title">Todo</p>
+<p class="last">Nota <em>verkfæri</em> eða <em>tól</em> fyrir <em>module</em></p>
+</div>
+<p>Python, rétt eins og önnur forritunarmál, býður upp á allskyns verkfæri sem við getum notað til að smíða forrit.</p>
+<p>Eins og við sáum áðan þá eru reikningsaðgerðir innbyggðar í Python (samlagning, frádráttur, margföldun, deiling, o.s.f.v.).</p>
+<p>En við gátum ekki reiknað saman heila tölu og texta. Afhverju ekki?</p>
+<p>Heil tala og texti (einnig <em>strengur</em>) er sitthvor tegundin af hráefni.</p>
+<p>Til að nota hráefni saman af sitthvorri gerðinni þurfum þau að vera eins. Í forritunarmálum eru aðgerðir til staðar sem sjá um að breyta einni tegund yfir í aðra.</p>
+<p>Dæmi:</p>
+<p>7 er heil tala en &#8216;7&#8217; (einnig hægt að nota tvöfaldar gæsalappir <em>&#8220;7&#8221;</em>) er texti. Við getum notað aðgerðina <em>int()</em>, sem merkir <em>integer</em> (á latínu <em>heil</em>), til að breyta strengnum &#8216;7&#8217; yfir í tölu.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">6</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="s">&#39;7&#39;</span><span class="p">)</span>
+<span class="go">13</span>
+</pre></div>
+</div>
+<p>Við getum einnig notað aðgerðina <em>str()</em>, sem merkir <em>string</em>, <em>(ísl: strengur)</em>, til að breyta tölunni 6 yfir í strenginn &#8220;6&#8221;, og límt strengina saman.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;7&#39;</span>
+<span class="go">&#39;67&#39;</span>
+</pre></div>
+</div>
+<p>Aðgerðirnar <em>int()</em> og <em>str()</em> eru innbyggðar aðgerðir sem eru aðgengileg þegar Python túlkurinn er ræstur.</p>
+<p>Python inniheldur einnig fjölda annara aðgerða sem við þurfum að sækja sérstaklega ef við viljum nota þau. Það er óþarfi að vera með aðgang að aðgerðum sem við þurfum ekki að nota og gæti tekið ansi langan tíma að ræsa túlkinn með öllum þeim aðgerðum sem hann býður upp á. Það væri t.d. ólíklegt að smiður myndi koma með gröfu til að smíða hundakofa.</p>
+<p>Sjá lista yfir þau tól <em>(modules)</em> sem Python inniheldur: <a class="reference external" href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a></p>
+<p>Til að sækja þau tól sem við þurfum notum við skipunina <em>import</em>. Ef við þurfum t.d. að búa til slembitölu <em>(random)</em> þá getum við notað tólið <em>random</em>. Þar sem það er ekki innbyggt tól sækjum við það með <em>import</em>.</p>
+<p>Tólið sjálft getur framkvæmt fjölda aðgerða. Grafa smiðsins getur t.d. farið áfram, afturábak, lyft og lækkað skóflunni o.s.f.v.</p>
+<p>Prófum að nota aðgerðina <em>randrange</em> sem býr til slembitölu milli tveggja talna.</p>
+<p>Dæmi:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">7</span>
+</pre></div>
+</div>
+<p>Tólið <em>Random</em> kemur einnig með aðgerðinni <em>random</em>. Sú aðgerð velur brotatölu milli 0 og 1.</p>
+<p>Dæmi:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="go">0.1910290300020966</span>
+</pre></div>
+</div>
+<p>Hér fyrir ofan eru einungis örfá dæmi um þau tól sem Python safnið býður upp á. Oft viljum við einnig nota tól sem eru ekki innifalin. Minecraft Pi tólin eru ekki hluti af Python safninu og því þurfum við að sækja þau sérstaklega þegar við skrifum kóða.</p>
 </div>
 
 
@@ -53,7 +104,7 @@
         <div class="sphinxsidebarwrapper">
 <h3><a href="../../index.html">Table Of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../intro.html">Námskeið</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supporters.html">Styrktaraðilar</a></li>
 </ul>
@@ -61,10 +112,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../intro.html">Námskeið</a><ul>
+  <li><a href="../../seminar.html">Námskeið</a><ul>
   <li><a href="intro.html">Dagur 1</a><ul>
-      <li>Previous: <a href="float.html" title="previous chapter">Float</a></li>
-      <li>Next: <a href="python-shell.html" title="next chapter">Python skelin</a></li>
+      <li>Previous: <a href="python-shell.html" title="previous chapter">Python skelin</a></li>
+      <li>Next: <a href="post-to-chat.html" title="next chapter">Post to chat</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

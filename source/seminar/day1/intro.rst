@@ -8,11 +8,9 @@ Dagur 1
     :titlesonly:
     
     python-shell
-    import-modules
-    strings
+    import-modules    
     post-to-chat
-    integer
-    float
     variables
+    minecraft-api
     
     

@@ -9,4 +9,6 @@ Dagur 2
     
     teleport
     teleport-tour
-    variables
+    input
+    if-else-conditions
+    and-or-conditions
