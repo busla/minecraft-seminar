@@ -1,4 +1,0 @@
-Teleport
-========
-
-Þetta er kynningartexti

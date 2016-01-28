@@ -7,7 +7,7 @@ Velkominn á Kóder.is - Python námskeið í Minecraft
 ==================================================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 3
     
     seminar
     about

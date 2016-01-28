@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Segð (expression) &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
+    <title>Ef að og eða &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
     <link rel="up" title="Dagur 2" href="intro.html" />
     <link rel="next" title="Dagur 3" href="../day3/intro.html" />
-    <link rel="prev" title="Segð (expression)" href="if-else-conditions.html" />
+    <link rel="prev" title="Hvað ef?" href="if-else-conditions.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -40,9 +40,76 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="seg-expression">
-<h1>Segð (expression)<a class="headerlink" href="#seg-expression" title="Permalink to this headline">¶</a></h1>
-<p>Þetta er kynningartexti</p>
+  <div class="section" id="ef-a-og-ea">
+<h1>Ef að og eða<a class="headerlink" href="#ef-a-og-ea" title="Permalink to this headline">¶</a></h1>
+<p>Reglulega notum við fleiri skilyrðingar með <em>if</em> og <em>else</em>. Í síðasta kafla vildum við athuga hvort auðkennið á blokkinni væri <em>0</em>. Hvað ef við viljum athuga hvort blokkinn sé annaðhvort loft eða steinn? Steinn hefur auðkennið <em>1</em>, (sjá <a class="reference internal" href="../minecraft-api.html#block-constants"><span>Auðkenni allra blokka í Minecraft</span></a>).</p>
+<p>Búið til nýja skrá sem heiti <em>verkefni5.py</em> og setjið inn eftirfarandi kóða.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti&#39;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr steini&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er hvorki úr lofti né steini&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Það má umorða kóðann svona: Ef kubburinn  á <em>nýja staðnum</em> er loft skaltu prenta fyrsta textann, eða ef <em>nýji staðurinn</em> eru úr steini skaltu prenta annan textann, annars skaltu prenta þriðja textann. Skipunin <em>elif</em> er stytting á <em>else if</em>.</p>
+<p>Við getum líka farið aðra leið að þessu með því að nota <em>or</em>.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti eða steini&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er hvorki úr lofti né steini&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ef blokkin er úr lofti <em>eða</em> steini skaltu láta mig vita. Við getum líka athugað hvort blokkin sé úr bæði lofti og steini. Það er auðvitað tilgangslaust skilyrði því að hver blokk getur aðeins verið af einni tegund. En við skulum prófa.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti og steini&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er hvorki úr lofti né steini&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Við getum líka blandað öllum þessum skilyrðum saman til að þrengja að þau enn meir. Við gætum t.d. athugað nýja staðsetningin sé úr lofti og hnitið fyrir neðan hann sé úr mold <em>(id=3)</em> eða steini.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">undir_nyjum_stad</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">undir_nyjum_stad</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">undir_nyjum_stad</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti og undir henni er blokk úr steini eða mold&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er ekki úr lofti og blokkin undir henni er hvorki úr mold né steini&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="verkefni-5">
+<span id="assignment-5"></span><h2>Verkefni 5<a class="headerlink" href="#verkefni-5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Finndu út úr því hvort Steve detti um leið og hann er sendur á nýja staðinn.</li>
+</ul>
+</div>
 </div>
 
 
@@ -53,7 +120,21 @@
         <div class="sphinxsidebarwrapper">
 <h3><a href="../../index.html">Table Of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 2</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="speedy-gonzales.html">Speedy Gonzales</a></li>
+<li class="toctree-l3"><a class="reference internal" href="input.html">Inntak</a></li>
+<li class="toctree-l3"><a class="reference internal" href="if-else-conditions.html">Hvað ef?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Ef að og eða</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day4/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supporters.html">Styrktaraðilar</a></li>
 </ul>
@@ -63,7 +144,7 @@
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../../seminar.html">Námskeið</a><ul>
   <li><a href="intro.html">Dagur 2</a><ul>
-      <li>Previous: <a href="if-else-conditions.html" title="previous chapter">Segð (expression)</a></li>
+      <li>Previous: <a href="if-else-conditions.html" title="previous chapter">Hvað ef?</a></li>
       <li>Next: <a href="../day3/intro.html" title="next chapter">Dagur 3</a></li>
   </ul></li>
   </ul></li>

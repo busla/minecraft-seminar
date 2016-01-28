@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Post to chat &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
+    <title>Minecraft skilaboð &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
     <link rel="up" title="Dagur 1" href="intro.html" />
-    <link rel="next" title="Breytur" href="variables.html" />
+    <link rel="next" title="Dagur 2" href="../day2/intro.html" />
     <link rel="prev" title="Verkfærin okkar" href="import-modules.html" />
    
   
@@ -40,9 +40,45 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="post-to-chat">
-<h1>Post to chat<a class="headerlink" href="#post-to-chat" title="Permalink to this headline">¶</a></h1>
-<p>Minecraft Pi er Python tól sem kemur uppsett á Raspberry Pi (kallað RasPi hér eftir). Til að byrja að nota tólið þurfum við fyrst að skoða hvaða aðgerðir það býður upp á.</p>
+  <div class="section" id="minecraft-skilabo">
+<h1>Minecraft skilaboð<a class="headerlink" href="#minecraft-skilabo" title="Permalink to this headline">¶</a></h1>
+<p>Minecraft Pi er Python tól sem kemur uppsett á Raspberry Pi (kallað RasPi hér eftir). Til að byrja að nota tólið þurfum við fyrst að skoða hvaða aðgerðir það býður upp á. Sjá  <a class="reference internal" href="../minecraft-api.html"><em>Minecraft API</em></a>.</p>
+<p>Ein þeirra er <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.postToChat" title="minecraft.Minecraft.postToChat"><code class="xref py py-func docutils literal"><span class="pre">postToChat()</span></code></a></p>
+<p>Þegar við framkvæmum aðgerð þá vinnur hún sína vinnu og stundum skilar einhverjum niðurstöðum tilbaka. Ef smiðurinn setur sement og sand í steypuhrærivél og kveikir á henni, þá ætti hún að skila okkur tilbúnni steypu tilbaka.</p>
+<p>Stundum skilar aðgerðin engu tilbaka og sendir afurðina eitthvert annað. Aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.postToChat" title="minecraft.Minecraft.postToChat"><code class="xref py py-func docutils literal"><span class="pre">postToChat()</span></code></a> gerir einmitt það. Við látum hana fá texta sem hún sendir svo áfram inn í Minecraft leikinn sem er í gangi.</p>
+<p>Áður en við köllum á <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.postToChat" title="minecraft.Minecraft.postToChat"><code class="xref py py-func docutils literal"><span class="pre">postToChat()</span></code></a> skulum við tengjast leiknum sem er í gangi. Til þess notum við <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.create" title="minecraft.Minecraft.create"><code class="xref py py-func docutils literal"><span class="pre">create()</span></code></a>. Þessi aðgerð skilar okkur hinsvegar niðurstöðum tilbaka sem er tenging við leikinn. Við þurfum að geyma tenginguna við leikinn í <em>breytu</em> svo við getum notað hana síðar.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">postToChat</span><span class="p">(</span><span class="s">&#39;Veiii.. minecraft er skemmtilegt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hvað gerist ef við sendum heila tölu?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">postToChat</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TracebackError</span>
+</pre></div>
+</div>
+<p>Aðgerðin getur bara notað strengi, ekki tölur. Það er ólíklegt að ef smiðurinn myndi fá tilbaka steypu ef hann myndi hella jógúrti í steypuhrærivélina.</p>
+<p>Hvað ef við breytum tölunni í streng?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">postToChat</span><span class="p">(</span><span class="s">&#39;17&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Það virkar.</p>
+<div class="section" id="verkefni-2">
+<span id="assignment-2"></span><h2>Verkefni 2<a class="headerlink" href="#verkefni-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Settu aldurinn þinn í breytu sem heila tölu</li>
+<li>Settu streng í aðra breytu sem þú vilt setja fyrir framan tölunni (t.d. &#8220;Ég er:&#8221;)</li>
+<li>Settu streng í þriðju breytuna sem þú vilt setja fyrir aftan töluna (t.d. &#8220;ára gömul&#8221;)</li>
+<li>Notaðu <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.postToChat" title="minecraft.Minecraft.postToChat"><code class="xref py py-func docutils literal"><span class="pre">postToChat()</span></code></a> til að senda textann í Minecraft.</li>
+</ul>
+<div class="section" id="aukaverkefni">
+<span id="assignment-2-extra"></span><h3>Aukaverkefni<a class="headerlink" href="#aukaverkefni" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Geturðu vistað allt í einni breytu og sent hana í <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.postToChat" title="minecraft.Minecraft.postToChat"><code class="xref py py-func docutils literal"><span class="pre">postToChat()</span></code></a> ?</li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -53,7 +89,20 @@
         <div class="sphinxsidebarwrapper">
 <h3><a href="../../index.html">Table Of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 1</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="python-shell.html">Python skelin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="import-modules.html">Verkfærin okkar</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Minecraft skilaboð</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day2/intro.html">Dagur 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day4/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supporters.html">Styrktaraðilar</a></li>
 </ul>
@@ -64,7 +113,7 @@
   <li><a href="../../seminar.html">Námskeið</a><ul>
   <li><a href="intro.html">Dagur 1</a><ul>
       <li>Previous: <a href="import-modules.html" title="previous chapter">Verkfærin okkar</a></li>
-      <li>Next: <a href="variables.html" title="next chapter">Breytur</a></li>
+      <li>Next: <a href="../day2/intro.html" title="next chapter">Dagur 2</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

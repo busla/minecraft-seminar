@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Segð (expression) &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
+    <title>Byggja blokkir &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
     <link rel="up" title="Dagur 3" href="intro.html" />
     <link rel="next" title="Dagur 3" href="../day4/intro.html" />
-    <link rel="prev" title="Segð (expression)" href="get-block.html" />
+    <link rel="prev" title="Segð (expression)" href="dictionaries.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -40,9 +40,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="seg-expression">
-<h1>Segð (expression)<a class="headerlink" href="#seg-expression" title="Permalink to this headline">¶</a></h1>
-<p>Þetta er kynningartexti</p>
+  <div class="section" id="byggja-blokkir">
+<h1>Byggja blokkir<a class="headerlink" href="#byggja-blokkir" title="Permalink to this headline">¶</a></h1>
+<p>Í kaflanum <a class="reference internal" href="../day2/if-else-conditions.html"><em>Hvað ef?</em></a> lærðum við um aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.getBlock" title="minecraft.Minecraft.getBlock"><code class="xref py py-meth docutils literal"><span class="pre">getBlock()</span></code></a> til að sækja upplýsingar um blokkir. Núna ætlum við að smíða nýja blokkir með aðgerðinni <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.setBlock" title="minecraft.Minecraft.setBlock"><code class="xref py py-meth docutils literal"><span class="pre">setBlock()</span></code></a>. Aðgerðin hefur fjórar færibreytur, <em>x, y, z, block.id</em>. Þau gildi sem við sendum með aðgerðinni verða notuð til að smíða blokkina. Við þurfum að senda <em>x, y, z</em> hnit og tegund blokkar.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti&#39;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr hörðu efni og þú munt festast&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -53,7 +66,22 @@
         <div class="sphinxsidebarwrapper">
 <h3><a href="../../index.html">Table Of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day2/intro.html">Dagur 2</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 3</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="while-loops.html">Segð (expression)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for-loops.html">Segð (expression)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html">Listar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html">Segð (expression)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Byggja blokkir</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day4/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../supporters.html">Styrktaraðilar</a></li>
 </ul>
@@ -63,7 +91,7 @@
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../../seminar.html">Námskeið</a><ul>
   <li><a href="intro.html">Dagur 3</a><ul>
-      <li>Previous: <a href="get-block.html" title="previous chapter">Segð (expression)</a></li>
+      <li>Previous: <a href="dictionaries.html" title="previous chapter">Segð (expression)</a></li>
       <li>Next: <a href="../day4/intro.html" title="next chapter">Dagur 3</a></li>
   </ul></li>
   </ul></li>

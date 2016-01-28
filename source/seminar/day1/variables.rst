@@ -1,4 +1,0 @@
-Breytur
-=======
-
-Þetta er kynningartexti

@@ -9,8 +9,6 @@ Dagur 1
     
     python-shell
     import-modules    
-    post-to-chat
-    variables
-    minecraft-api
+    post-to-chat    
     
     

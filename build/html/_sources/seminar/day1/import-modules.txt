@@ -49,6 +49,16 @@ Við getum einnig notað aðgerðina *str()*, sem merkir *string*, *(ísl: stren
 
 Aðgerðirnar *int()* og *str()* eru innbyggðar aðgerðir sem eru aðgengileg þegar Python túlkurinn er ræstur.
 
+Eins og sést þá birtist svarið strax á skjánum. Við getum líka geymt svarið ef við viljum kannski nota það síðar. Við geymum svör í *breytu*.
+
+*Dæmi*
+
+>>> einhver_tala = 7 + 7
+>>> einhver_tala
+14
+>>> einhver_tala + 2
+16
+
 Python inniheldur einnig fjölda annara aðgerða sem við þurfum að sækja sérstaklega ef við viljum nota þau. Það er óþarfi að vera með aðgang að aðgerðum sem við þurfum ekki að nota og gæti tekið ansi langan tíma að ræsa túlkinn með öllum þeim aðgerðum sem hann býður upp á. Það væri t.d. ólíklegt að smiður myndi koma með gröfu til að smíða hundakofa.
 
 Sjá lista yfir þau tól *(modules)* sem Python inniheldur: https://docs.python.org/3/library/index.html
@@ -78,3 +88,12 @@ Dæmi:
 Hér fyrir ofan eru einungis örfá dæmi um þau tól sem Python safnið býður upp á. Oft viljum við einnig nota tól sem eru ekki innifalin. Minecraft Pi tólin eru ekki hluti af Python safninu og því þurfum við að sækja þau sérstaklega þegar við skrifum kóða.
 
 
+.. _assignment-1:
+
+Verkefni 1
+----------
+
+* Búðu til slembitölu á bilinu 0-10 og geymdu hana í breytu.
+* Búðu til aðra slembitölu og geymdu hana í annari breytu.
+* Birtu báðar slembitölurnar á skjánum.
+* Leggðu saman tölurnar með því að nota breyturnar svo að samlagning þeirra birtist á skjánum.

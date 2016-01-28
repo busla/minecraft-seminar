@@ -7,8 +7,7 @@ Dagur 2
     :maxdepth: 1
     :titlesonly:
     
-    teleport
-    teleport-tour
+    speedy-gonzales
     input
     if-else-conditions
     and-or-conditions

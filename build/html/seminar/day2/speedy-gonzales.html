@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Speedy Gonzales &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
+    <link rel="up" title="Dagur 2" href="intro.html" />
+    <link rel="next" title="Inntak" href="input.html" />
+    <link rel="prev" title="Dagur 2" href="intro.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="speedy-gonzales">
+<h1>Speedy Gonzales<a class="headerlink" href="#speedy-gonzales" title="Permalink to this headline">¶</a></h1>
+<p>Minecraft klasarnir hafa fjölda aðgerða sem við getum leikið okkur með. Við erum búinn að prófa að senda skilaboð á skjáinn en hvað getum við látið Steve gera?</p>
+<p>Ef við kíkjum á <a class="reference internal" href="../minecraft-api.html"><em>Minecraft API</em></a> þá sjáum við listann yfir klasana og aðgerðirnar sem þeir hafa. Það fyrsta sem við ætlum að gera er að skoða aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.getPos" title="minecraft.CmdPlayer.getPos"><code class="xref py py-attr docutils literal"><span class="pre">getPos</span></code></a> sem sækir staðsetninguna á Steve.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Vantar dæmi um hnitaniðurstöður</p>
+</div>
+<p>Þessi aðgerð skilar okkur niðurstöðum. Við biðjum Minecraft að kíkja hvar hann er og senda okkur tilbaka staðsetninguna. Hvernig geta þessar þrjár tölur verið staðsetningin hans? Málið er að þetta er staðsetningin hans í hnitum. Til að finna staðsetningu í hnitum skulum við ímynda okkur taflborð. Við getum fundið staðsetninguna á vinstri riddaranum með því að telja reitina til hliðar og áfram. Muniði þegar við vorum að tala um breytur? Hnit geta hafa breyturnar x, y (einnig z, sjá síðar) og innihald þeirra er fjarlægðin frá neðstu hliðinni og vinstri hliðinni.</p>
+<p>Ef við byrjum á 0 og teljum reitina meðfram hliðinni sem snýr að okkur þá fáum við eftirfarandi fjarlægðir:</p>
+<ul class="simple">
+<li>Hrókur = 1</li>
+<li>Riddari = 2</li>
+<li>Biskup = 3</li>
+<li>Kóngur = 4</li>
+<li>Drottning = 5</li>
+<li>Biskup = 6</li>
+<li>Riddari = 7</li>
+<li>Hrókur = 8</li>
+</ul>
+<p>Þetta eru hnit taflmannana á x ás. Hver væru hnit þeirra á y ás? Þá þyrftum við að telja áfram, meðfram vinstri hliðinni.</p>
+<ul class="simple">
+<li>Hrókur = 1</li>
+<li>Riddari = 1</li>
+<li>Biskup = 1</li>
+<li>Kóngur = 1</li>
+<li>Drottning = 1</li>
+<li>Biskup = 1</li>
+<li>Riddari = 1</li>
+<li>Hrókur = 1</li>
+</ul>
+<p>Hmm, þetta er eitthvað skrítið. Þeir eru allir með sama hnitið? Það er af því að þeir eru allir með sömu hæðarlínu. Reynum aftur með peðið lengst til hægri.</p>
+<p>Peðið lengst til hægri er með x ásinn 8 og y ásinn 2.</p>
+<p>Þegar við notum riddarann þá þurfum við stundum að hoppa yfir aðra leikmenn. Þá lyftum við riddaranum af borðinu. Þegar við lyftum honum upp þá breytist hæðin á honum og annað hnit bætist við, y, sem er notað fyrir hæð.</p>
+<p>Þannig getum við fundið nákvæma staðsetningu á hlutum í kringum okkur. Tannburstinn ykkar er t.d. með ákveðið x,z,y hnit á heimilinu.</p>
+<p>En aftur að Steve. Hann er staddur einhverstaðar í Minecraft heiminum ykkar og við getum fengið að vita nákvæmlega hvar hann er með því að skoða x, y, z hnitið hans.</p>
+<p>Við getum meira að segja geymt hnitin hans í breytum og notað síðar. Af því að aðgerðin getPos skilar okkur þremur tölum þá skulum við nota þrjár breytur til að geyma þær í sitthvoru lagi.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+<span class="go">Vec3(1.9, 5.4, 9.8)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">player</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">player</span><span class="o">.</span><span class="n">x</span>
+<span class="go">5.6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>
+<span class="go">9.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span>
+<span class="go">2.3</span>
+</pre></div>
+</div>
+<p>En hvað getum við gert við þessi hnit? Ef við kíkjum aftur í <a class="reference internal" href="../minecraft-api.html"><em>Minecraft API</em></a> þá sjáum við að það eru fleiri aðgerðir sem við getum notað, eins og <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þar sem við sendum hnit inn í leikinn og Steve fer beint á hnitið. Gildi sem við sendum í aðgerðina kallast <em>færibreytur</em>. Í þessari aðgerð hefur aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þrjár færibreytur, <em>x, y, z</em>.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Skemmtilegt. Við getum fært hann eins og við viljum! Passið ykkur samt, því ef hnitið er inni í fjalli þá festist hann og þið þurfið að fara úr leiknum til að byrja upp á nýtt.</p>
+<p>Væri ekki gaman að stjórna því betur hvert hann færi?</p>
+<div class="section" id="verkefni-3">
+<span id="assignment-3"></span><h2>Verkefni 3<a class="headerlink" href="#verkefni-3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Sæktu staðsetningun á Steve og settu hana í breyturnar <em>x, y, z</em></li>
+<li>Færðu Steve áfram á <em>y</em> ás um 5 hnit</li>
+<li>Færðu Steve til vinstri á <em>x</em> ás um 10 hnit</li>
+<li>Færðu Steve upp í loft á <em>z</em> ás um 30 hnit</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../seminar.html">Námskeið</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 2</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Speedy Gonzales</a></li>
+<li class="toctree-l3"><a class="reference internal" href="input.html">Inntak</a></li>
+<li class="toctree-l3"><a class="reference internal" href="if-else-conditions.html">Hvað ef?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="and-or-conditions.html">Ef að og eða</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day4/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supporters.html">Styrktaraðilar</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../../seminar.html">Námskeið</a><ul>
+  <li><a href="intro.html">Dagur 2</a><ul>
+      <li>Previous: <a href="intro.html" title="previous chapter">Dagur 2</a></li>
+      <li>Next: <a href="input.html" title="next chapter">Inntak</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/seminar/day2/speedy-gonzales.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Jón Levy.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="../../_sources/seminar/day2/speedy-gonzales.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

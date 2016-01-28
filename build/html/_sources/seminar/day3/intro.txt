@@ -11,5 +11,4 @@ Dagur 3
     for-loops
     lists
     dictionaries
-    get-block
     set-block
