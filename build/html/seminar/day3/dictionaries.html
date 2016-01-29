@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Segð (expression) &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
+    <title>Orðasöfn &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -40,9 +40,63 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="seg-expression">
-<h1>Segð (expression)<a class="headerlink" href="#seg-expression" title="Permalink to this headline">¶</a></h1>
-<p>Þetta er kynningartexti</p>
+  <div class="section" id="orasofn">
+<h1>Orðasöfn<a class="headerlink" href="#orasofn" title="Permalink to this headline">¶</a></h1>
+<p>Orðasöfn <em>(dictionaries)</em> eru svipaðar listum að því leiti að við getum geymt safn af gildum. Munurinn er þó sá að í stað þess að nota sætisnúmer líkt og við gerðum með flugvélina í kaflanum <a class="reference internal" href="lists.html"><em>Listar</em></a> þá getum við nefnt sætin <em>vinstri</em> og <em>hægri</em>. Sætin <em>0</em> og <em>1</em> í listanum segir okkur ekki mikið um hvoru meginn í flugvélinni fólkið sat.</p>
+<p>Í orðasöfnum notum við lýsandi orð til að flokka gildin okkar. Í stað þess að nota hornklofa <em>[]</em> (brackets) notum við krullur <em>{}</em> (braces).</p>
+<p>Gildið okkar fær því sitt eigið heiti. Heitið og gildið sjálft er síðan aðskilið með tvípunkti. Oft er talað um <em>lykil</em> og <em>gildi</em> (á ensku <em>key, value</em> )</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;nafn&#39;</span><span class="p">:</span> <span class="s">&#39;Jón&#39;</span><span class="p">,</span> <span class="s">&#39;netfang&#39;</span><span class="p">:</span> <span class="s">&#39;koder@koder.is&#39;</span><span class="p">,</span> <span class="s">&#39;aldur&#39;</span><span class="p">:</span> <span class="mi">34</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span>
+<span class="go">{&#39;aldur&#39;: 34, &#39;netfang&#39;: &#39;koder@koder.is&#39;, &#39;nafn&#39;: &#39;Jón&#39;}</span>
+</pre></div>
+</div>
+<p>Í þessu dæmi þá hefur t.d. lykillinn <em>&#8216;nafn&#8217;</em> gildið <em>&#8216;Jón&#8217;</em>. Takið eftir að orðasafnið er ekki í sömu röð og við slógum það inn því við erum ekki að nota sæti líkt og í listum. Við hrúgum bara öllu inn og getum svo raðað því seinna ef við viljum. Í dæminu sjáiði við notum streng í gildunum fyrir nafn og netfang en heila tölu fyrir aldur. Líkt og í listum getum við notað hvaða tegund sem er.</p>
+<p>Búið til skrá og nefnið hana <em>verkefni9.py</em>. Sláið síðan inn eftirfarandi kóða. Í stað þess að hafa hann allan í einni línu þá gerum við hann snyrtilegan og notum fjögur bil eins og við lærðum í <a class="reference internal" href="../day2/if-else-conditions.html"><em>Hvað ef?</em></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">nemandi</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;nafn&#39;</span><span class="p">:</span> <span class="s">&#39;Jón&#39;</span><span class="p">,</span>
+    <span class="s">&#39;netfang&#39;</span><span class="p">:</span> <span class="s">&#39;koder@koder.is&#39;</span><span class="p">,</span>
+    <span class="s">&#39;aldur&#39;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
+    <span class="s">&#39;systkini&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;Gunnar&#39;</span><span class="p">,</span> <span class="s">&#39;Inga&#39;</span><span class="p">,</span> <span class="s">&#39;Ástrós&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">nemandi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Keyrið síðan kóðann.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python3 verkefni9.py
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Af hvaða tegund er lykillinn <em>systkini</em> ?</p>
+</div>
+<p>Til að sækja gildi úr orðasafni þá notum við lykilinn. Við sækjum það eins og við sækjum gildi úr lista (sjá <a class="reference internal" href="lists.html"><em>Listar</em></a>) en notum lykilinn í staðinn fyrir sætið.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span><span class="p">[</span><span class="s">&#39;nafn&#39;</span><span class="p">]</span>
+<span class="go">&#39;Jón&#39;</span>
+</pre></div>
+</div>
+<p>Við getum líka notað aðgerðina <em>get()</em> til að sækja gildið.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;nafn&#39;</span><span class="p">)</span>
+<span class="go">&#39;Jón&#39;</span>
+</pre></div>
+</div>
+<p>Athugum hvort orðasafnið sé með ákveðinn lykil.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;nafn&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;skónúmer&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Í þessu orðasafni erum við að geyma einn nemanda. Hvað ef við viljum geyma marga nemendur? Oft notum við lista og orðasöfn saman. Í þessu tilfelli getum við búið til lista af nemendum. Þá fær hvert sæti í listanum orðasafn af hverjum nemanda.</p>
+<div class="section" id="verkefni-9">
+<span id="assignment-9"></span><h2>Verkefni 9<a class="headerlink" href="#verkefni-9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Búðu til lista sem geymir þrjá nemendur. Hver nemandi skal vera orðasafn.</li>
+</ul>
+</div>
 </div>
 
 
@@ -60,7 +114,7 @@
 <li class="toctree-l3"><a class="reference internal" href="while-loops.html">Segð (expression)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="for-loops.html">Segð (expression)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lists.html">Listar</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Segð (expression)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Orðasöfn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="set-block.html">Byggja blokkir</a></li>
 </ul>
 </li>

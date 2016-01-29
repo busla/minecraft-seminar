@@ -27,7 +27,7 @@
     <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
     <link rel="up" title="Dagur 3" href="intro.html" />
     <link rel="next" title="Dagur 3" href="../day4/intro.html" />
-    <link rel="prev" title="Segð (expression)" href="dictionaries.html" />
+    <link rel="prev" title="Orðasöfn" href="dictionaries.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -43,18 +43,20 @@
   <div class="section" id="byggja-blokkir">
 <h1>Byggja blokkir<a class="headerlink" href="#byggja-blokkir" title="Permalink to this headline">¶</a></h1>
 <p>Í kaflanum <a class="reference internal" href="../day2/if-else-conditions.html"><em>Hvað ef?</em></a> lærðum við um aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.getBlock" title="minecraft.Minecraft.getBlock"><code class="xref py py-meth docutils literal"><span class="pre">getBlock()</span></code></a> til að sækja upplýsingar um blokkir. Núna ætlum við að smíða nýja blokkir með aðgerðinni <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.setBlock" title="minecraft.Minecraft.setBlock"><code class="xref py py-meth docutils literal"><span class="pre">setBlock()</span></code></a>. Aðgerðin hefur fjórar færibreytur, <em>x, y, z, block.id</em>. Þau gildi sem við sendum með aðgerðinni verða notuð til að smíða blokkina. Við þurfum að senda <em>x, y, z</em> hnit og tegund blokkar.</p>
+<p>Búið til nýja skrá, sláið inn eftirfarandi kóða og nefnið hana <em>verkefni7.py</em>.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti&#39;</span><span class="p">)</span>
-
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr hörðu efni og þú munt festast&#39;</span><span class="p">)</span>
+<span class="n">blokk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">setBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
+</div>
+<p>Engin blokk? Það er skiljanlegt því þú ert ekkert endilega á sama stað og hnitið sem þú sendir í færibreyturnar.</p>
+<div class="section" id="verkefni-7">
+<span id="assignment-7"></span><h2>Verkefni 7<a class="headerlink" href="#verkefni-7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Settu blokk einhverstaðar nálægt Steve (nota aðgerðir úr <a class="reference internal" href="../day2/speedy-gonzales.html#assignment-3"><span>Verkefni 3</span></a>)</li>
+</ul>
 </div>
 </div>
 
@@ -73,7 +75,7 @@
 <li class="toctree-l3"><a class="reference internal" href="while-loops.html">Segð (expression)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="for-loops.html">Segð (expression)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lists.html">Listar</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dictionaries.html">Segð (expression)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html">Orðasöfn</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Byggja blokkir</a></li>
 </ul>
 </li>
@@ -91,7 +93,7 @@
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../../seminar.html">Námskeið</a><ul>
   <li><a href="intro.html">Dagur 3</a><ul>
-      <li>Previous: <a href="dictionaries.html" title="previous chapter">Segð (expression)</a></li>
+      <li>Previous: <a href="dictionaries.html" title="previous chapter">Orðasöfn</a></li>
       <li>Next: <a href="../day4/intro.html" title="next chapter">Dagur 3</a></li>
   </ul></li>
   </ul></li>
