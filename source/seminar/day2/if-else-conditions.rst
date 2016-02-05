@@ -16,12 +16,12 @@ Til að sækja upplýsingar um blokkir getum við notað aðgerðina :meth:`~min
 
 >>> from mcpi.minecraft import Minecraft
 >>> mc = Minecraft.create()
->>> mc.getBlock(5, 8, 9)
+>>> mc.getBlock(80, 4, 40)
 
 .. todo::
     Vantar result
 
-Prófiði þar til þið fáið blokk með auðkennið *1*. Við getum líka búið til skilyrði til að fá betri lýsingu á því hvaða blokk þetta er. Opniði núna forritið *IDLE3* svo við þurfum ekki að skrifa þetta allt í *Terminal*.
+Prófiði þar til þið fáið blokk með auðkennið *1*. Opniði núna forritið *IDLE3* svo við þurfum ekki að skrifa þetta allt í *Terminal*.
 
 *Dæmi*
 
@@ -30,7 +30,7 @@ Prófiði þar til þið fáið blokk með auðkennið *1*. Við getum líka bú
     from mcpi.minecraft import Minecraft
 
     mc = Minecraft.create()
-    blokk = mc.getBlock(5, 8, 9)
+    blokk = mc.getBlock(80, 4, 40)
 
     print(blokk)
 
@@ -51,9 +51,9 @@ Kíkjum aftur á kóðan og búum til skilyrði sem athugar hvort blokkin sé *A
     from mcpi.minecraft import Minecraft
 
     mc = Minecraft.create()
-    nyr_stadur = mc.getBlock(5, 8, 9)
+    nyr_stadur = mc.getBlock(80, 4, 40)
 
-    if nyr_stadur.id == 1:
+    if nyr_stadur == 1:
         print('Þessi blokk er úr lofti')
     
     else:
@@ -76,9 +76,9 @@ Hvað gerist ef við færum *print()* skipunina aftur um fjögur bil?
     from mcpi.minecraft import Minecraft
 
     mc = Minecraft.create()
-    nyr_stadur = mc.getBlock(5, 8, 9)
+    nyr_stadur = mc.getBlock(80, 4, 40)
 
-    if nyr_stadur.id == 0:
+    if nyr_stadur == 0:
         print('Þessi blokk er úr lofti')
     
     else:
@@ -94,9 +94,9 @@ Við fáum villu því að það er tilgangslaust að vera með samanburð og fr
     from mcpi.minecraft import Minecraft
 
     mc = Minecraft.create()
-    nyr_stadur = mc.getBlock(5, 8, 9)
+    nyr_stadur = mc.getBlock(80, 4, 40)
 
-    if nyr_stadur.id == 0:
+    if nyr_stadur == 0:
         print('Þessi blokk er úr lofti')
     
     else:

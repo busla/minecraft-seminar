@@ -27,7 +27,7 @@
     <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
     <link rel="up" title="Dagur 2" href="intro.html" />
     <link rel="next" title="Ef að og eða" href="and-or-conditions.html" />
-    <link rel="prev" title="Inntak" href="input.html" />
+    <link rel="prev" title="Speedy Gonzales" href="speedy-gonzales.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -50,19 +50,19 @@
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
 <p class="last">Vantar result</p>
 </div>
-<p>Prófiði þar til þið fáið blokk með auðkennið <em>1</em>. Við getum líka búið til skilyrði til að fá betri lýsingu á því hvaða blokk þetta er. Opniði núna forritið <em>IDLE3</em> svo við þurfum ekki að skrifa þetta allt í <em>Terminal</em>.</p>
+<p>Prófiði þar til þið fáið blokk með auðkennið <em>1</em>. Opniði núna forritið <em>IDLE3</em> svo við þurfum ekki að skrifa þetta allt í <em>Terminal</em>.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">blokk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">blokk</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">blokk</span><span class="p">)</span>
 </pre></div>
@@ -77,9 +77,9 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
@@ -94,9 +94,9 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
@@ -108,9 +108,9 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
@@ -140,9 +140,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur 1</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 2</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="speedy-gonzales.html">Speedy Gonzales</a></li>
-<li class="toctree-l3"><a class="reference internal" href="input.html">Inntak</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Hvað ef?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="and-or-conditions.html">Ef að og eða</a></li>
+<li class="toctree-l3"><a class="reference internal" href="input.html">Inntak</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur 3</a></li>
@@ -160,7 +160,7 @@
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../../seminar.html">Námskeið</a><ul>
   <li><a href="intro.html">Dagur 2</a><ul>
-      <li>Previous: <a href="input.html" title="previous chapter">Inntak</a></li>
+      <li>Previous: <a href="speedy-gonzales.html" title="previous chapter">Speedy Gonzales</a></li>
       <li>Next: <a href="and-or-conditions.html" title="next chapter">Ef að og eða</a></li>
   </ul></li>
   </ul></li>

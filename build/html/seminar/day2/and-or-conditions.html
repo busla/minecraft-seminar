@@ -26,7 +26,7 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html" />
     <link rel="up" title="Dagur 2" href="intro.html" />
-    <link rel="next" title="Dagur 3" href="../day3/intro.html" />
+    <link rel="next" title="Inntak" href="input.html" />
     <link rel="prev" title="Hvað ef?" href="if-else-conditions.html" />
    
   
@@ -48,12 +48,12 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti&#39;</span><span class="p">)</span>
 
-<span class="k">elif</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="k">elif</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr steini&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
@@ -66,9 +66,9 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti eða steini&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
@@ -80,9 +80,9 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti og steini&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
@@ -94,10 +94,10 @@
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">nyr_stadur</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 <span class="n">undir_nyjum_stad</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">nyr_stadur</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">undir_nyjum_stad</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">undir_nyjum_stad</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">nyr_stadur</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">undir_nyjum_stad</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">undir_nyjum_stad</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi blokk er úr lofti og undir henni er blokk úr steini eða mold&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
@@ -124,9 +124,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur 1</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 2</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="speedy-gonzales.html">Speedy Gonzales</a></li>
-<li class="toctree-l3"><a class="reference internal" href="input.html">Inntak</a></li>
 <li class="toctree-l3"><a class="reference internal" href="if-else-conditions.html">Hvað ef?</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Ef að og eða</a></li>
+<li class="toctree-l3"><a class="reference internal" href="input.html">Inntak</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur 3</a></li>
@@ -145,7 +145,7 @@
   <li><a href="../../seminar.html">Námskeið</a><ul>
   <li><a href="intro.html">Dagur 2</a><ul>
       <li>Previous: <a href="if-else-conditions.html" title="previous chapter">Hvað ef?</a></li>
-      <li>Next: <a href="../day3/intro.html" title="next chapter">Dagur 3</a></li>
+      <li>Next: <a href="input.html" title="next chapter">Inntak</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

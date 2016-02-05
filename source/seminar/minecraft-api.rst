@@ -66,13 +66,14 @@ Ef við kíkjum í *minecraft.py* skrána þá sjáum við svolítið athyglisve
 
     .. method:: getBlock(x, y, z)
 
-        Sækir tegund blokkarinnar á gefnu hniti.
+        Sækir tegund blokkarinnar á gefnu hniti og skilar tilbaka auðkenni blokkarinnar.
 
         *Dæmi*
 
         >>> from mcpi.minecraft import Minecraft
         >>> mc = Minecraft.create()
         >>> mc.getBlock(3, 7, 9)
+        0
 
         .. todo::
 

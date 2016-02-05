@@ -12,12 +12,12 @@ Búið til nýja skrá sem heiti *verkefni5.py* og setjið inn eftirfarandi kó�
     from mcpi.minecraft import Minecraft
 
     mc = Minecraft.create()
-    nyr_stadur = mc.getBlock(5, 8, 9)
+    nyr_stadur = mc.getBlock(80, 4, 40)
 
-    if nyr_stadur.id == 0:
+    if nyr_stadur == 0:
         print('Þessi blokk er úr lofti')
     
-    elif nyr_stadur.id == 1:
+    elif nyr_stadur == 1:
         print('Þessi blokk er úr steini')
     
     else:
@@ -34,9 +34,9 @@ Við getum líka farið aðra leið að þessu með því að nota *or*.
     from mcpi.minecraft import Minecraft
 
     mc = Minecraft.create()
-    nyr_stadur = mc.getBlock(5, 8, 9)
+    nyr_stadur = mc.getBlock(80, 4, 40)
 
-    if nyr_stadur.id == 0 or nyr_stadur.id == 1:
+    if nyr_stadur == 0 or nyr_stadur == 1:
         print('Þessi blokk er úr lofti eða steini')
     
     else:
@@ -52,9 +52,9 @@ Ef blokkin er úr lofti *eða* steini skaltu láta mig vita. Við getum líka at
     from mcpi.minecraft import Minecraft
 
     mc = Minecraft.create()
-    nyr_stadur = mc.getBlock(5, 8, 9)
+    nyr_stadur = mc.getBlock(80, 4, 40)
 
-    if nyr_stadur.id == 0 and nyr_stadur.id == 1:
+    if nyr_stadur == 0 and nyr_stadur == 1:
         print('Þessi blokk er úr lofti og steini')
     
     else:
@@ -70,10 +70,10 @@ Við getum líka blandað öllum þessum skilyrðum saman til að þrengja að �
     from mcpi.minecraft import Minecraft
 
     mc = Minecraft.create()
-    nyr_stadur = mc.getBlock(5, 8, 9)
+    nyr_stadur = mc.getBlock(80, 4, 40)
     undir_nyjum_stad = mc.getBlock(5, 7, 9)
 
-    if nyr_stadur.id == 0 and undir_nyjum_stad.id == 1 or undir_nyjum_stad.id == 3:
+    if nyr_stadur == 0 and undir_nyjum_stad == 1 or undir_nyjum_stad == 3:
         print('Þessi blokk er úr lofti og undir henni er blokk úr steini eða mold')
     
     else:
