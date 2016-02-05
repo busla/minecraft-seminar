@@ -105,6 +105,20 @@ Ef við kíkjum í *minecraft.py* skrána þá sjáum við svolítið athyglisve
         >>> mc = Minecraft.create()
         >>> mc.player.getPos()
 
+    .. attribute:: events
+
+        Tilviksbreyta sem fær tilkynningu um leið og Steve lemur í blokk með sverði, sjá :class:`~minecraft.CmdEvents`.
+
+        *Dæmi*
+
+        .. code-block:: python
+            
+            from mcpi.minecraft import Minecraft
+            mc = Minecraft.create()
+
+            while True:
+                print(mc.events.pollBlockHits())
+
 
 .. class:: CmdPlayer
 
@@ -131,6 +145,24 @@ Ef við kíkjum í *minecraft.py* skrána þá sjáum við svolítið athyglisve
         >>> from mcpi.minecraft import Minecraft
         >>> mc = Minecraft.create()
         >>> mc.player.setPos(1.9, 5.7, 10.3)
+
+
+.. class:: CmdEvents
+    
+    Klasi með aðgerð sem skilar lista með upplýsingum um hvert högg sem var gert með *sverði*. Hægt er að sækja fjölda högga með aðgerðinni :meth:`~minecraft.CmdEvents.pollBlockHits`. Inniheldur einnig aðgerð til að endursetja.
+
+    Í klasanum :class:`~minecraft.Minecraft` er tilviksbreytan :attr:`~minecraft.Minecraft.events` sem býr til eintak af þessum klasa svo það er óþarfi að nota þennan klasa beint.
+
+
+    .. method:: clearAll(self)
+
+        Hreinsar tilkynningarlistann.
+
+
+    .. method:: pollBlockHits(self)
+
+        Skilar tilbaka upplýsingum um blokkina sem var lamið í. Athugaðu að það er eingöngu hægt að nota sverð.
+
 
 
 .. _block-constants:

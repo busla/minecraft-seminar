@@ -141,6 +141,20 @@
 </div>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="minecraft.Minecraft.events">
+<code class="descname">events</code><a class="headerlink" href="#minecraft.Minecraft.events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tilviksbreyta sem fær tilkynningu um leið og Steve lemur í blokk með sverði, sjá <a class="reference internal" href="#minecraft.CmdEvents" title="minecraft.CmdEvents"><code class="xref py py-class docutils literal"><span class="pre">CmdEvents</span></code></a>.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">pollBlockHits</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -169,6 +183,25 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">,</span> <span class="mf">10.3</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="minecraft.CmdEvents">
+<em class="property">class </em><code class="descclassname">minecraft.</code><code class="descname">CmdEvents</code><a class="headerlink" href="#minecraft.CmdEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasi með aðgerð sem skilar lista með upplýsingum um hvert högg sem var gert með <em>sverði</em>. Hægt er að sækja fjölda högga með aðgerðinni <a class="reference internal" href="#minecraft.CmdEvents.pollBlockHits" title="minecraft.CmdEvents.pollBlockHits"><code class="xref py py-meth docutils literal"><span class="pre">pollBlockHits()</span></code></a>. Inniheldur einnig aðgerð til að endursetja.</p>
+<p>Í klasanum <a class="reference internal" href="#minecraft.Minecraft" title="minecraft.Minecraft"><code class="xref py py-class docutils literal"><span class="pre">Minecraft</span></code></a> er tilviksbreytan <a class="reference internal" href="#minecraft.Minecraft.events" title="minecraft.Minecraft.events"><code class="xref py py-attr docutils literal"><span class="pre">events</span></code></a> sem býr til eintak af þessum klasa svo það er óþarfi að nota þennan klasa beint.</p>
+<dl class="method">
+<dt id="minecraft.CmdEvents.clearAll">
+<code class="descname">clearAll</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.CmdEvents.clearAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hreinsar tilkynningarlistann.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="minecraft.CmdEvents.pollBlockHits">
+<code class="descname">pollBlockHits</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.CmdEvents.pollBlockHits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Skilar tilbaka upplýsingum um blokkina sem var lamið í. Athugaðu að það er eingöngu hægt að nota sverð.</p>
 </dd></dl>
 
 </dd></dl>
