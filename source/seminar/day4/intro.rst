@@ -1,7 +1,5 @@
-Dagur 3
+Dagur 4
 ========
-
-Þetta er kynningartexti
 
 .. toctree::
     :maxdepth: 1
