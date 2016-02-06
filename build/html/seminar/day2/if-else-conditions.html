@@ -57,8 +57,7 @@
 <p class="first admonition-title">Todo</p>
 <p class="last">Vantar result</p>
 </div>
-<p>Prófiði þar til þið fáið blokk með auðkennið <em>1</em>. Opniði núna forritið <em>IDLE3</em> svo við þurfum ekki að skrifa þetta allt í <em>Terminal</em>.</p>
-<p><em>Dæmi</em></p>
+<p>Prófiði þar til þið fáið blokk með auðkennið <em>1</em>. Opniði núna forritið <em>IDLE3</em> svo við þurfum ekki að skrifa þetta allt í Python skelinni. Smellið á <em>File</em> og <em>New</em> og setjið inn eftirfarandi kóða.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
@@ -67,11 +66,31 @@
 <span class="k">print</span><span class="p">(</span><span class="n">blokk</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Vistið þessa skrá sem <em>verkefni4.py</em>. Nú getiði keyrt kóðann ykkar með því að skrifa:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python3 athuga_blokk.py
+<p>Vistið þessa skrá sem <em>verkefni4.py</em>. Kíkjum aftur í <em>Terminal</em> og búum til nýja möppu.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span>
+<span class="nv">$ </span>mkdir verkefni
 </pre></div>
 </div>
-<p>Hér biðjum við <em>Python</em> að túlka allt sem finnst í <em>athuga_blokk.py</em> skránni. Ef þið viljið endurtaka skipunina þá notiði <em>upp</em> örina á lyklaborðinu til að skoða söguna á öllum skipunum sem þið hafið slegið inn.</p>
+<p>Í <em>Terminal</em> notum við aðgerðir sem tengjast ekki Python á neinn hátt. <em>Terminal</em> mun verða ykkar tryggasti vinur þegar þið byrjið að forrita síðar. Til að framkvæma aðgerðir í stýrikerfinu getum við nota glugga viðmót eða texta viðmót. Í glugga viðmótinu notum við <em>File Manager</em> til að skoða skrár, búa til möppur, opna forrit, o.s.f.v. Í texta viðmótinu gerum við sömu hluti en við skrifum skipanir til að framkvæma þær. Rétt eins og við höfum við að skrifa skipunina <em>python3</em> til að opna Python skelina.</p>
+<p>Í texta viðmótinu getum við framkvæmt fleiri aðgerðir en í glugga viðmótinu. Hér fyrir ofan notum við aðgerðina <em>cd</em> sem fer með okkur í notandamöppuna okkar. Síðan notum við <em>mkdir (make directory)</em> til að búa til nýja möppu. Skipunin <em>ls</em> sýnir okkur hvað er í henni:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ls
+</pre></div>
+</div>
+<p>Til að fara inn í einhverja af þessum möppuna notarðu <em>cd</em> og nafnið á möppunni.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd </span>Documents
+<span class="nv">$ </span>ls
+</pre></div>
+</div>
+<p>Passaðu þig á stórum og litlum stöfum, þeir skipta máli. Mappan <em>Documents</em> er ekki það sama og mappan <em>documents</em>. Til að fara aftur niður um möppu notiði <em>cd</em>, bil og tveir punktar.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> ..
+<span class="nv">$ </span>ls
+</pre></div>
+</div>
+<p>Fariði núna í möppuna <em>verkefni</em> og keyriði kóðann ykkar:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python3 verkefni4.py
+</pre></div>
+</div>
+<p>Hér biðjum við <em>Python</em> að túlka allt sem finnst í <em>verkefni4.py</em> skránni. Ef þið viljið endurtaka skipunina þá notiði <em>upp</em> örina á lyklaborðinu til að skoða söguna á öllum skipunum sem þið hafið slegið inn.</p>
 <p>Kíkjum aftur á kóðan og búum til skilyrði sem athugar hvort blokkin sé <em>AIR</em>. Til þess notum við <em>if</em> og <em>else</em> skilyrðingu, þ.e.a.s. <em>ef</em> blokkin er af tegundinni <em>AIR</em> þá skaltu prenta texta á skjánum sem segir með það, <em>annars</em> skaltu prenta texta á skjánum sem segir mér að hún sé það ekki.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>

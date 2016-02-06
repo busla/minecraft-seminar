@@ -21,9 +21,8 @@ Til að sækja upplýsingar um blokkir getum við notað aðgerðina :meth:`~min
 .. todo::
     Vantar result
 
-Prófiði þar til þið fáið blokk með auðkennið *1*. Opniði núna forritið *IDLE3* svo við þurfum ekki að skrifa þetta allt í *Terminal*.
+Prófiði þar til þið fáið blokk með auðkennið *1*. Opniði núna forritið *IDLE3* svo við þurfum ekki að skrifa þetta allt í Python skelinni. Smellið á *File* og *New* og setjið inn eftirfarandi kóða.
 
-*Dæmi*
 
 .. code-block:: python
 
@@ -34,13 +33,44 @@ Prófiði þar til þið fáið blokk með auðkennið *1*. Opniði núna forrit
 
     print(blokk)
 
-Vistið þessa skrá sem *verkefni4.py*. Nú getiði keyrt kóðann ykkar með því að skrifa:
+
+Vistið þessa skrá sem *verkefni4.py*. Kíkjum aftur í *Terminal* og búum til nýja möppu.
+
+.. code-block:: bash
+
+    $ cd
+    $ mkdir verkefni
+
+Í *Terminal* notum við aðgerðir sem tengjast ekki Python á neinn hátt. *Terminal* mun verða ykkar tryggasti vinur þegar þið byrjið að forrita síðar. Til að framkvæma aðgerðir í stýrikerfinu getum við nota glugga viðmót eða texta viðmót. Í glugga viðmótinu notum við *File Manager* til að skoða skrár, búa til möppur, opna forrit, o.s.f.v. Í texta viðmótinu gerum við sömu hluti en við skrifum skipanir til að framkvæma þær. Rétt eins og við höfum við að skrifa skipunina *python3* til að opna Python skelina.
+
+Í texta viðmótinu getum við framkvæmt fleiri aðgerðir en í glugga viðmótinu. Hér fyrir ofan notum við aðgerðina *cd* sem fer með okkur í notandamöppuna okkar. Síðan notum við *mkdir (make directory)* til að búa til nýja möppu. Skipunin *ls* sýnir okkur hvað er í henni:
 
 .. code-block:: bash
     
-    $ python3 athuga_blokk.py
+    $ ls
 
-Hér biðjum við *Python* að túlka allt sem finnst í *athuga_blokk.py* skránni. Ef þið viljið endurtaka skipunina þá notiði *upp* örina á lyklaborðinu til að skoða söguna á öllum skipunum sem þið hafið slegið inn.
+Til að fara inn í einhverja af þessum möppuna notarðu *cd* og nafnið á möppunni.
+
+.. code-block:: bash
+
+    $ cd Documents
+    $ ls
+
+Passaðu þig á stórum og litlum stöfum, þeir skipta máli. Mappan *Documents* er ekki það sama og mappan *documents*. Til að fara aftur niður um möppu notiði *cd*, bil og tveir punktar.
+
+.. code-block:: bash
+
+    $ cd ..
+    $ ls
+
+
+Fariði núna í möppuna *verkefni* og keyriði kóðann ykkar:
+
+.. code-block:: bash
+    
+    $ python3 verkefni4.py
+
+Hér biðjum við *Python* að túlka allt sem finnst í *verkefni4.py* skránni. Ef þið viljið endurtaka skipunina þá notiði *upp* örina á lyklaborðinu til að skoða söguna á öllum skipunum sem þið hafið slegið inn.
 
 Kíkjum aftur á kóðan og búum til skilyrði sem athugar hvort blokkin sé *AIR*. Til þess notum við *if* og *else* skilyrðingu, þ.e.a.s. *ef* blokkin er af tegundinni *AIR* þá skaltu prenta texta á skjánum sem segir með það, *annars* skaltu prenta texta á skjánum sem segir mér að hún sé það ekki.
 

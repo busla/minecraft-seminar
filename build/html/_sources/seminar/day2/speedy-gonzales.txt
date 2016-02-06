@@ -61,9 +61,9 @@ Vec3(1.9, 5.4, 9.8)
 >>> player = mc.player.getPos()
 >>> player.x
 5.6
->>> y
+>>> player.y
 9.1
->>> z
+>>> player.z
 2.3
 
 
