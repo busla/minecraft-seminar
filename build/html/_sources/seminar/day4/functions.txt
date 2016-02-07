@@ -1,4 +1,4 @@
-Segð (expression)
+Föll (expression)
 =================
 
 Þetta er kynningartexti

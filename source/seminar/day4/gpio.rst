@@ -1,4 +1,6 @@
-Segð (expression)
-=================
+GPIO (Gagnapinnar)
+==================
 
-Þetta er kynningartexti
+.. image:: gpio-pins.png
+
+.. image:: gpio-led.png
