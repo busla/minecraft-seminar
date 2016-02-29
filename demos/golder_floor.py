@@ -23,7 +23,7 @@ while True:
     WIDTH = 8
     LENGTH = 8
     tile_pos = mc.player.getTilePos()
-    tile_type = mc.getBlock(tile_pos)
+    #tile_type = mc.getBlock(tile_pos)
     render_tiles(tile_pos, GOLD, WIDTH, LENGTH)
     #print(tile_type)
     time.sleep(1)    
