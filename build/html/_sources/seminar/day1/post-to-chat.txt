@@ -31,7 +31,6 @@ Hvað ef við breytum tölunni í streng?
 
 Það virkar.
 
-
 .. _assignment-2:
 
 Verkefni 2
@@ -45,6 +44,8 @@ Verkefni 2
 
 * Notaðu :func:`~minecraft.Minecraft.postToChat` til að senda textann í Minecraft.
 
+
+Sjá lausn :github:`mitas.py`
 
 .. _assignment-2-extra:
 
