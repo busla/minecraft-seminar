@@ -29,5 +29,5 @@ end = 128
 world_start = Vec3(start, 0, start)
 world_end = Vec3(end, 11, end)
 
-render_tiles(world_start, world_end, [0, 0, 0, 4, 50])
+render_tiles(world_start, world_end, [0, 0, 0, 4])
     
