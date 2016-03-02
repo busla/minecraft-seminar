@@ -15,41 +15,14 @@ Ef við kíkjum á :doc:`../minecraft-api` þá sjáum við listann yfir klasana
     
     Vantar dæmi um hnitaniðurstöður
 
-Þessi aðgerð skilar okkur niðurstöðum. Við biðjum Minecraft að kíkja hvar hann er og senda okkur tilbaka staðsetninguna. Hvernig geta þessar þrjár tölur verið staðsetningin hans? Málið er að þetta er staðsetningin hans í hnitum. Til að finna staðsetningu í hnitum skulum við ímynda okkur taflborð. Við getum fundið staðsetninguna á vinstri riddaranum með því að telja reitina til hliðar og áfram. Muniði þegar við vorum að tala um breytur? Hnit geta hafa breyturnar x, y (einnig z, sjá síðar) og innihald þeirra er fjarlægðin frá neðstu hliðinni og vinstri hliðinni.
+Þessi aðgerð skilar okkur niðurstöðum. Við biðjum Minecraft að kíkja hvar hann er og senda okkur tilbaka staðsetninguna. Hvernig geta þessar þrjár tölur verið staðsetningin hans? Málið er að þetta er staðsetningin hans í hnitum. Til að finna staðsetningu í hnitum skulum við skoða herbergið sem við erum í. Allt inni í herberginu hefur einhverja staðsetningu. Myndin á veggnum, stóllinn, tölvan, allt sem þú sérð. Til að átta okkur betur á hnitum getum við ímyndað okkur taflborð. Taflborðið er merkt með bókstöfum á einni hlið og tölustöfum á hinni. Ef við skoðum t.d. hvíta hrókinn vinstra meginn þá hefur hann hnitið A,1. Hann getur farið til hliðar eftir tölustöfum (x ás) og áfram eftir bókstöfum (y ás). Við notum orðið *ás* þegar við tölum um áttir. Ef við setjum hann einhverstaðar á borðið þá getum við séð hnitið hans með því að skoða töluna og bókstafinn sem hann er á. 
 
-Ef við byrjum á 0 og teljum reitina meðfram hliðinni sem snýr að okkur þá fáum við eftirfarandi fjarlægðir:
+Vandamálið með taflið er að taflmennirnir geta bara farið áfram og til hliðar á borðinu. Þeir geta ekki farið upp í loft sem er þriðji ásinn og við skulum kalla hann *z ás*. Þegar við erum með þrjú hnit þá getum við kallað það þrívídd. Taflborðið væri þá tvívídd. Miðað við röðunina *x, y, z* þá væri bolur sem liggur á gólfinu í vinstra horninu á herberginu með hnitið *0, 0, 0*. Ef við myndum setja hann upp á lítið borð í sama horni þá væri hann hugsanlega með hnitið *0, 0, 2* því hann hefur hækkað.
 
-* Hrókur = 1
-* Riddari = 2
-* Biskup = 3
-* Kóngur = 4
-* Drottning = 5
-* Biskup = 6
-* Riddari = 7
-* Hrókur = 8
 
-Þetta eru hnit taflmannana á x ás. Hver væru hnit þeirra á y ás? Þá þyrftum við að telja áfram, meðfram vinstri hliðinni.
+En aftur að Steve. Hann er staddur einhverstaðar í Minecraft heiminum ykkar og við getum fengið að vita nákvæmlega hvar hann er með því að skoða *x, y, z* hnitið hans.
 
-* Hrókur = 1
-* Riddari = 1
-* Biskup = 1
-* Kóngur = 1
-* Drottning = 1
-* Biskup = 1
-* Riddari = 1
-* Hrókur = 1
-
-Hmm, þetta er eitthvað skrítið. Þeir eru allir með sama hnitið? Það er af því að þeir eru allir með sömu hæðarlínu. Reynum aftur með peðið lengst til hægri.
-
-Peðið lengst til hægri er með x ásinn 8 og y ásinn 2.
-
-Þegar við notum riddarann þá þurfum við stundum að hoppa yfir aðra leikmenn. Þá lyftum við riddaranum af borðinu. Þegar við lyftum honum upp þá breytist hæðin á honum og annað hnit bætist við, y, sem er notað fyrir hæð.
-
-Þannig getum við fundið nákvæma staðsetningu á hlutum í kringum okkur. Tannburstinn ykkar er t.d. með ákveðið x,z,y hnit á heimilinu.
-
-En aftur að Steve. Hann er staddur einhverstaðar í Minecraft heiminum ykkar og við getum fengið að vita nákvæmlega hvar hann er með því að skoða x, y, z hnitið hans.
-
-Við getum meira að segja geymt hnitin hans í breytum og notað síðar. Af því að aðgerðin getPos skilar okkur þremur tölum þá skulum við nota þrjár breytur til að geyma þær í sitthvoru lagi.
+Við getum meira að segja geymt hnitin hans í breytum og notað síðar. Af því að aðgerðin :attr:`~minecraft.CmdPlayer.getPos` skilar okkur þremur tölum þá skulum við nota þrjár breytur til að geyma þær í sitthvoru lagi.
 
 
 *Dæmi*

@@ -1,7 +1,7 @@
 While lúppur
 ============
 
-Lúppur eru aðgerðir sem við notum til að spóla í gegnum lista, orðasöfn eða aðra hluti sem geyma safn af gögnum sem við viljum nálgast. Ef við þyrftum t.d. að leita að nafni í símaskránni þá myndum við eflaust nota lúppur.
+Lúppur eru aðgerðir sem við notum til að fara yfir lista, orðasöfn eða aðra hluti sem geyma safn af gögnum sem við viljum nálgast. Ef við þyrftum t.d. að leita að nafni í símaskránni þá myndum við eflaust nota lúppur.
 
 Oftast notum við tvær tegundir af lúppum, *while* eða *for* lúppur. Í þessum kafla förum við í *while* lúppur.
 
@@ -13,11 +13,21 @@ Búið til nýja skrá og nefnið hana *verkefni10.py*.
 
     while teljari < 10:
         print(teljari)
-        teljari += 1
+        teljari = teljari + 1
 
-Í þessum kóða búum við til breytuna *teljari*. Við gefum henni gildið *0* og er því breytan af tegundinni *integer (heil tala)*. Þýðum nú lúppuna yfir á mannamál.
+Í þessum kóða búum við til breytuna *teljari*. Við gefum henni gildið *0* og er því breytan af tegundinni *integer* (heil tala). Þýðum nú lúppuna yfir á mannamál.
 
 *Á meðan* teljari er minni en talan *10*, prentaðu út teljarann og hækkaðu svo teljarann um *1*.
+
+Hér er önnur leið til að leggja saman teljarann:
+
+.. code-block:: python
+    
+    teljari = 0
+
+    while teljari < 10:
+        print(teljari)
+        teljari += 1
 
 Þessi aðgerð endurtekur sig svo lengi sem teljari er minni en einn. Það sem *while* aðgerðin er að gera er að endurtaka sig svo lengi sem eitthvað er *satt*. Um leið og það verður *rangt* þá stoppar aðgerðin.
 
@@ -104,7 +114,7 @@ Búðu til skrá með heitið *verkefni10.py* og settu inn eftirfarandi kóða. 
         sleep(0.5)
 
 
-Athugið að breytan *hogg* er listi og við getum athugað lengdina á listanum til að vita hversu oft var slegið í blokk. Í leiknum okkar er lúppan svæfð í 500 millisekúndur eftir hvern hring.
+Athugið að breytan *hogg* er listi og við getum athugað lengdina á listanum til að vita hversu oft var slegið í blokk. Í leiknum okkar er lúppan svæfð í 500 millisekúndur eftir hvern hring. Ef við svæfum hana ekki fer hún alltof hratt og við náum ekki 
 
 Í leiknum okkar sjáum við nýja aðferð við að prenta út upplýsingar í Terminal. Við setjum *%d (decimal, ísl: tugabrot)* inn í miðjan textann okkar og sendum svo tölu gildi þangað inn breytunni *hogg*. 
 
