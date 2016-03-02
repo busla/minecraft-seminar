@@ -42,24 +42,32 @@
             
   <div class="section" id="while-luppur">
 <h1>While lúppur<a class="headerlink" href="#while-luppur" title="Permalink to this headline">¶</a></h1>
-<p>Lúppur eru aðgerðir sem við notum til að spóla í gegnum lista, orðasöfn eða aðra hluti sem geyma safn af gögnum sem við viljum nálgast. Ef við þyrftum t.d. að leita að nafni í símaskránni þá myndum við eflaust nota lúppur.</p>
+<p>Lúppur eru aðgerðir sem við notum til að fara yfir lista, orðasöfn eða aðra hluti sem geyma safn af gögnum sem við viljum nálgast. Ef við þyrftum t.d. að leita að nafni í símaskránni þá myndum við eflaust nota lúppur.</p>
 <p>Oftast notum við tvær tegundir af lúppum, <em>while</em> eða <em>for</em> lúppur. Í þessum kafla förum við í <em>while</em> lúppur.</p>
 <p>Búið til nýja skrá og nefnið hana <em>verkefni10.py</em>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">teljari</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">teljari</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">teljari</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">teljari</span><span class="p">)</span>
+    <span class="n">teljari</span> <span class="o">=</span> <span class="n">teljari</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Í þessum kóða búum við til breytuna <em>teljari</em>. Við gefum henni gildið <em>0</em> og er því breytan af tegundinni <em>integer</em> (heil tala). Þýðum nú lúppuna yfir á mannamál.</p>
+<p><em>Á meðan</em> teljari er minni en talan <em>10</em>, prentaðu út teljarann og hækkaðu svo teljarann um <em>1</em>.</p>
+<p>Hér er önnur leið til að leggja saman teljarann:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">teljari</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">while</span> <span class="n">teljari</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">teljari</span><span class="p">)</span>
     <span class="n">teljari</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>Í þessum kóða búum við til breytuna <em>teljari</em>. Við gefum henni gildið <em>0</em> og er því breytan af tegundinni <em>integer (heil tala)</em>. Þýðum nú lúppuna yfir á mannamál.</p>
-<p><em>Á meðan</em> teljari er minni en talan <em>10</em>, prentaðu út teljarann og hækkaðu svo teljarann um <em>1</em>.</p>
 <p>Þessi aðgerð endurtekur sig svo lengi sem teljari er minni en einn. Það sem <em>while</em> aðgerðin er að gera er að endurtaka sig svo lengi sem eitthvað er <em>satt</em>. Um leið og það verður <em>rangt</em> þá stoppar aðgerðin.</p>
 <p>Við gætum t.d. gert:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="k">while</span> <span class="bp">True</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&#39;endurtekningin endalausa&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;endurtekningin endalausa&#39;</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -71,11 +79,11 @@
 </div>
 <p>Þótt þetta líti út fyrir að vera tilgangslaust þá eru tilfelli þar sem við getum nýtt okkur endalausa lúppu. Til að stöðva lúppuna notum við skipunina <em>break</em>.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span> <span class="c"># gerir það sama og *while True == True*</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span> <span class="c1"># gerir það sama og *while True == True*</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þessi texti mun endurtaka sig 10 sinnum&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Þessi texti mun endurtaka sig 10 sinnum&#39;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
         <span class="k">break</span>
@@ -96,7 +104,7 @@
 <li>Hvaða hlið var slegið á.</li>
 </ul>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span>
     <span class="n">BlockEvent</span><span class="p">(</span><span class="n">BlockEvent</span><span class="o">.</span><span class="n">HIT</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
     <span class="n">BlockEvent</span><span class="p">(</span><span class="n">BlockEvent</span><span class="o">.</span><span class="n">HIT</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">78</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">]</span>
@@ -105,7 +113,7 @@
 <p>Í hverju sæti er því eitt eintak af klasanum <em>BlockEvent</em> með upplýsingunum sem minnst var á hér fyrir ofan. Við tölum um klasa og afrit síðar. Það sem við þurfum að taka vel eftir er að þetta er listi sem geymir einhvern fjölda af hlutum.</p>
 <p>Í lokin notum við aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.CmdEvents.clearAll" title="minecraft.CmdEvents.clearAll"><code class="xref py py-meth docutils literal"><span class="pre">clearAll()</span></code></a> til að hreinsa teljarann.</p>
 <p>Búðu til skrá með heitið <em>verkefni10.py</em> og settu inn eftirfarandi kóða. Keyrðu síðan kóðann í <em>Terminal</em>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
@@ -115,18 +123,18 @@
     <span class="n">hogg</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">pollBlockHits</span><span class="p">())</span>
 
     <span class="k">if</span> <span class="n">hogg</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Þú slóst </span><span class="si">%d</span><span class="s"> sinni í blokk&#39;</span> <span class="o">%</span> <span class="n">hogg</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Þú slóst </span><span class="si">%d</span><span class="s1"> sinni í blokk&#39;</span> <span class="o">%</span> <span class="n">hogg</span><span class="p">)</span>
         <span class="n">mc</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">clearAll</span><span class="p">()</span>
 
     <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Athugið að breytan <em>hogg</em> er listi og við getum athugað lengdina á listanum til að vita hversu oft var slegið í blokk. Í leiknum okkar er lúppan svæfð í 500 millisekúndur eftir hvern hring.</p>
+<p>Athugið að breytan <em>hogg</em> er listi og við getum athugað lengdina á listanum til að vita hversu oft var slegið í blokk. Í leiknum okkar er lúppan svæfð í 500 millisekúndur eftir hvern hring. Ef við svæfum hana ekki fer hún alltof hratt og við náum ekki</p>
 <p>Í leiknum okkar sjáum við nýja aðferð við að prenta út upplýsingar í Terminal. Við setjum <em>%d (decimal, ísl: tugabrot)</em> inn í miðjan textann okkar og sendum svo tölu gildi þangað inn breytunni <em>hogg</em>.</p>
 <p>Við getum líka notað <em>%s</em> til að prenta út streng en þá þurfum við fyrst að breyta tölunni í streng.</p>
 <p>print(&#8216;Þú slóst %s sinni í blokk&#8217; % str(hogg))</p>
 <p>Önnur leið við að prenta út það sama væri:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&#39;Þú slóst &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hog</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39; sinni í blokk&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;Þú slóst &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hog</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; sinni í blokk&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="section" id="verkefni-10">
@@ -207,7 +215,7 @@
       &copy;2016, Jón Levy.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
       
       |
