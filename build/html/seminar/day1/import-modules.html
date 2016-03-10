@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Verkfærin okkar &mdash; Kóder.is - Python námskeið í Minecraft 1 documentation</title>
+  <title>Verkfærin okkar &mdash; Python seminar for Minecraft 1 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
-    <link rel="top" title="Kóder.is - Python námskeið í Minecraft 1 documentation" href="../../index.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
         <link rel="up" title="Dagur 1" href="intro.html"/>
         <link rel="next" title="Dagur 2" href="../day2/intro.html"/>
         <link rel="prev" title="Dagur 1" href="intro.html"/> 
@@ -53,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Kóder.is - Python námskeið í Minecraft
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
           
 
           
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.0
+                0.1
               </div>
             
           
@@ -115,7 +115,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../index.html">Kóder.is - Python námskeið í Minecraft</a>
+        <a href="../../index.html">Python seminar for Minecraft</a>
       </nav>
 
 
@@ -153,32 +153,31 @@
   <div class="section" id="verkfaerin-okkar">
 <h1>Verkfærin okkar<a class="headerlink" href="#verkfaerin-okkar" title="Permalink to this headline">¶</a></h1>
 <p><strong>Verkfæri forritunarmála</strong></p>
-<p>Það má líkja forritunarmálum við smiði. Þeir nota allskyns tól og tæki til að smíða hús. Krana, gröfur, ýtur, naglabyssur, hamra og fleira. Öll þessi tól geta framkvæmt mismunandi aðgerðir. Hamarinn <em>hamrar</em>, sögin <em>sagar</em>, skrúfjárnið <em>skrúfar</em>, o.s.f.v.</p>
+<p>Það má líkja forritunarmálum við smiði. Þeir nota allskyns tól og tæki til að smíða hús. Krana, gröfur, ýtur, naglabyssur, hamra og fleira. Öll þessi tól geta framkvæmt mismunandi aðgerðir. Hamarinn <em>hamrar</em> (og losar nagla), sögin <em>sagar</em>, skrúfjárnið <em>skrúfar</em>, o.s.f.v.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Í Python kallast aðgerð <em>function</em></p>
+</div>
 <p>Verkfærin gera ekkert eins síns liðs. Þau þurfa eitthvað hráefni til að vinna með. Hamarinn þarf nagla, sögin þarf spítu og skrúfjárnið þarf skrúfu.</p>
 <p>Í forritun myndi þetta líta svona út:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">hilla</span> <span class="o">=</span> <span class="n">Hamar</span><span class="o">.</span><span class="n">hamra</span><span class="p">(</span><span class="n">naglar</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">hilla</span> <span class="o">=</span> <span class="n">Hamar</span><span class="o">.</span><span class="n">hamra</span><span class="p">(</span><span class="n">nagli</span><span class="p">)</span>
+<span class="n">laus</span> <span class="n">spíta</span> <span class="o">=</span> <span class="n">Hamar</span><span class="o">.</span><span class="n">losa</span><span class="p">(</span><span class="n">nagli</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Til að búa til <em>hillu</em> þurfum við að nota verkfærið <em>hamar</em> sem <em>hamrar</em> og þarf nagla til að geta hamrað eitthvað saman. Útkoman verður <em>hilla</em>.</p>
+<p>Til að búa til <em>hillu</em> þurfum við að nota verkfærið <em>hamar</em> sem <em>hamrar</em> en þarf líka nagla til að geta hamrað eitthvað saman. Útkoman verður <em>hilla</em>. Hráefnið sem við notum er alltaf sett innan sviga á eftir aðgerðinni.</p>
 <p>Þessa hillu getum við notað síðar til að geyma sokkana okkar, eða hvað annað sem þið viljið nota hana í.</p>
 <p>Oft hafa tólin svo margar aðgerðir að það þarf að flokka þær í sér verkfærakassa. Smiðurinn geturu t.d. verið með nokkra mismunandi verkfærakassa eftir því hvað hann er að gera. Einn kassa fyrir allskyns tegundir af hömrum og nöglum, annan fyrir margar tegundir af skrúfjárnum og skrúfum og svo enn einn fyrir sandpappír og þjalir. Það færi allt í tóma vitleysu ef hann væri með einn stóran kassa fyrir þetta allt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Í Python eru verkfærakassar kallaðir <em>klasar (á ensku class)</em>.</p>
+</div>
 <p>Það sama gildir um málara. Penslar í einum kassa, lakk í öðrum, o.s.f.v.</p>
 <p>Hvað myndi nú gerast ef smiðurinn og málarinn væru með sömu vinnustofu? Ef þeir geyma ekki kassana sína á sérstökum stað á vinnustofunni þá færi eflaust allt í vitleysu. Smiðurinn tæki kannski kassa af pennslum í staðinn fyrir kassa af hömrum.</p>
 <p>Allt þarf að vera á sínum stað. Málarinn geymir sína kassa í einni geymslu og smiðurinn sína kassa í annari.</p>
 <p>Kóði í forritun virkar á sama hátt. Allt þarf að vera á sínum stað.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Í Python eru verkfærakassar kallaðir <em>klasar (á ensku class)</em>.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
 <p class="last">Í Python eru geymslur fyrir verkfærakassa kallaðar <em>einingar (á ensku modules)</em></p>
-</div>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p>Tól = module</p>
-<p>Klasi = class</p>
-<p class="last">Aðgerð = function</p>
 </div>
 <p>Python, rétt eins og önnur forritunarmál, býður upp á allskyns verkfæri sem við getum notað til að smíða forrit.</p>
 <p>Eins og við sáum áðan þá eru reikningsaðgerðir innbyggðar í Python (samlagning, frádráttur, margföldun, deiling, o.s.f.v.).</p>
@@ -255,7 +254,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Jón Levy.
+        &copy; Copyright .
 
     </p>
   </div>

@@ -57,16 +57,16 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Kóder.is - Python námskeið í Minecraft'
-copyright = '2016, Jón Levy'
-author = 'Jón Levy'
+project = 'Python seminar for Minecraft'
+#copyright = '2016, Jón Levy'
+author = 'Jon Levy'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '0.0'
+version = '0.1'
 # The full version, including alpha/beta/rc tags.
 release = '1'
 

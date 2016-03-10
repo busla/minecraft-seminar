@@ -91,7 +91,7 @@ Kíkjum aftur á kóðan og búum til skilyrði sem athugar hvort blokkin sé *A
 
 
 
-Skoðum þennan kóða aðeins betur því að er ýmislegt að gerast í honum. Þegar við notum tvö samasem merki *==* þá erum við að nota *samanburðaraðgerð*. Í :doc:`../day1/python-shell` notuðum við eitt *=* merki til að gefa einhverri breytu gildi, sem myndi kallast *gildisaðgerð*. Það er algengt að við ruglumst á þessu þegar við erum að læra um aðgerðir.
+Skoðum þennan kóða aðeins betur því að er ýmislegt að gerast í honum. Þegar við notum tvö samasem merki *==* þá erum við að nota *samanburðaraðgerð*. Í :doc:`../day1/import-modules` notuðum við eitt *=* merki til að gefa einhverri breytu gildi, sem myndi kallast *gildisaðgerð*. Það er algengt að við ruglumst á þessu þegar við erum að læra um aðgerðir.
 
 Þegar við notum samanburð til að bera saman tvö gildi þá er samanburðurinn annaðhvort sannur eða ósannur. Sem dæmi þá er *1 == 2* ósannur því 1 er ekki það sama og tveir. Hér fyrir ofan erum við að bera saman auðkennið á blokkinni við töluna *0*. Ef samanburðurinn er sannur þá vil ég framkvæma allar aðgerðir sem koma á eftir tvípunktinum og hafa fjögur bil í inndrátt.
 

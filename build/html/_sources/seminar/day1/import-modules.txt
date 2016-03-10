@@ -3,7 +3,12 @@ Verkfærin okkar
 
 **Verkfæri forritunarmála**
 
-Það má líkja forritunarmálum við smiði. Þeir nota allskyns tól og tæki til að smíða hús. Krana, gröfur, ýtur, naglabyssur, hamra og fleira. Öll þessi tól geta framkvæmt mismunandi aðgerðir. Hamarinn *hamrar*, sögin *sagar*, skrúfjárnið *skrúfar*, o.s.f.v.
+Það má líkja forritunarmálum við smiði. Þeir nota allskyns tól og tæki til að smíða hús. Krana, gröfur, ýtur, naglabyssur, hamra og fleira. Öll þessi tól geta framkvæmt mismunandi aðgerðir. Hamarinn *hamrar* (og losar nagla), sögin *sagar*, skrúfjárnið *skrúfar*, o.s.f.v.
+
+.. note::
+    
+    Í Python kallast aðgerð *function*
+    
 
 Verkfærin gera ekkert eins síns liðs. Þau þurfa eitthvað hráefni til að vinna með. Hamarinn þarf nagla, sögin þarf spítu og skrúfjárnið þarf skrúfu.
 
@@ -11,15 +16,21 @@ Verkfærin gera ekkert eins síns liðs. Þau þurfa eitthvað hráefni til að 
 
 .. code-block:: python
     
-    hilla = Hamar.hamra(naglar)
+    hilla = Hamar.hamra(nagli)
+    laus spíta = Hamar.losa(nagli)
 
-Til að búa til *hillu* þurfum við að nota verkfærið *hamar* sem *hamrar* og þarf nagla til að geta hamrað eitthvað saman. Útkoman verður *hilla*.
+Til að búa til *hillu* þurfum við að nota verkfærið *hamar* sem *hamrar* en þarf líka nagla til að geta hamrað eitthvað saman. Útkoman verður *hilla*. Hráefnið sem við notum er alltaf sett innan sviga á eftir aðgerðinni.
 
 Þessa hillu getum við notað síðar til að geyma sokkana okkar, eða hvað annað sem þið viljið nota hana í.
 
 Oft hafa tólin svo margar aðgerðir að það þarf að flokka þær í sér verkfærakassa. Smiðurinn geturu t.d. verið með nokkra mismunandi verkfærakassa eftir því hvað hann er að gera. Einn kassa fyrir allskyns tegundir af hömrum og nöglum, annan fyrir margar tegundir af skrúfjárnum og skrúfum og svo enn einn fyrir sandpappír og þjalir. Það færi allt í tóma vitleysu ef hann væri með einn stóran kassa fyrir þetta allt.
 
+.. note::
+    
+    Í Python eru verkfærakassar kallaðir *klasar (á ensku class)*.
+
 Það sama gildir um málara. Penslar í einum kassa, lakk í öðrum, o.s.f.v.
+
 
 Hvað myndi nú gerast ef smiðurinn og málarinn væru með sömu vinnustofu? Ef þeir geyma ekki kassana sína á sérstökum stað á vinnustofunni þá færi eflaust allt í vitleysu. Smiðurinn tæki kannski kassa af pennslum í staðinn fyrir kassa af hömrum.
 
@@ -27,22 +38,10 @@ Allt þarf að vera á sínum stað. Málarinn geymir sína kassa í einni geyms
 
 Kóði í forritun virkar á sama hátt. Allt þarf að vera á sínum stað. 
 
-
-.. note::
-    
-    Í Python eru verkfærakassar kallaðir *klasar (á ensku class)*. 
-
 .. note::
     
     Í Python eru geymslur fyrir verkfærakassa kallaðar *einingar (á ensku modules)*
 
-.. todo::
-    
-    Tól = module
-
-    Klasi = class
-    
-    Aðgerð = function
 
 
 Python, rétt eins og önnur forritunarmál, býður upp á allskyns verkfæri sem við getum notað til að smíða forrit.
