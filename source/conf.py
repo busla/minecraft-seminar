@@ -34,8 +34,10 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
-    'sphinx.ext.extlinks'
+    'sphinx.ext.extlinks',
 ]
+
+
 
 extlinks = {'github': ('https://github.com/koderteam/minecraft-seminar/blob/master/demos/%s',
                       '')}

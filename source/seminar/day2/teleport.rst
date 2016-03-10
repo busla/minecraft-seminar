@@ -1,4 +1,4 @@
-Speedy Gonzales
+Teleport
 ===============
 
 Minecraft klasarnir hafa fjölda aðgerða sem við getum leikið okkur með. Við erum búinn að prófa að senda skilaboð á skjáinn en hvað getum við látið Steve gera?
