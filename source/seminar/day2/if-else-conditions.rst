@@ -3,7 +3,7 @@ Hvað ef?
 
 Við virðumst ekki geta stjórnað því hvort Steve lendi inni í fjalli eða ekki. Við sendum hann bara á það hnit sem við viljum og hann er sendur þangað. Væri ekki gott ef við gætum athugað hvort hann festist eða ekki?
 
-Steve festist ef það er blokk úr efni á sama hniti og við sendum hann á. Skoðum lista yfir blokkirnar
+Steve festist ef það er blokk úr *efni* á sama hniti og við sendum hann á. 
 
 Í Minecraft er *loft* einnig blokk. Hún er ekki sýnileg og leyfir okkur að ganga í gegnum hana. En þetta er blokk engu að síður. Allar blokkir í Minecraft hafa auðkenni. Kíktu á lista yfir auðkenni allra blokka í Minecraft (:ref:`block-constants`)
 
@@ -16,10 +16,9 @@ Til að sækja upplýsingar um blokkir getum við notað aðgerðina :meth:`~min
 
 >>> from mcpi.minecraft import Minecraft
 >>> mc = Minecraft.create()
->>> mc.getBlock(80, 4, 40)
+>>> mc.getBlock(1, 1, 1)
+4
 
-.. todo::
-    Vantar result
 
 Prófiði þar til þið fáið blokk með auðkennið *1*. Opniði núna forritið *IDLE3* svo við þurfum ekki að skrifa þetta allt í Python skelinni. Smellið á *File* og *New* og setjið inn eftirfarandi kóða.
 
