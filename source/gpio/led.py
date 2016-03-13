@@ -9,16 +9,17 @@ import math
 
 GPIO.setwarnings(False)
 
+PIN = 21
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(18, GPIO.OUT)
+GPIO.setup(PIN, GPIO.OUT)
 
 
 
 def led_off():
-    GPIO.output(18, GPIO.LOW)
+    GPIO.output(PIN, GPIO.LOW)
     
 def led_on():   
-    GPIO.output(18, GPIO.HIGH)
+    GPIO.output(PIN, GPIO.HIGH)
 
 def led_blink(speed):
         led_on()
@@ -38,20 +39,21 @@ def distance_between_points(point1, point2):
 
 if __name__ == "__main__":
     mc = Minecraft.create()
-    mc.postToChat("Hey there...")
+    mc.postToChat("VELKOMIN!...")
+    
     sleep(2)
 
     mc.player.setPos(1,mc.getHeight(1,1),1)
     player_pos = mc.player.getPos()
-    print('Player pos: %s' % player_pos)
+    print('Þú ert á hniti: %s' % player_pos)
     
     random_block_pos = round_vec3(player_pos)
     
     random_block_pos.x = random.randrange(random_block_pos.x - 50, random_block_pos.x + 50)
-    random_block_pos.y = random.randrange(random_block_pos.y - 10, random_block_pos.y + 10)
+    #random_block_pos.y = random.randrange(random_block_pos.y - 10, random_block_pos.y + 10)
     random_block_pos.z = random.randrange(random_block_pos.z - 50, random_block_pos.z + 50)
     print(random_block_pos)
-    mc.setBlock(random_block_pos, block.MELON)  
+    mc.setBlock(random_block_pos, 246)  
     
     #mc.setBlock(treasure)
     seeking = True
@@ -64,6 +66,7 @@ if __name__ == "__main__":
 
     while (seeking == True):
         player_pos = mc.player.getPos()
+        
         if last_player_pos != player_pos:
             distance_from_block = distance_between_points(random_block_pos, player_pos)
             #print("Distance: %s" % distance_from_block)
@@ -96,7 +99,7 @@ if __name__ == "__main__":
                     
             last_distance_from_block = distance_from_block
             #print(last_distance_from_block)
-    mc.postToChat("You found the block")
+    mc.postToChat("Thu fannst blokkina!")
     led_off()
     
 
