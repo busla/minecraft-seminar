@@ -1,3 +1,5 @@
+.. _our-tools:
+
 Verkfærin okkar
 ===============
 
@@ -15,6 +17,7 @@ Verkfærin gera ekkert eins síns liðs. Þau þurfa eitthvað hráefni til að 
 Í forritun myndi þetta líta svona út:
 
 .. code-block:: python
+
     import Hamar
 
     hilla = Hamar.hamra(nagli)
@@ -30,6 +33,7 @@ Oft hafa tólin svo margar aðgerðir að það þarf að flokka þær í sér v
 Dæmi um kóða þar sem við þurfum að sækja verkfærakistu myndi líta svona út:
 
 .. code-block:: python
+
     from hamarkassi import Hamar
 
     hilla = Hamar.hamra(nagli)
@@ -50,6 +54,7 @@ Allt þarf að vera á sínum stað. Málarinn geymir sína kassa í einni geyms
 Kóði í forritun virkar á sama hátt. Allt þarf að vera á sínum stað. Dæmi um verkfærageymslu með verkfærakössum myndi líta svona út:
 
 .. code-block:: python
+
     from smíðageymsla.hamarkassi import Hamar
 
     hilla = Hamar.hamra(nagli)
@@ -86,6 +91,7 @@ Við getum einnig notað aðgerðina *str()*, sem merkir *string*, *(ísl: stren
 '67'
 
 Aðgerðirnar *int()* og *str()* eru innbyggðar aðgerðir sem eru aðgengileg þegar Python túlkurinn er ræstur.
+
 
 Eins og sést þá birtist svarið strax á skjánum. Við getum líka geymt svarið ef við viljum kannski nota það síðar. Við geymum svör í *breytu*.
 

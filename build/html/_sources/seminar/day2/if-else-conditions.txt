@@ -1,9 +1,11 @@
+.. _if-else:
+
 Hvað ef?
 ========
 
 Við virðumst ekki geta stjórnað því hvort Steve lendi inni í fjalli eða ekki. Við sendum hann bara á það hnit sem við viljum og hann er sendur þangað. Væri ekki gott ef við gætum athugað hvort hann festist eða ekki?
 
-Steve festist ef það er blokk úr efni á sama hniti og við sendum hann á. Skoðum lista yfir blokkirnar
+Steve festist ef það er blokk úr *efni* á sama hniti og við sendum hann á. 
 
 Í Minecraft er *loft* einnig blokk. Hún er ekki sýnileg og leyfir okkur að ganga í gegnum hana. En þetta er blokk engu að síður. Allar blokkir í Minecraft hafa auðkenni. Kíktu á lista yfir auðkenni allra blokka í Minecraft (:ref:`block-constants`)
 
@@ -16,10 +18,9 @@ Til að sækja upplýsingar um blokkir getum við notað aðgerðina :meth:`~min
 
 >>> from mcpi.minecraft import Minecraft
 >>> mc = Minecraft.create()
->>> mc.getBlock(80, 4, 40)
+>>> mc.getBlock(1, 1, 1)
+4
 
-.. todo::
-    Vantar result
 
 Prófiði þar til þið fáið blokk með auðkennið *1*. Opniði núna forritið *IDLE3* svo við þurfum ekki að skrifa þetta allt í Python skelinni. Smellið á *File* og *New* og setjið inn eftirfarandi kóða.
 
@@ -40,28 +41,6 @@ Vistið þessa skrá sem *verkefni4.py*. Kíkjum aftur í *Terminal* og búum ti
 
     $ cd
     $ mkdir verkefni
-
-Í *Terminal* notum við aðgerðir sem tengjast ekki Python á neinn hátt. *Terminal* mun verða ykkar tryggasti vinur þegar þið byrjið að forrita síðar. Til að framkvæma aðgerðir í stýrikerfinu getum við nota glugga viðmót eða texta viðmót. Í glugga viðmótinu notum við *File Manager* til að skoða skrár, búa til möppur, opna forrit, o.s.f.v. Í texta viðmótinu gerum við sömu hluti en við skrifum skipanir til að framkvæma þær. Rétt eins og við höfum við að skrifa skipunina *python3* til að opna Python skelina.
-
-Í texta viðmótinu getum við framkvæmt fleiri aðgerðir en í glugga viðmótinu. Hér fyrir ofan notum við aðgerðina *cd* sem fer með okkur í notandamöppuna okkar. Síðan notum við *mkdir (make directory)* til að búa til nýja möppu. Skipunin *ls* sýnir okkur hvað er í henni:
-
-.. code-block:: bash
-    
-    $ ls
-
-Til að fara inn í einhverja af þessum möppuna notarðu *cd* og nafnið á möppunni.
-
-.. code-block:: bash
-
-    $ cd Documents
-    $ ls
-
-Passaðu þig á stórum og litlum stöfum, þeir skipta máli. Mappan *Documents* er ekki það sama og mappan *documents*. Til að fara aftur niður um möppu notiði *cd*, bil og tveir punktar.
-
-.. code-block:: bash
-
-    $ cd ..
-    $ ls
 
 
 Fariði núna í möppuna *verkefni* og keyriði kóðann ykkar:
@@ -91,7 +70,7 @@ Kíkjum aftur á kóðan og búum til skilyrði sem athugar hvort blokkin sé *A
 
 
 
-Skoðum þennan kóða aðeins betur því að er ýmislegt að gerast í honum. Þegar við notum tvö samasem merki *==* þá erum við að nota *samanburðaraðgerð*. Í :doc:`../day1/import-modules` notuðum við eitt *=* merki til að gefa einhverri breytu gildi, sem myndi kallast *gildisaðgerð*. Það er algengt að við ruglumst á þessu þegar við erum að læra um aðgerðir.
+Skoðum þennan kóða aðeins betur því að er ýmislegt að gerast í honum. Þegar við notum tvö samasem merki *==* þá erum við að nota *samanburðaraðgerð*. Í :ref:`variables` notuðum við eitt *=* merki til að gefa einhverri breytu gildi, sem myndi kallast *gildisaðgerð*. Það er algengt að við ruglumst á þessu þegar við erum að læra um aðgerðir.
 
 Þegar við notum samanburð til að bera saman tvö gildi þá er samanburðurinn annaðhvort sannur eða ósannur. Sem dæmi þá er *1 == 2* ósannur því 1 er ekki það sama og tveir. Hér fyrir ofan erum við að bera saman auðkennið á blokkinni við töluna *0*. Ef samanburðurinn er sannur þá vil ég framkvæma allar aðgerðir sem koma á eftir tvípunktinum og hafa fjögur bil í inndrátt.
 

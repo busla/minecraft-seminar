@@ -1,7 +1,7 @@
 Orðasöfn
 =================
 
-Orðasöfn *(dictionaries)* eru svipaðar listum að því leiti að við getum geymt safn af gildum. Munurinn er þó sá að í stað þess að nota sætisnúmer líkt og við gerðum með flugvélina í kaflanum :doc:`lists` þá getum við nefnt sætin *vinstri* og *hægri*. Sætin *0* og *1* í listanum segir okkur ekki mikið um hvoru meginn í flugvélinni fólkið sat.
+Orðasöfn *(dictionaries)* eru svipaðar listum að því leiti að við getum geymt safn af gildum. Munurinn er þó sá að í stað þess að nota sætisnúmer líkt og við gerðum með flugvélina í kaflanum :ref:`lists` þá getum við nefnt sætin *vinstri* og *hægri*. Sætin *0* og *1* í listanum segir okkur ekki mikið um hvoru meginn í flugvélinni fólkið sat.
 
 Í orðasöfnum notum við lýsandi orð til að flokka gildin okkar. Í stað þess að nota hornklofa *[]* (brackets) notum við krullur *{}* (braces).
 
@@ -15,7 +15,7 @@ Gildið okkar fær því sitt eigið heiti. Heitið og gildið sjálft er síða
 
 Í þessu dæmi þá hefur t.d. lykillinn *'nafn'* gildið *'Jón'*. Takið eftir að orðasafnið er ekki í sömu röð og við slógum það inn því við erum ekki að nota sæti líkt og í listum. Við hrúgum bara öllu inn og getum svo raðað því seinna ef við viljum. Í dæminu sjáiði við notum streng í gildunum fyrir nafn og netfang en heila tölu fyrir aldur. Líkt og í listum getum við notað hvaða tegund sem er.
 
-Búið til skrá og nefnið hana *verkefni9.py*. Sláið síðan inn eftirfarandi kóða. Í stað þess að hafa hann allan í einni línu þá gerum við hann snyrtilegan og notum fjögur bil eins og við lærðum í :doc:`../day2/if-else-conditions`.
+Búið til skrá og nefnið hana *verkefni9.py*. Sláið síðan inn eftirfarandi kóða. Í stað þess að hafa hann allan í einni línu þá gerum við hann snyrtilegan og notum fjögur bil eins og við lærðum í :ref:`if-else`.
 
 .. code-block:: python
 
@@ -38,7 +38,7 @@ Keyrið síðan kóðann.
 
     Af hvaða tegund er lykillinn *systkini* ?
 
-Til að sækja gildi úr orðasafni þá notum við lykilinn. Við sækjum það eins og við sækjum gildi úr lista (sjá :doc:`lists`) en notum lykilinn í staðinn fyrir sætið.
+Til að sækja gildi úr orðasafni þá notum við lykilinn. Við sækjum það eins og við sækjum gildi úr lista (sjá :ref:`lists`) en notum lykilinn í staðinn fyrir sætið.
 
 >>> nemandi['nafn']
 'Jón'

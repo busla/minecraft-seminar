@@ -5,20 +5,34 @@ Oft viljum við einnig nota tól sem eru ekki innifalin í Python. Minecraft Pi 
 
 Minecraft tólin hafa fjölda aðgerða sem við getum leikið okkur með.
 
-Ef við kíkjum á :doc:`../minecraft-api` þá sjáum við listann yfir klasana og aðgerðirnar sem þeir hafa. Það fyrsta sem við ætlum að gera er að skoða aðgerðina :attr:`~minecraft.CmdPlayer.getPos` sem sækir staðsetninguna á Steve.
+Ef við kíkjum á :ref:`terminal` þá sjáum við listann yfir klasana og aðgerðirnar sem þeir hafa. Það fyrsta sem við ætlum að gera er að skoða aðgerðina :attr:`~minecraft.CmdPlayer.getPos` sem sækir staðsetninguna á Steve.
 
 Í stað þess að skrifa þetta í Python skelinni skulum við opna *Python (IDLE3)* forritið og búa til nýja skrá *(File -> New file)*. Vistiði hana síðan sem *verkefni3.py* í möppunni *pi*. Þetta verður fyrsta forritið sem við búum til fyrir Minecraft. Það eina sem forritið okkar gerir er að segja okkur hvar Steve er staðsettur.
 
 
+Setjið eftirfarandi kóða í forritið ykkar:
+
+.. code-block:: python
+
+    from mcpi.minecraft import Minecraft
+    mc = Minecraft.create()
+    stadsetning = mc.player.getPos()
+    print(stadsetning)
+
+
+
+Til að keyra forritið ykkar þá skuliði opna forritið *Terminal* (sjá :ref:`terminal`). Þegar það opnast ættu þið að sjá 
+
+
 *Dæmi*
 
->>> from mcpi.minecraft import Minecraft
->>> mc = Minecraft.create()
->>> mc.player.getPos()
-Vec3(34.6, 29.9, -18.1)
+.. code-block:: bash
+
+    python3 verkefni3.py
+    Vec3(34.6, 29.9, -18.1)
 
 Þessi aðgerð skilar okkur einum hlut af tegundinni *Vec3* sem hefur þrjá eiginleika sem er hnitið á staðsetningu Steve.
- 
+
 
 Til að finna hnit hlutar skulum við skoða herbergið sem við erum í. Allt inni í herberginu hefur einhverja staðsetningu. Myndin á veggnum, stóllinn, tölvan, allt sem þú sérð. Til að átta okkur betur á hnitum getum við ímyndað okkur taflborð. Taflborðið er merkt með bókstöfum á einni hlið og tölustöfum á hinni. Ef við skoðum t.d. hvíta hrókinn vinstra meginn þá hefur hann hnitið A,1. Hann getur farið til hliðar eftir tölustöfum (z ás) og áfram eftir bókstöfum (x ás). Við notum orðið *ás* þegar við tölum um áttir. Ef við setjum hann einhverstaðar á borðið þá getum við séð hnitið hans með því að skoða töluna og bókstafinn sem hann er á. 
 
@@ -48,7 +62,7 @@ Vec3(1.9, 5.4, 9.8)
 9.8
 
 
-En hvað getum við gert við þetta hnit? Ef við kíkjum aftur í :doc:`../minecraft-api` þá sjáum við að það eru fleiri aðgerðir sem við getum notað, eins og :meth:`~minecraft.CmdPlayer.setPos` þar sem við sendum hnit inn í leikinn og Steve fer beint á hnitið. Gildi sem við sendum í aðgerðina kallast *færibreytur*. Í þessari aðgerð hefur aðgerðin :meth:`~minecraft.CmdPlayer.setPos` þrjár færibreytur, *x, y, z*.
+En hvað getum við gert við þetta hnit? Ef við kíkjum aftur í :ref:`minecraft-api` þá sjáum við að það eru fleiri aðgerðir sem við getum notað, eins og :meth:`~minecraft.CmdPlayer.setPos` þar sem við sendum hnit inn í leikinn og Steve fer beint á hnitið. Gildi sem við sendum í aðgerðina kallast *færibreytur*. Í þessari aðgerð hefur aðgerðin :meth:`~minecraft.CmdPlayer.setPos` þrjár færibreytur, *x, y, z*.
 
 *Dæmi*
 

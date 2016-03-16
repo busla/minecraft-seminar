@@ -1,7 +1,9 @@
+.. _lists:
+
 Listar
 ======
 
-Í kaflanum um :doc:`../day2/and-or-conditions` notuðum við samanburðaraðgerðir til að athuga hvort gildi voru sönn eða ósönn. Þú tókst kannski eftir því að við vorum að endurtaka breytuna *nyr_stadur* margoft þegar við bárum hana saman við önnur gildi. Innan Python samfélagsins er oft talað um *DRY* regluna, *Don´t repeat yourself*, eða *Ekki endurtaka þig*.
+Í kaflanum um :ref:`and-or` notuðum við samanburðaraðgerðir til að athuga hvort gildi voru sönn eða ósönn. Þú tókst kannski eftir því að við vorum að endurtaka breytuna *nyr_stadur* margoft þegar við bárum hana saman við önnur gildi. Innan Python samfélagsins er oft talað um *DRY* regluna, *Don´t repeat yourself*, eða *Ekki endurtaka þig*.
 
 Með því að nota lista (oft kallað *fylki*) getum við fækkað þessum endurtekningum á breytunni *nyr_stadur*. 
 
@@ -34,7 +36,7 @@ Eða athugað hvort breytan okkar (sem er listi) innihaldi eitthvað gildi.
 >>> 3 in safnid_mitt
 True
 
-Kíkjum núna aftur á kóðann sem við skrifuðum í :doc:`../day2/and-or-conditions` og athugum hvort við getum breytt honum með því að nota lista.
+Kíkjum núna aftur á kóðann sem við skrifuðum í :ref:`and-or` og athugum hvort við getum breytt honum með því að nota lista.
 
 Afritið skrána og vistið hana sem *verkefni8.py*.
 
@@ -166,5 +168,5 @@ Verkefni 8
 __________
 
 * Búðu til lista með nokkrum blokkum (notaðu auðkenni þeirra)
-* Bjóddu notandanum upp á að slá inn auðkenni blokkar (sjá :doc:`../day2/input`)
+* Bjóddu notandanum upp á að slá inn auðkenni blokkar (sjá :ref:`input`)
 * Settu nýja blokk (sjá :ref:`assignment-7`) af tegundinni sem var slegin inn fyrir framan, aftan og hliðina á Steve (nota *x ás* og *z ás*)

@@ -8,6 +8,8 @@ Dagur 1
     :titlesonly:
 
     import-modules    
-      
+    variables
+    terminal
+
     
     

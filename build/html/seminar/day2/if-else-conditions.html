@@ -154,21 +154,18 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hva-ef">
-<h1>Hvað ef?<a class="headerlink" href="#hva-ef" title="Permalink to this headline">¶</a></h1>
+<span id="if-else"></span><h1>Hvað ef?<a class="headerlink" href="#hva-ef" title="Permalink to this headline">¶</a></h1>
 <p>Við virðumst ekki geta stjórnað því hvort Steve lendi inni í fjalli eða ekki. Við sendum hann bara á það hnit sem við viljum og hann er sendur þangað. Væri ekki gott ef við gætum athugað hvort hann festist eða ekki?</p>
-<p>Steve festist ef það er blokk úr efni á sama hniti og við sendum hann á. Skoðum lista yfir blokkirnar</p>
+<p>Steve festist ef það er blokk úr <em>efni</em> á sama hniti og við sendum hann á.</p>
 <p>Í Minecraft er <em>loft</em> einnig blokk. Hún er ekki sýnileg og leyfir okkur að ganga í gegnum hana. En þetta er blokk engu að síður. Allar blokkir í Minecraft hafa auðkenni. Kíktu á lista yfir auðkenni allra blokka í Minecraft (<a class="reference internal" href="../minecraft-api.html#block-constants"><span>Auðkenni allra blokka í Minecraft</span></a>)</p>
 <p>Sem dæmi þá hefur <em>AIR</em> auðkennið <em>1</em>. Áður en við sendum Steve á nýtt hnit þá getum við athugað hvort það sé <em>AIR</em> blokk á hnitinu. Það ætti að koma í veg fyrir að hann festist inn í miðju fjalli.</p>
 <p>Til að sækja upplýsingar um blokkir getum við notað aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.Minecraft.getBlock" title="minecraft.Minecraft.getBlock"><code class="xref py py-meth docutils literal"><span class="pre">getBlock()</span></code></a>. Þessi aðgerð tekur við hnitum og skilar okkur tilbaka tegundinni á blokkinni.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">4</span>
 </pre></div>
-</div>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Vantar result</p>
 </div>
 <p>Prófiði þar til þið fáið blokk með auðkennið <em>1</em>. Opniði núna forritið <em>IDLE3</em> svo við þurfum ekki að skrifa þetta allt í Python skelinni. Smellið á <em>File</em> og <em>New</em> og setjið inn eftirfarandi kóða.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
@@ -182,21 +179,6 @@
 <p>Vistið þessa skrá sem <em>verkefni4.py</em>. Kíkjum aftur í <em>Terminal</em> og búum til nýja möppu.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span>
 $ mkdir verkefni
-</pre></div>
-</div>
-<p>Í <em>Terminal</em> notum við aðgerðir sem tengjast ekki Python á neinn hátt. <em>Terminal</em> mun verða ykkar tryggasti vinur þegar þið byrjið að forrita síðar. Til að framkvæma aðgerðir í stýrikerfinu getum við nota glugga viðmót eða texta viðmót. Í glugga viðmótinu notum við <em>File Manager</em> til að skoða skrár, búa til möppur, opna forrit, o.s.f.v. Í texta viðmótinu gerum við sömu hluti en við skrifum skipanir til að framkvæma þær. Rétt eins og við höfum við að skrifa skipunina <em>python3</em> til að opna Python skelina.</p>
-<p>Í texta viðmótinu getum við framkvæmt fleiri aðgerðir en í glugga viðmótinu. Hér fyrir ofan notum við aðgerðina <em>cd</em> sem fer með okkur í notandamöppuna okkar. Síðan notum við <em>mkdir (make directory)</em> til að búa til nýja möppu. Skipunin <em>ls</em> sýnir okkur hvað er í henni:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ls
-</pre></div>
-</div>
-<p>Til að fara inn í einhverja af þessum möppuna notarðu <em>cd</em> og nafnið á möppunni.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> Documents
-$ ls
-</pre></div>
-</div>
-<p>Passaðu þig á stórum og litlum stöfum, þeir skipta máli. Mappan <em>Documents</em> er ekki það sama og mappan <em>documents</em>. Til að fara aftur niður um möppu notiði <em>cd</em>, bil og tveir punktar.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ..
-$ ls
 </pre></div>
 </div>
 <p>Fariði núna í möppuna <em>verkefni</em> og keyriði kóðann ykkar:</p>
@@ -218,7 +200,7 @@ $ ls
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Þessi blokk er úr hörðu efni og þú munt festast&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Skoðum þennan kóða aðeins betur því að er ýmislegt að gerast í honum. Þegar við notum tvö samasem merki <em>==</em> þá erum við að nota <em>samanburðaraðgerð</em>. Í <a class="reference internal" href="../day1/import-modules.html"><em>Verkfærin okkar</em></a> notuðum við eitt <em>=</em> merki til að gefa einhverri breytu gildi, sem myndi kallast <em>gildisaðgerð</em>. Það er algengt að við ruglumst á þessu þegar við erum að læra um aðgerðir.</p>
+<p>Skoðum þennan kóða aðeins betur því að er ýmislegt að gerast í honum. Þegar við notum tvö samasem merki <em>==</em> þá erum við að nota <em>samanburðaraðgerð</em>. Í <a class="reference internal" href="../day1/variables.html#variables"><span>Breytur</span></a> notuðum við eitt <em>=</em> merki til að gefa einhverri breytu gildi, sem myndi kallast <em>gildisaðgerð</em>. Það er algengt að við ruglumst á þessu þegar við erum að læra um aðgerðir.</p>
 <p>Þegar við notum samanburð til að bera saman tvö gildi þá er samanburðurinn annaðhvort sannur eða ósannur. Sem dæmi þá er <em>1 == 2</em> ósannur því 1 er ekki það sama og tveir. Hér fyrir ofan erum við að bera saman auðkennið á blokkinni við töluna <em>0</em>. Ef samanburðurinn er sannur þá vil ég framkvæma allar aðgerðir sem koma á eftir tvípunktinum og hafa fjögur bil í inndrátt.</p>
 <p>Python er mjög strangt þegar það kemur að inndrætti og skilar villu ef það eru færri eða fleiri bil. Þetta er gert til að það sé samræmi í öllum Python kóða sem við munum koma til með að skrifa og svo það sé auðskiljanlegt að lesa kóða frá öðrum.</p>
 <p>Hvað gerist ef við færum <em>print()</em> skipunina aftur um fjögur bil?</p>

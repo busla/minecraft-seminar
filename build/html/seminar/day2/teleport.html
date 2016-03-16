@@ -155,37 +155,44 @@
             
   <div class="section" id="teleport">
 <h1>Teleport<a class="headerlink" href="#teleport" title="Permalink to this headline">¶</a></h1>
-<p>Minecraft klasarnir hafa fjölda aðgerða sem við getum leikið okkur með. Við erum búinn að prófa að senda skilaboð á skjáinn en hvað getum við látið Steve gera?</p>
-<p>Ef við kíkjum á <a class="reference internal" href="../minecraft-api.html"><em>Minecraft API</em></a> þá sjáum við listann yfir klasana og aðgerðirnar sem þeir hafa. Það fyrsta sem við ætlum að gera er að skoða aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.getPos" title="minecraft.CmdPlayer.getPos"><code class="xref py py-attr docutils literal"><span class="pre">getPos</span></code></a> sem sækir staðsetninguna á Steve.</p>
-<p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+<p>Oft viljum við einnig nota tól sem eru ekki innifalin í Python. Minecraft Pi tólin eru ekki hluti af Python safninu og því þurfum við að sækja þau sérstaklega þegar við skrifum kóða.</p>
+<p>Minecraft tólin hafa fjölda aðgerða sem við getum leikið okkur með.</p>
+<p>Ef við kíkjum á <a class="reference internal" href="../day1/terminal.html#terminal"><span>Terminal</span></a> þá sjáum við listann yfir klasana og aðgerðirnar sem þeir hafa. Það fyrsta sem við ætlum að gera er að skoða aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.getPos" title="minecraft.CmdPlayer.getPos"><code class="xref py py-attr docutils literal"><span class="pre">getPos</span></code></a> sem sækir staðsetninguna á Steve.</p>
+<p>Í stað þess að skrifa þetta í Python skelinni skulum við opna <em>Python (IDLE3)</em> forritið og búa til nýja skrá <em>(File -&gt; New file)</em>. Vistiði hana síðan sem <em>verkefni3.py</em> í möppunni <em>pi</em>. Þetta verður fyrsta forritið sem við búum til fyrir Minecraft. Það eina sem forritið okkar gerir er að segja okkur hvar Steve er staðsettur.</p>
+<p>Setjið eftirfarandi kóða í forritið ykkar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">stadsetning</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">stadsetning</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Vantar dæmi um hnitaniðurstöður</p>
+<p>Til að keyra forritið ykkar þá skuliði opna forritið <em>Terminal</em> (sjá <a class="reference internal" href="../day1/terminal.html#terminal"><span>Terminal</span></a>). Þegar það opnast ættu þið að sjá</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python3 verkefni3.py
+Vec3<span class="o">(</span>34.6, 29.9, -18.1<span class="o">)</span>
+</pre></div>
 </div>
-<p>Þessi aðgerð skilar okkur niðurstöðum. Við biðjum Minecraft að kíkja hvar hann er og senda okkur tilbaka staðsetninguna. Hvernig geta þessar þrjár tölur verið staðsetningin hans? Málið er að þetta er staðsetningin hans í hnitum. Til að finna staðsetningu í hnitum skulum við skoða herbergið sem við erum í. Allt inni í herberginu hefur einhverja staðsetningu. Myndin á veggnum, stóllinn, tölvan, allt sem þú sérð. Til að átta okkur betur á hnitum getum við ímyndað okkur taflborð. Taflborðið er merkt með bókstöfum á einni hlið og tölustöfum á hinni. Ef við skoðum t.d. hvíta hrókinn vinstra meginn þá hefur hann hnitið A,1. Hann getur farið til hliðar eftir tölustöfum (x ás) og áfram eftir bókstöfum (y ás). Við notum orðið <em>ás</em> þegar við tölum um áttir. Ef við setjum hann einhverstaðar á borðið þá getum við séð hnitið hans með því að skoða töluna og bókstafinn sem hann er á.</p>
-<p>Vandamálið með taflið er að taflmennirnir geta bara farið áfram og til hliðar á borðinu. Þeir geta ekki farið upp í loft sem er þriðji ásinn og við skulum kalla hann <em>z ás</em>. Þegar við erum með þrjú hnit þá getum við kallað það þrívídd. Taflborðið væri þá tvívídd. Miðað við röðunina <em>x, y, z</em> þá væri bolur sem liggur á gólfinu í vinstra horninu á herberginu með hnitið <em>0, 0, 0</em>. Ef við myndum setja hann upp á lítið borð í sama horni þá væri hann hugsanlega með hnitið <em>0, 0, 2</em> því hann hefur hækkað.</p>
+<p>Þessi aðgerð skilar okkur einum hlut af tegundinni <em>Vec3</em> sem hefur þrjá eiginleika sem er hnitið á staðsetningu Steve.</p>
+<p>Til að finna hnit hlutar skulum við skoða herbergið sem við erum í. Allt inni í herberginu hefur einhverja staðsetningu. Myndin á veggnum, stóllinn, tölvan, allt sem þú sérð. Til að átta okkur betur á hnitum getum við ímyndað okkur taflborð. Taflborðið er merkt með bókstöfum á einni hlið og tölustöfum á hinni. Ef við skoðum t.d. hvíta hrókinn vinstra meginn þá hefur hann hnitið A,1. Hann getur farið til hliðar eftir tölustöfum (z ás) og áfram eftir bókstöfum (x ás). Við notum orðið <em>ás</em> þegar við tölum um áttir. Ef við setjum hann einhverstaðar á borðið þá getum við séð hnitið hans með því að skoða töluna og bókstafinn sem hann er á.</p>
+<p>Vandamálið með taflið er að taflmennirnir geta bara farið áfram og til hliðar á borðinu. Þeir geta ekki farið upp í loft sem er þriðji ásinn og við skulum kalla hann <em>y ás</em>. Þegar við erum með þrjá punkta þá getum við kallað það þrívídd. Taflborðið væri þá tvívídd. Miðað við röðunina <em>x, y, z</em> þá væri bolur sem liggur á gólfinu í vinstra horninu á herberginu með hnitið <em>0, 0, 0</em>. Ef við myndum setja hann upp á lítið borð í sama horni þá væri hann hugsanlega með hnitið <em>0, 2, 0</em> því hann hefur hækkað.</p>
 <p>En aftur að Steve. Hann er staddur einhverstaðar í Minecraft heiminum ykkar og við getum fengið að vita nákvæmlega hvar hann er með því að skoða <em>x, y, z</em> hnitið hans.</p>
-<p>Við getum meira að segja geymt hnitin hans í breytum og notað síðar. Af því að aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.getPos" title="minecraft.CmdPlayer.getPos"><code class="xref py py-attr docutils literal"><span class="pre">getPos</span></code></a> skilar okkur þremur tölum þá skulum við nota þrjár breytur til að geyma þær í sitthvoru lagi.</p>
+<p>Það sem við fáum frá <em>getPos()</em> er einn hlutur með þrjá eiginleika, <em>x, y, z</em> hnitin á Steve. Þegar aðgerðir skila okkur hlutum tilbaka þá getum við notað eiginleika þeirra. Hlutur getur verið með hvaða eiginleika sem er. Peysa gæti t.d. haft eiginleikana <em>litur, efni, þykkt, stærð</em>. Til að nálgast eiginleika hluta í Python notum við heitið á þeim.</p>
+<p>Við getum líka geymt hnitið hans í breytum og notað síðar. Af því að aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.getPos" title="minecraft.CmdPlayer.getPos"><code class="xref py py-attr docutils literal"><span class="pre">getPos</span></code></a> skilar okkur hlut með þremur punktum þá skulum við nota þrjár breytur til að geyma þær.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
 <span class="go">Vec3(1.9, 5.4, 9.8)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">player</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">player</span><span class="o">.</span><span class="n">x</span>
-<span class="go">5.6</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">player</span><span class="o">.</span><span class="n">y</span>
-<span class="go">9.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hnit</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hnit</span><span class="o">.</span><span class="n">x</span>
+<span class="go">1.9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hnit</span><span class="o">.</span><span class="n">y</span>
+<span class="go">5.4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">player</span><span class="o">.</span><span class="n">z</span>
-<span class="go">2.3</span>
+<span class="go">9.8</span>
 </pre></div>
 </div>
-<p>En hvað getum við gert við þessi hnit? Ef við kíkjum aftur í <a class="reference internal" href="../minecraft-api.html"><em>Minecraft API</em></a> þá sjáum við að það eru fleiri aðgerðir sem við getum notað, eins og <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þar sem við sendum hnit inn í leikinn og Steve fer beint á hnitið. Gildi sem við sendum í aðgerðina kallast <em>færibreytur</em>. Í þessari aðgerð hefur aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þrjár færibreytur, <em>x, y, z</em>.</p>
+<p>En hvað getum við gert við þetta hnit? Ef við kíkjum aftur í <a class="reference internal" href="../minecraft-api.html#minecraft-api"><span>Minecraft API</span></a> þá sjáum við að það eru fleiri aðgerðir sem við getum notað, eins og <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þar sem við sendum hnit inn í leikinn og Steve fer beint á hnitið. Gildi sem við sendum í aðgerðina kallast <em>færibreytur</em>. Í þessari aðgerð hefur aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þrjár færibreytur, <em>x, y, z</em>.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>

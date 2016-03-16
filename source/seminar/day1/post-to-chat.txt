@@ -1,7 +1,7 @@
 Minecraft skilaboð
 ==================
 
-Minecraft Pi er Python tól sem kemur uppsett á Raspberry Pi (kallað RasPi hér eftir). Til að byrja að nota tólið þurfum við fyrst að skoða hvaða aðgerðir það býður upp á. Sjá  :doc:`../minecraft-api`.
+Minecraft Pi er Python tól sem kemur uppsett á Raspberry Pi (kallað RasPi hér eftir). Til að byrja að nota tólið þurfum við fyrst að skoða hvaða aðgerðir það býður upp á. Sjá  :ref:`minecraft-api`.
 
 Ein þeirra er :func:`~minecraft.Minecraft.postToChat`
 

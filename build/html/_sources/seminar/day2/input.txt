@@ -1,3 +1,5 @@
+.. _input:
+
 Inntak
 ======
 
@@ -113,4 +115,4 @@ Fyrst fáum við strenginn, breytum honum í heila tölu og svo í brotatölu. �
 
 Verkefni 6
 ----------
-* Spurðu notandann hvort hann vilji senda Steve á nýja hnitið. Ef hann vill það ekki þá fer hann ekki neitt. Skoða vel :doc:`if-else-conditions`.
+* Spurðu notandann hvort hann vilji senda Steve á nýja hnitið. Ef hann vill það ekki þá fer hann ekki neitt. Skoða vel :ref:`if-else`.

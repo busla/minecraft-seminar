@@ -1,7 +1,7 @@
 Byggja blokkir
 ==============
 
-Í kaflanum :doc:`../day2/if-else-conditions` lærðum við um aðgerðina :meth:`~minecraft.Minecraft.getBlock` til að sækja upplýsingar um blokkir. Núna ætlum við að smíða nýja blokkir með aðgerðinni :meth:`~minecraft.Minecraft.setBlock`. Aðgerðin hefur fjórar færibreytur, *x, y, z, block.id*. Þau gildi sem við sendum með aðgerðinni verða notuð til að smíða blokkina. Við þurfum að senda *x, y, z* hnit og tegund blokkar.
+Í kaflanum :ref:`if-else` lærðum við um aðgerðina :meth:`~minecraft.Minecraft.getBlock` til að sækja upplýsingar um blokkir. Núna ætlum við að smíða nýja blokkir með aðgerðinni :meth:`~minecraft.Minecraft.setBlock`. Aðgerðin hefur fjórar færibreytur, *x, y, z, block.id*. Þau gildi sem við sendum með aðgerðinni verða notuð til að smíða blokkina. Við þurfum að senda *x, y, z* hnit og tegund blokkar.
 
 Búið til nýja skrá, sláið inn eftirfarandi kóða og nefnið hana *verkefni7.py*. 
 

@@ -1,3 +1,5 @@
+.. _minecraft-api:
+
 Minecraft API
 =============
 
