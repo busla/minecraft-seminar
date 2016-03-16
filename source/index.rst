@@ -9,9 +9,8 @@ Velkominn á Kóder.is - Python námskeið í Minecraft
 .. toctree::
     :maxdepth: 3
     
-    seminar
+    curriculum    
     about
-    supporters
 
 Indices and tables
 ==================

@@ -1,0 +1,15 @@
+Námskeið
+========
+
+Þetta er kynningartexti
+
+
+.. toctree::
+    :maxdepth: 2
+
+    curriculum/chapter1/intro
+    curriculum/chapter2/intro
+    curriculum/chapter3/intro
+    curriculum/chapter4/intro
+    curriculum/chapter5/intro
+    curriculum/minecraft-api

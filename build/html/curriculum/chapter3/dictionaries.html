@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Orðasöfn &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur 3" href="intro.html"/>
+        <link rel="next" title="Byggja blokkir" href="set-block.html"/>
+        <link rel="prev" title="Listar" href="lists.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../curriculum.html">Námskeið</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/intro.html">Dagur 2</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 3</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="while-loops.html">While lúppur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for-loops.html">Segð (expression)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html">Listar</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Orðasöfn</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verkefni-9">Verkefni 9</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="set-block.html">Byggja blokkir</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/intro.html">Dagur 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Dagur 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../curriculum.html">Námskeið</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur 3</a> &raquo;</li>
+      
+    <li>Orðasöfn</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/curriculum/chapter3/dictionaries.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="orasofn">
+<h1>Orðasöfn<a class="headerlink" href="#orasofn" title="Permalink to this headline">¶</a></h1>
+<p>Orðasöfn <em>(dictionaries)</em> eru svipaðar listum að því leiti að við getum geymt safn af gildum. Munurinn er þó sá að í stað þess að nota sætisnúmer líkt og við gerðum með flugvélina í kaflanum <a class="reference internal" href="lists.html#lists"><span>Listar</span></a> þá getum við nefnt sætin <em>vinstri</em> og <em>hægri</em>. Sætin <em>0</em> og <em>1</em> í listanum segir okkur ekki mikið um hvoru meginn í flugvélinni fólkið sat.</p>
+<p>Í orðasöfnum notum við lýsandi orð til að flokka gildin okkar. Í stað þess að nota hornklofa <em>[]</em> (brackets) notum við krullur <em>{}</em> (braces).</p>
+<p>Gildið okkar fær því sitt eigið heiti. Heitið og gildið sjálft er síðan aðskilið með tvípunkti. Oft er talað um <em>lykil</em> og <em>gildi</em> (á ensku <em>key, value</em> )</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nafn&#39;</span><span class="p">:</span> <span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="s1">&#39;netfang&#39;</span><span class="p">:</span> <span class="s1">&#39;koder@koder.is&#39;</span><span class="p">,</span> <span class="s1">&#39;aldur&#39;</span><span class="p">:</span> <span class="mi">34</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span>
+<span class="go">{&#39;aldur&#39;: 34, &#39;netfang&#39;: &#39;koder@koder.is&#39;, &#39;nafn&#39;: &#39;Jón&#39;}</span>
+</pre></div>
+</div>
+<p>Í þessu dæmi þá hefur t.d. lykillinn <em>&#8216;nafn&#8217;</em> gildið <em>&#8216;Jón&#8217;</em>. Takið eftir að orðasafnið er ekki í sömu röð og við slógum það inn því við erum ekki að nota sæti líkt og í listum. Við hrúgum bara öllu inn og getum svo raðað því seinna ef við viljum. Í dæminu sjáiði við notum streng í gildunum fyrir nafn og netfang en heila tölu fyrir aldur. Líkt og í listum getum við notað hvaða tegund sem er.</p>
+<p>Búið til skrá og nefnið hana <em>verkefni9.py</em>. Sláið síðan inn eftirfarandi kóða. Í stað þess að hafa hann allan í einni línu þá gerum við hann snyrtilegan og notum fjögur bil eins og við lærðum í <a class="reference internal" href="../chapter2/if-else-conditions.html#if-else"><span>Hvað ef?</span></a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nemandi</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;nafn&#39;</span><span class="p">:</span> <span class="s1">&#39;Jón&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;netfang&#39;</span><span class="p">:</span> <span class="s1">&#39;koder@koder.is&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;aldur&#39;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
+    <span class="s1">&#39;systkini&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Gunnar&#39;</span><span class="p">,</span> <span class="s1">&#39;Inga&#39;</span><span class="p">,</span> <span class="s1">&#39;Ástrós&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">nemandi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Keyrið síðan kóðann.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python3 verkefni9.py
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Af hvaða tegund er lykillinn <em>systkini</em> ?</p>
+</div>
+<p>Til að sækja gildi úr orðasafni þá notum við lykilinn. Við sækjum það eins og við sækjum gildi úr lista (sjá <a class="reference internal" href="lists.html#lists"><span>Listar</span></a>) en notum lykilinn í staðinn fyrir sætið.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span><span class="p">[</span><span class="s1">&#39;nafn&#39;</span><span class="p">]</span>
+<span class="go">&#39;Jón&#39;</span>
+</pre></div>
+</div>
+<p>Við getum líka notað aðgerðina <em>get()</em> til að sækja gildið.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nafn&#39;</span><span class="p">)</span>
+<span class="go">&#39;Jón&#39;</span>
+</pre></div>
+</div>
+<p>Athugum hvort orðasafnið sé með ákveðinn lykil.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s1">&#39;nafn&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nemandi</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s1">&#39;skónúmer&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Í þessu orðasafni erum við að geyma einn nemanda. Hvað ef við viljum geyma marga nemendur? Oft notum við lista og orðasöfn saman. Í þessu tilfelli getum við búið til lista af nemendum. Þá fær hvert sæti í listanum orðasafn af hverjum nemanda.</p>
+<div class="section" id="verkefni-9">
+<span id="assignment-9"></span><h2>Verkefni 9<a class="headerlink" href="#verkefni-9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Búðu til lista sem geymir þrjá nemendur. Hver nemandi skal vera orðasafn.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="set-block.html" class="btn btn-neutral float-right" title="Byggja blokkir" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lists.html" class="btn btn-neutral" title="Listar" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
