@@ -10,6 +10,7 @@ Velkominn á Kóder.is - Python námskeið í Minecraft
     :maxdepth: 3
     
     curriculum    
+    seminar
     about
 
 Indices and tables
