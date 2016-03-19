@@ -1,51 +1,82 @@
 from mcpi.minecraft import Minecraft
 from mcpi.vec3      import Vec3
+from mcpi import block
 import sys
 import time 
-from mcpi import block
-
+from subprocess import *
 import random
 
 class Game(object):
-    def __init__(self, mc, tokens):
+    def __init__(self, mc, tokens, tile, burn):
         self.mc = mc
         self.tokens = tokens
-        self.mc.postToChat('Preparing race')
+        self.tile = tile
+        self.burn = burn
+        self.name = input('Hvað heitiru?: ')
+        self.is_server = input('Ertu server? (j/n): ')        
+        self.mc.postToChat(self.get_ip_address())        
         
-        
+
+    def get_ip_address(self):
+        interface = 'wlan0'
+        cmd = "ip -4 addr show "+interface+" | grep inet | awk '{print $2}' | cut -d/ -f1"
+
+        p = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE)
+        output = p.communicate()[0]
+
+        if p.returncode != 0:
+            return None
+        return output.decode()
+    
+            
+    def round_vec3(self, vec3):
+        return Vec3(int(vec3.x), int(vec3.y), int(vec3.z))
+
+    def block_exists(self, vec3, block_list):
+        for i in block_list:
+            if (i.x == vec3.x) and (i.y == vec3.y) and (i.z == vec3.z):
+                return True
+        return False
+    
     def play(self):
+
         self.reset_players()
-        self.set_tokens(self.tokens)
-        self.save_checkpoint()        
-        self.mc.postToChat('Race has started!')
+
+        if self.is_server == 'j':
+            self.set_tokens(self.tokens)            
+            self.save_checkpoint()
+            start = input('Ýttu á ENTER til að byrja: ')    
+            self.mc.postToChat('BYRJA!!')
         total = 0
         block_list = []
-        while True:
-            
-            hits = self.mc.events.pollBlockHits()
-            
-            
-            if len(hits) > 0:
-                block_pos = Vec3(hits[0].pos.x, hits[0].pos.y, hits[0].pos.z)
-                block_type = self.mc.getBlock(block_pos)
-                if block_pos not in block_list and block_type == 1:
-                    block_list.append(block_pos)
-                    total += len(hits)
-                    print(total)
-                    
-                    if total >= 10:
-                        self.mc.postToChat('Thu vannst, jibbbi!!')
-                        sys.exit(0)
-            time.sleep(1)
         
-        restore = input('Press ENTER to restore checkpoint')
+        while True:
+                    
+            hits = self.mc.events.pollBlockHits()                    
+            if len(hits) > 0:
+                
+                block_pos = self.round_vec3(Vec3(hits[0].pos.x, hits[0].pos.y, hits[0].pos.z))        
+                block_type = self.mc.getBlock(block_pos)       
+                                
+                if block_type == self.tile: # and not self.block_exists(block_pos, block_list):
+                    self.mc.setBlock(block_pos, self.burn)
+                    total += len(hits)
+                    self.mc.postToChat(self.name + ': ' + str(total))
+                    if total >= 10:
+                        self.mc.postToChat('Sigurvegari: '+self.name)
+                        #sys.exit(0)
+                        break
+                block_list.append(block_pos)
+            time.sleep(0.3)        
+        
+        restore = input('Ýttu á ENTER til að hreinsa kortið: ')
         game.restore_checkpoint()
         
         pass
 
     def reset_players(self):
-        self.mc.postToChat('Setting players to the starting point')
-        self.mc.player.setPos(90, 18, -127)
+        self.mc.postToChat('Nyr leikur ad hefjast ...')
+        self.mc.player.setPos(0, 50, 0)
         pass
 
     def winner(self):
@@ -55,10 +86,10 @@ class Game(object):
         pass
 
     def set_tokens(self, tokens):
-        coord = list(range(-127, 127))
+        coord = list(range(-90, 90))
         
         for i in range(0, tokens):
-            self.mc.setBlock(random.choice(coord), random.choice(list(range(0, 10))), random.choice(coord), 22)
+            self.mc.setBlock(random.choice(coord), random.choice(list(range(0, 10))), random.choice(coord), self.tile)
 
     def save_checkpoint(self):
         self.mc.saveCheckpoint()
@@ -70,7 +101,7 @@ class Game(object):
 class World(object):
     def __init__(self, mc):
         self.mc = mc
-        self.mc.postToChat('Preparing world')
+        self.mc.postToChat('Undirby kortid ...')
         
     def clear_world(self):
         pass
@@ -83,8 +114,7 @@ class World(object):
 
 
 mc = Minecraft.create()
-
-game = Game(mc, tokens=1000)
+game = Game(mc, tokens=1000, tile=22, burn=49)
 game.play()
 
 
