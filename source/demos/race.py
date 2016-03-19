@@ -1,5 +1,7 @@
 from mcpi.minecraft import Minecraft
-
+from mcpi.vec3      import Vec3
+import sys
+import time 
 from mcpi import block
 
 import random
@@ -16,6 +18,26 @@ class Game(object):
         self.set_tokens(self.tokens)
         self.save_checkpoint()        
         self.mc.postToChat('Race has started!')
+        total = 0
+        block_list = []
+        while True:
+            
+            hits = self.mc.events.pollBlockHits()
+            
+            
+            if len(hits) > 0:
+                block_pos = Vec3(hits[0].pos.x, hits[0].pos.y, hits[0].pos.z)
+                block_type = self.mc.getBlock(block_pos)
+                if block_pos not in block_list and block_type == 1:
+                    block_list.append(block_pos)
+                    total += len(hits)
+                    print(total)
+                    
+                    if total >= 10:
+                        self.mc.postToChat('Thu vannst, jibbbi!!')
+                        sys.exit(0)
+            time.sleep(1)
+        
         restore = input('Press ENTER to restore checkpoint')
         game.restore_checkpoint()
         
@@ -23,7 +45,7 @@ class Game(object):
 
     def reset_players(self):
         self.mc.postToChat('Setting players to the starting point')
-        self.mc.player.setPos(127, 0, 127)
+        self.mc.player.setPos(90, 18, -127)
         pass
 
     def winner(self):
@@ -36,7 +58,7 @@ class Game(object):
         coord = list(range(-127, 127))
         
         for i in range(0, tokens):
-            self.mc.setBlock(random.choice(coord), random.choice(list(range(0, 10))), random.choice(coord), block.LAPIS_LAZULI_BLOCK)
+            self.mc.setBlock(random.choice(coord), random.choice(list(range(0, 10))), random.choice(coord), 22)
 
     def save_checkpoint(self):
         self.mc.saveCheckpoint()

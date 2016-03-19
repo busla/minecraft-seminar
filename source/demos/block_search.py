@@ -31,17 +31,17 @@ def render_tiles(pos, tile, width, length):
                         time.sleep(2)
                         virar.output(21, virar.LOW)
                         return
-                  #print('Fann ekki blokk')
+                  
 
         
-    #mc.setBlock(x, pos.y, pos.z, tile)
+    
 
 
 player_pos = mc.player.getPos()
 random_block_pos = round_vec3(player_pos)
     
 random_block_pos.x = random.randrange(random_block_pos.x - 50, random_block_pos.x + 50)
-random_block_pos.y = random.randrange(random_block_pos.y - 5, random_block_pos.y + 10)
+random_block_pos.y = random.randrange(random_block_pos.y - 5, random_block_pos.y - 1)
 random_block_pos.z = random.randrange(random_block_pos.z - 50, random_block_pos.z + 50)
 
 print(random_block_pos)
@@ -52,9 +52,7 @@ while True:
     WIDTH = 6
     LENGTH = 6
     tile_pos = mc.player.getTilePos()
-    #tile_type = mc.getBlock(tile_pos)
     render_tiles(tile_pos, GOLD, WIDTH, LENGTH)
-    #print(tile_type)
     time.sleep(1) 
 """
 while True:
