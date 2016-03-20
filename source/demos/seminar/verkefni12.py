@@ -85,6 +85,5 @@ mc.setBlocks(x + 5, # x byrjar
              z + breidd - 5, # z endar
              5) # Tegund á blokk
 
-mc.player.setTilePos(x + lengd - 5, thak_byrjar + 5, z + breidd - 5)
-
-# Settu Steve inn í húsið
+# Á hvaða hnit þarf Steve að fara? Getur verið að hann þurfi að fara á síðasta kubbinn sem þú byggir?
+mc.player.setTilePos()

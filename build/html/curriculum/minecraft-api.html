@@ -34,7 +34,7 @@
               href="../about.html"/>
     <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../index.html"/>
         <link rel="up" title="Kennsluefni" href="../curriculum.html"/>
-        <link rel="next" title="Námskeið" href="../seminar.html"/>
+        <link rel="next" title="Python námskeið Kóder.is" href="../seminar.html"/>
         <link rel="prev" title="Segð (expression)" href="chapter5/hide-and-seek.html"/> 
 
   
@@ -93,11 +93,12 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter5/intro.html">Dagur 5</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Minecraft API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#aukenni-allra-blokka-i-minecraft">Auðkenni allra blokka í Minecraft</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eiginleikar-blokka">Eiginleikar blokka</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../seminar.html">Námskeið</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar.html">Python námskeið Kóder.is</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">Um námskeiðið</a></li>
 </ul>
 
@@ -460,6 +461,116 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="eiginleikar-blokka">
+<span id="block-data"></span><h2>Eiginleikar blokka<a class="headerlink" href="#eiginleikar-blokka" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;The data (or sub-type) of a block&#8221;</p>
+<p>Data Values of blocks:
+WOOL:
+0: White
+1: Orange
+2: Magenta
+3: Light Blue
+4: Yellow
+5: Lime
+6: Pink
+7: Grey
+8: Light grey
+9: Cyan
+10: Purple
+11: Blue
+12: Brown
+13: Green
+14: Red
+15:Black</p>
+<p>WOOD:
+0: Oak (up/down)
+1: Spruce (up/down)
+2: Birch (up/down)
+(below not on Pi)
+3: Jungle (up/down)
+4: Oak (east/west)
+5: Spruce (east/west)
+6: Birch (east/west)
+7: Jungle (east/west)
+8: Oak (north/south)
+9: Spruce (north/south)
+10: Birch (north/south)
+11: Jungle (north/south)
+12: Oak (only bark)
+13: Spruce (only bark)
+14: Birch (only bark)
+15: Jungle (only bark)</p>
+<p>WOOD_PLANKS (Not on Pi):
+0: Oak
+1: Spruce
+2: Birch
+3: Jungle</p>
+<p>SAPLING:
+0: Oak
+1: Spruce
+2: Birch
+3: Jungle (Not on Pi)</p>
+<p>GRASS_TALL:
+0: Shrub
+1: Grass
+2: Fern
+3: Grass (color affected by biome) (Not on Pi)</p>
+<p>TORCH:
+1: Pointing east
+2: Pointing west
+3: Pointing south
+4: Pointing north
+5: Facing up</p>
+<p>STONE_BRICK:
+0: Stone brick
+1: Mossy stone brick
+2: Cracked stone brick
+3: Chiseled stone brick</p>
+<p>STONE_SLAB / STONE_SLAB_DOUBLE:
+0: Stone
+1: Sandstone
+2: Wooden
+3: Cobblestone
+4: Brick
+5: Stone Brick
+Below - not on Pi
+6: Nether Brick
+7: Quartz</p>
+<p>Not on Pi
+SNOW_BLOCK:
+0-7: Height of snow, 0 being the lowest, 7 being the highest.</p>
+<p>TNT:
+0: Inactive
+1: Ready to explode</p>
+<p>LEAVES:
+1: Oak leaves
+2: Spruce leaves
+3: Birch leaves</p>
+<p>SANDSTONE:
+0: Sandstone
+1: Chiseled sandstone
+2: Smooth sandstone</p>
+<p>STAIRS_[COBBLESTONE, WOOD]:
+0: Ascending east
+1: Ascending west
+2: Ascending south
+3: Ascending north
+4: Ascending east (upside down)
+5: Ascending west (upside down)
+6: Ascending south (upside down)
+7: Ascending north (upside down)</p>
+<p>LADDERS, CHESTS, FURNACES, FENCE_GATE:
+2: Facing north
+3: Facing south
+4: Facing west
+5: Facing east</p>
+<p>[WATER, LAVA]_STATIONARY:
+0-7: Level of the water, 0 being the highest, 7 the lowest</p>
+<p>NETHER_REACTOR_CORE:
+0: Unused
+1: Active
+2: Stopped / used up</p>
+</div>
 </div>
 
 
@@ -469,7 +580,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../seminar.html" class="btn btn-neutral float-right" title="Námskeið" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../seminar.html" class="btn btn-neutral float-right" title="Python námskeið Kóder.is" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="chapter5/hide-and-seek.html" class="btn btn-neutral" title="Segð (expression)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

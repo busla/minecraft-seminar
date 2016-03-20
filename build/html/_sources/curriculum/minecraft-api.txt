@@ -318,3 +318,133 @@ Auðkenni allra blokka í Minecraft
     GLOWING_OBSIDIAN    = 246
 
     NETHER_REACTOR_CORE = 247
+
+
+.. _block-data:
+
+Eiginleikar blokka
+---------------------------------
+
+"The data (or sub-type) of a block"
+
+Data Values of blocks:
+WOOL:
+0: White
+1: Orange
+2: Magenta
+3: Light Blue
+4: Yellow
+5: Lime
+6: Pink
+7: Grey
+8: Light grey
+9: Cyan
+10: Purple
+11: Blue
+12: Brown
+13: Green
+14: Red
+15:Black
+
+WOOD:
+0: Oak (up/down)
+1: Spruce (up/down)
+2: Birch (up/down)
+(below not on Pi)
+3: Jungle (up/down)
+4: Oak (east/west)
+5: Spruce (east/west)
+6: Birch (east/west)
+7: Jungle (east/west)
+8: Oak (north/south)
+9: Spruce (north/south)
+10: Birch (north/south)
+11: Jungle (north/south)
+12: Oak (only bark)
+13: Spruce (only bark)
+14: Birch (only bark)
+15: Jungle (only bark)
+
+WOOD_PLANKS (Not on Pi):
+0: Oak
+1: Spruce
+2: Birch
+3: Jungle
+
+SAPLING:
+0: Oak
+1: Spruce
+2: Birch
+3: Jungle (Not on Pi)
+
+GRASS_TALL:
+0: Shrub
+1: Grass
+2: Fern
+3: Grass (color affected by biome) (Not on Pi)
+
+TORCH:
+1: Pointing east
+2: Pointing west
+3: Pointing south
+4: Pointing north
+5: Facing up
+
+STONE_BRICK:
+0: Stone brick
+1: Mossy stone brick
+2: Cracked stone brick
+3: Chiseled stone brick
+
+STONE_SLAB / STONE_SLAB_DOUBLE:
+0: Stone
+1: Sandstone
+2: Wooden
+3: Cobblestone
+4: Brick
+5: Stone Brick
+Below - not on Pi
+6: Nether Brick
+7: Quartz
+
+Not on Pi
+SNOW_BLOCK:
+0-7: Height of snow, 0 being the lowest, 7 being the highest.
+
+TNT:
+0: Inactive
+1: Ready to explode
+
+LEAVES:
+1: Oak leaves
+2: Spruce leaves
+3: Birch leaves
+
+SANDSTONE:
+0: Sandstone
+1: Chiseled sandstone
+2: Smooth sandstone
+
+STAIRS_[COBBLESTONE, WOOD]:
+0: Ascending east
+1: Ascending west
+2: Ascending south
+3: Ascending north
+4: Ascending east (upside down)
+5: Ascending west (upside down)
+6: Ascending south (upside down)
+7: Ascending north (upside down)
+
+LADDERS, CHESTS, FURNACES, FENCE_GATE:
+2: Facing north
+3: Facing south
+4: Facing west
+5: Facing east
+
+[WATER, LAVA]_STATIONARY:
+0-7: Level of the water, 0 being the highest, 7 the lowest
+
+NETHER_REACTOR_CORE:
+0: Unused
+1: Active
+2: Stopped / used up    
