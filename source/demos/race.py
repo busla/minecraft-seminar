@@ -7,11 +7,12 @@ from subprocess import *
 import random
 
 class Game(object):
-    def __init__(self, tokens, tile, burn):
+    def __init__(self, tokens, tile, burn, score_to_win):
         self.mc = Minecraft.create()
         self.tokens = tokens
         self.tile = tile
         self.burn = burn
+        self.score_to_win = score_to_win
         self.player_id = self.mc.getPlayerEntityIds()[0]
         self.name = input('Hvað heitiru?: ')
         self.is_server = input('Ertu server? (j/n): ')
@@ -46,18 +47,20 @@ class Game(object):
     
         self.reset_players()
         self.mc.events.clearAll()
+        
         if self.is_server == 'j':
-            self.mc.postToChat('Server: ' + self.get_ip_address())            
+            self.mc.postToChat('Server: ' + self.get_ip_address())
+            time.sleep(2)
             start = input('Ýttu á ENTER til að byrja: ')
             self.mc.postToChat('BYRJA')
         #print('bíð í 3 sek')
-        #time.sleep(5)
+        
         total = 0
         block_list = []
         
         while True:
                     
-            hits = self.mc.events.pollBlockHits()                    
+            hits = self.mc.events.pollBlockHits()
             if len(hits) > 0:
                 print(self.mc.getPlayerEntityIds())
                 print(hits)
@@ -67,9 +70,9 @@ class Game(object):
                 
                 if block_type == self.tile and self.player_id == block_player_id: # and not self.block_exists(block_pos, block_list):
                     self.mc.setBlock(block_pos, self.burn)
-                    total += len(hits)
+                    total += 1
                     self.mc.postToChat(self.name + ': ' + str(total))
-                    if total >= 10:
+                    if total >= self.score_to_win:
                         """ Winner """
                         self.mc.postToChat('Sigurvegari: '+self.name)                        
                         break
@@ -79,7 +82,7 @@ class Game(object):
                     self.mc.setBlock(block_pos, self.burn)
 
                 block_list.append(block_pos)
-            time.sleep(0.3)        
+            time.sleep(0.1)        
         
         restore = input('Ýttu á ENTER til að hreinsa kortið: ')
         self.restore_checkpoint()
@@ -125,7 +128,7 @@ class World(object):
 
 
 def run():
-    Game(tokens=1000, tile=22, burn=49)
+    Game(tokens=1000, tile=22, burn=49, score_to_win=10)
 
 if __name__ == '__main__':
     run()
