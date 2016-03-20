@@ -12,7 +12,7 @@ class Game(object):
         self.tokens = tokens
         self.tile = tile
         self.burn = burn
-        self.player_id = mc.getPlayerEntityIds()[0]
+        self.player_id = self.mc.getPlayerEntityIds()[0]
         self.name = input('Hvað heitiru?: ')
         self.is_server = input('Ertu server? (j/n): ')        
         self.mc.postToChat(self.get_ip_address())
