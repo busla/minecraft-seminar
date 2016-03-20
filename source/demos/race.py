@@ -7,14 +7,16 @@ from subprocess import *
 import random
 
 class Game(object):
-    def __init__(self, mc, tokens, tile, burn):
-        self.mc = mc
+    def __init__(self, tokens, tile, burn):
+        self.mc = Minecraft.create()
         self.tokens = tokens
         self.tile = tile
         self.burn = burn
+        self.player_id = mc.getPlayerEntityIds()[0]
         self.name = input('Hvað heitiru?: ')
         self.is_server = input('Ertu server? (j/n): ')        
-        self.mc.postToChat(self.get_ip_address())        
+        self.mc.postToChat(self.get_ip_address())
+        self.play()
         
 
     def get_ip_address(self):
@@ -39,14 +41,16 @@ class Game(object):
         return False
     
     def play(self):
-
+    
         self.reset_players()
 
         if self.is_server == 'j':
-            self.set_tokens(self.tokens)            
-            self.save_checkpoint()
-            start = input('Ýttu á ENTER til að byrja: ')    
-            self.mc.postToChat('BYRJA!!')
+            self.set_tokens(self.tokens)
+            #self.save_checkpoint()
+            start = input('Ýttu á ENTER til að byrja: ')
+            self.mc.postToChat('BYRJA')
+        print('bíð í 3 sek')
+        time.sleep(5)
         total = 0
         block_list = []
         
@@ -54,11 +58,13 @@ class Game(object):
                     
             hits = self.mc.events.pollBlockHits()                    
             if len(hits) > 0:
-                
+                print(self.mc.getPlayerEntityIds())
+                print(hits)
                 block_pos = self.round_vec3(Vec3(hits[0].pos.x, hits[0].pos.y, hits[0].pos.z))        
                 block_type = self.mc.getBlock(block_pos)       
-                                
-                if block_type == self.tile: # and not self.block_exists(block_pos, block_list):
+                block_player_id = hits[0].entityId
+                
+                if block_type == self.tile and self.player_id == block_player_id: # and not self.block_exists(block_pos, block_list):
                     self.mc.setBlock(block_pos, self.burn)
                     total += len(hits)
                     self.mc.postToChat(self.name + ': ' + str(total))
@@ -70,14 +76,14 @@ class Game(object):
             time.sleep(0.3)        
         
         restore = input('Ýttu á ENTER til að hreinsa kortið: ')
-        game.restore_checkpoint()
+        self.restore_checkpoint()
         
         pass
 
     def reset_players(self):
         self.mc.postToChat('Nyr leikur ad hefjast ...')
         self.mc.player.setPos(0, 50, 0)
-        pass
+        return
 
     def winner(self):
         pass
@@ -113,10 +119,8 @@ class World(object):
         pass
 
 
-mc = Minecraft.create()
-game = Game(mc, tokens=1000, tile=22, burn=49)
-game.play()
+def run():
+    Game(tokens=1000, tile=22, burn=49)
 
-
-
-
+if __name__ == '__main__':
+    run()
