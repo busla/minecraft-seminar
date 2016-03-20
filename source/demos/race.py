@@ -14,8 +14,10 @@ class Game(object):
         self.burn = burn
         self.player_id = self.mc.getPlayerEntityIds()[0]
         self.name = input('Hvað heitiru?: ')
-        self.is_server = input('Ertu server? (j/n): ')        
-        self.mc.postToChat(self.get_ip_address())
+        self.is_server = input('Ertu server? (j/n): ')
+        if self.is_server == 'j':
+            self.set_tokens(self.tokens)
+            self.save_checkpoint()
         self.play()
         
 
@@ -43,14 +45,13 @@ class Game(object):
     def play(self):
     
         self.reset_players()
-
+        self.mc.events.clearAll()
         if self.is_server == 'j':
-            self.set_tokens(self.tokens)
-            #self.save_checkpoint()
+            self.mc.postToChat('Server: ' + self.get_ip_address())            
             start = input('Ýttu á ENTER til að byrja: ')
             self.mc.postToChat('BYRJA')
-        print('bíð í 3 sek')
-        time.sleep(5)
+        #print('bíð í 3 sek')
+        #time.sleep(5)
         total = 0
         block_list = []
         
@@ -69,16 +70,20 @@ class Game(object):
                     total += len(hits)
                     self.mc.postToChat(self.name + ': ' + str(total))
                     if total >= 10:
-                        self.mc.postToChat('Sigurvegari: '+self.name)
-                        #sys.exit(0)
+                        """ Winner """
+                        self.mc.postToChat('Sigurvegari: '+self.name)                        
                         break
+
+                elif (block_type == self.tile) and (self.player_id != block_player_id):
+                    print('brenni blokk fyrir %d' % block_player_id)
+                    self.mc.setBlock(block_pos, self.burn)
+
                 block_list.append(block_pos)
             time.sleep(0.3)        
         
         restore = input('Ýttu á ENTER til að hreinsa kortið: ')
         self.restore_checkpoint()
-        
-        pass
+        self.play()
 
     def reset_players(self):
         self.mc.postToChat('Nyr leikur ad hefjast ...')
@@ -102,7 +107,7 @@ class Game(object):
 
     def restore_checkpoint(self):
         self.mc.restoreCheckpoint()
-        self.play()
+        return
 
 class World(object):
     def __init__(self, mc):
