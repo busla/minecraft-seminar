@@ -160,7 +160,7 @@
 <p>Minecraft Pi tólin eru geymd í möppunni <em>mcpi</em>. Tólin hafa síðan klasa sem allir hafa nokkrar aðgerðir til að stjórna Minecraft.</p>
 <p>Klasarnir sem við getum notað eru <em>Minecraft</em>, <em>Block</em>, <em>Event</em> og <em>Vec3</em>.</p>
 <p>Hver klasi hefur svo nokkrar aðgerðir.</p>
-<p>Til að sækja klasana getum við notað <em>import</em> skipunina (sjá <a class="reference internal" href="chapter1/import-modules.html#our-tools"><span class="std std-ref">Verkfærin okkar</span></a>). Við þurfum einnig að tilgreina möppuna og skrána sem klasinn er geymdur í.</p>
+<p>Til að sækja klasana getum við notað <em>import</em> skipunina (sjá <a class="reference internal" href="../thermo-seminar/chapter1/import-modules.html#our-tools"><span class="std std-ref">Verkfærin okkar</span></a>). Við þurfum einnig að tilgreina möppuna og skrána sem klasinn er geymdur í.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 </pre></div>
@@ -243,7 +243,7 @@
 <dl class="attribute">
 <dt id="minecraft.Minecraft.player">
 <code class="descname">player</code><a class="headerlink" href="#minecraft.Minecraft.player" title="Permalink to this definition">¶</a></dt>
-<dd><p>Tilviksbreyta með upplýsingum um Steve og aðgerðum til að stjórna honum, sjá <a class="reference internal" href="#minecraft.CmdPlayer" title="minecraft.CmdPlayer"><code class="xref py py-class docutils literal"><span class="pre">CmdPlayer</span></code></a></p>
+<dd><p>Tilviksbreyta með upplýsingum um Steve og aðgerðum til að stjórna honum, sjá <a class="reference internal" href="../thermo-seminar/minecraft-api.html#minecraft.CmdPlayer" title="minecraft.CmdPlayer"><code class="xref py py-class docutils literal"><span class="pre">CmdPlayer</span></code></a></p>
 <p><em>Dæmi</em></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
@@ -255,7 +255,7 @@
 <dl class="attribute">
 <dt id="minecraft.Minecraft.events">
 <code class="descname">events</code><a class="headerlink" href="#minecraft.Minecraft.events" title="Permalink to this definition">¶</a></dt>
-<dd><p>Tilviksbreyta sem fær tilkynningu um leið og Steve lemur í blokk með sverði, sjá <a class="reference internal" href="#minecraft.CmdEvents" title="minecraft.CmdEvents"><code class="xref py py-class docutils literal"><span class="pre">CmdEvents</span></code></a>.</p>
+<dd><p>Tilviksbreyta sem fær tilkynningu um leið og Steve lemur í blokk með sverði, sjá <a class="reference internal" href="../thermo-seminar/minecraft-api.html#minecraft.CmdEvents" title="minecraft.CmdEvents"><code class="xref py py-class docutils literal"><span class="pre">CmdEvents</span></code></a>.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
 <span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
@@ -271,7 +271,7 @@
 <dl class="class">
 <dt id="minecraft.CmdPlayer">
 <em class="property">class </em><code class="descclassname">minecraft.</code><code class="descname">CmdPlayer</code><a class="headerlink" href="#minecraft.CmdPlayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Klasi með aðgerðum til að láta Steve gera allskyns kúnstir. Tilvik af þessum klasa koma innifalinn með <a class="reference internal" href="#minecraft.Minecraft" title="minecraft.Minecraft"><code class="xref py py-class docutils literal"><span class="pre">Minecraft</span></code></a> svo að það skal ekki nota hann beint.</p>
+<dd><p>Klasi með aðgerðum til að láta Steve gera allskyns kúnstir. Tilvik af þessum klasa koma innifalinn með <a class="reference internal" href="../thermo-seminar/minecraft-api.html#minecraft.Minecraft" title="minecraft.Minecraft"><code class="xref py py-class docutils literal"><span class="pre">Minecraft</span></code></a> svo að það skal ekki nota hann beint.</p>
 <dl class="method">
 <dt id="minecraft.CmdPlayer.getPos">
 <code class="descname">getPos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.CmdPlayer.getPos" title="Permalink to this definition">¶</a></dt>
@@ -301,8 +301,8 @@
 <dl class="class">
 <dt id="minecraft.CmdEvents">
 <em class="property">class </em><code class="descclassname">minecraft.</code><code class="descname">CmdEvents</code><a class="headerlink" href="#minecraft.CmdEvents" title="Permalink to this definition">¶</a></dt>
-<dd><p>Klasi með aðgerð sem skilar lista með upplýsingum um hvert högg sem var gert með <em>sverði</em>. Hægt er að sækja fjölda högga með aðgerðinni <a class="reference internal" href="#minecraft.CmdEvents.pollBlockHits" title="minecraft.CmdEvents.pollBlockHits"><code class="xref py py-meth docutils literal"><span class="pre">pollBlockHits()</span></code></a>. Inniheldur einnig aðgerð til að endursetja.</p>
-<p>Í klasanum <a class="reference internal" href="#minecraft.Minecraft" title="minecraft.Minecraft"><code class="xref py py-class docutils literal"><span class="pre">Minecraft</span></code></a> er tilviksbreytan <a class="reference internal" href="#minecraft.Minecraft.events" title="minecraft.Minecraft.events"><code class="xref py py-attr docutils literal"><span class="pre">events</span></code></a> sem býr til eintak af þessum klasa svo það er óþarfi að nota þennan klasa beint.</p>
+<dd><p>Klasi með aðgerð sem skilar lista með upplýsingum um hvert högg sem var gert með <em>sverði</em>. Hægt er að sækja fjölda högga með aðgerðinni <a class="reference internal" href="../thermo-seminar/minecraft-api.html#minecraft.CmdEvents.pollBlockHits" title="minecraft.CmdEvents.pollBlockHits"><code class="xref py py-meth docutils literal"><span class="pre">pollBlockHits()</span></code></a>. Inniheldur einnig aðgerð til að endursetja.</p>
+<p>Í klasanum <a class="reference internal" href="../thermo-seminar/minecraft-api.html#minecraft.Minecraft" title="minecraft.Minecraft"><code class="xref py py-class docutils literal"><span class="pre">Minecraft</span></code></a> er tilviksbreytan <a class="reference internal" href="../thermo-seminar/minecraft-api.html#minecraft.Minecraft.events" title="minecraft.Minecraft.events"><code class="xref py py-attr docutils literal"><span class="pre">events</span></code></a> sem býr til eintak af þessum klasa svo það er óþarfi að nota þennan klasa beint.</p>
 <dl class="method">
 <dt id="minecraft.CmdEvents.clearAll">
 <code class="descname">clearAll</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.CmdEvents.clearAll" title="Permalink to this definition">¶</a></dt>
