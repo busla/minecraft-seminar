@@ -32,6 +32,9 @@
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
         <link rel="up" title="Dagur 2" href="intro.html"/>
         <link rel="next" title="Hvað ef?" href="if-else-conditions.html"/>
@@ -88,7 +91,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../curriculum.html">Kennsluefni</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 2</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Teleport</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Teleport</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#verkefni-3">Verkefni 3</a></li>
 </ul>
 </li>
@@ -103,7 +106,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../seminar.html">Python námskeið Kóder.is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminar.html">Minecraft námskeið Kóder.is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo.html">Python námskeið Kóder.is</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
 </ul>
 
@@ -143,7 +147,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/curriculum/chapter2/teleport.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/curriculum/chapter2/teleport.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -157,7 +161,7 @@
 <h1>Teleport<a class="headerlink" href="#teleport" title="Permalink to this headline">¶</a></h1>
 <p>Oft viljum við einnig nota tól sem eru ekki innifalin í Python. Minecraft Pi tólin eru ekki hluti af Python safninu og því þurfum við að sækja þau sérstaklega þegar við skrifum kóða.</p>
 <p>Minecraft tólin hafa fjölda aðgerða sem við getum leikið okkur með.</p>
-<p>Ef við kíkjum á <a class="reference internal" href="../chapter1/terminal.html#terminal"><span>Terminal</span></a> þá sjáum við listann yfir klasana og aðgerðirnar sem þeir hafa. Það fyrsta sem við ætlum að gera er að skoða aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.getPos" title="minecraft.CmdPlayer.getPos"><code class="xref py py-attr docutils literal"><span class="pre">getPos</span></code></a> sem sækir staðsetninguna á Steve.</p>
+<p>Ef við kíkjum á <a class="reference internal" href="../chapter1/terminal.html#terminal"><span class="std std-ref">Terminal</span></a> þá sjáum við listann yfir klasana og aðgerðirnar sem þeir hafa. Það fyrsta sem við ætlum að gera er að skoða aðgerðina <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.getPos" title="minecraft.CmdPlayer.getPos"><code class="xref py py-attr docutils literal"><span class="pre">getPos</span></code></a> sem sækir staðsetninguna á Steve.</p>
 <p>Í stað þess að skrifa þetta í Python skelinni skulum við opna <em>Python (IDLE3)</em> forritið og búa til nýja skrá <em>(File -&gt; New file)</em>. Vistiði hana síðan sem <em>verkefni3.py</em> í möppunni <em>pi</em>. Þetta verður fyrsta forritið sem við búum til fyrir Minecraft. Það eina sem forritið okkar gerir er að segja okkur hvar Steve er staðsettur.</p>
 <p>Setjið eftirfarandi kóða í forritið ykkar:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
@@ -166,7 +170,7 @@
 <span class="k">print</span><span class="p">(</span><span class="n">stadsetning</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Til að keyra forritið ykkar þá skuliði opna forritið <em>Terminal</em> (sjá <a class="reference internal" href="../chapter1/terminal.html#terminal"><span>Terminal</span></a>). Þegar það opnast ættu þið að sjá</p>
+<p>Til að keyra forritið ykkar þá skuliði opna forritið <em>Terminal</em> (sjá <a class="reference internal" href="../chapter1/terminal.html#terminal"><span class="std std-ref">Terminal</span></a>). Þegar það opnast ættu þið að sjá</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>python3 verkefni3.py
 Vec3<span class="o">(</span>34.6, 29.9, -18.1<span class="o">)</span>
@@ -179,7 +183,7 @@ Vec3<span class="o">(</span>34.6, 29.9, -18.1<span class="o">)</span>
 <p>Það sem við fáum frá <em>getPos()</em> er einn hlutur með þrjá eiginleika, <em>x, y, z</em> hnitin á Steve. Þegar aðgerðir skila okkur hlutum tilbaka þá getum við notað eiginleika þeirra. Hlutur getur verið með hvaða eiginleika sem er. Peysa gæti t.d. haft eiginleikana <em>litur, efni, þykkt, stærð</em>. Til að nálgast eiginleika hluta í Python notum við heitið á þeim.</p>
 <p>Við getum líka geymt hnitið hans í breytum og notað síðar. Af því að aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.getPos" title="minecraft.CmdPlayer.getPos"><code class="xref py py-attr docutils literal"><span class="pre">getPos</span></code></a> skilar okkur hlut með þremur punktum þá skulum við nota þrjár breytur til að geyma þær.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
 <span class="go">Vec3(1.9, 5.4, 9.8)</span>
@@ -192,9 +196,9 @@ Vec3<span class="o">(</span>34.6, 29.9, -18.1<span class="o">)</span>
 <span class="go">9.8</span>
 </pre></div>
 </div>
-<p>En hvað getum við gert við þetta hnit? Ef við kíkjum aftur í <a class="reference internal" href="../minecraft-api.html#minecraft-api"><span>Minecraft API</span></a> þá sjáum við að það eru fleiri aðgerðir sem við getum notað, eins og <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þar sem við sendum hnit inn í leikinn og Steve fer beint á hnitið. Gildi sem við sendum í aðgerðina kallast <em>færibreytur</em>. Í þessari aðgerð hefur aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þrjár færibreytur, <em>x, y, z</em>.</p>
+<p>En hvað getum við gert við þetta hnit? Ef við kíkjum aftur í <a class="reference internal" href="../minecraft-api.html#minecraft-api"><span class="std std-ref">Minecraft API</span></a> þá sjáum við að það eru fleiri aðgerðir sem við getum notað, eins og <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þar sem við sendum hnit inn í leikinn og Steve fer beint á hnitið. Gildi sem við sendum í aðgerðina kallast <em>færibreytur</em>. Í þessari aðgerð hefur aðgerðin <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> þrjár færibreytur, <em>x, y, z</em>.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>

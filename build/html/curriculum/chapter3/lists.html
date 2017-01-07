@@ -32,6 +32,9 @@
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
         <link rel="up" title="Dagur 3" href="intro.html"/>
         <link rel="next" title="Orðasöfn" href="dictionaries.html"/>
@@ -91,7 +94,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 3</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="while-loops.html">While lúppur</a></li>
 <li class="toctree-l3"><a class="reference internal" href="for-loops.html">Segð (expression)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Listar</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Listar</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#verkefni-8">Verkefni 8</a></li>
 </ul>
 </li>
@@ -104,7 +107,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../seminar.html">Python námskeið Kóder.is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminar.html">Minecraft námskeið Kóder.is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo.html">Python námskeið Kóder.is</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
 </ul>
 
@@ -144,7 +148,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/curriculum/chapter3/lists.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/curriculum/chapter3/lists.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -156,37 +160,37 @@
             
   <div class="section" id="listar">
 <span id="lists"></span><h1>Listar<a class="headerlink" href="#listar" title="Permalink to this headline">¶</a></h1>
-<p>Í kaflanum um <a class="reference internal" href="../chapter2/and-or-conditions.html#and-or"><span>Ef að og eða</span></a> notuðum við samanburðaraðgerðir til að athuga hvort gildi voru sönn eða ósönn. Þú tókst kannski eftir því að við vorum að endurtaka breytuna <em>nyr_stadur</em> margoft þegar við bárum hana saman við önnur gildi. Innan Python samfélagsins er oft talað um <em>DRY</em> regluna, <em>Don´t repeat yourself</em>, eða <em>Ekki endurtaka þig</em>.</p>
+<p>Í kaflanum um <a class="reference internal" href="../chapter2/and-or-conditions.html#and-or"><span class="std std-ref">Ef að og eða</span></a> notuðum við samanburðaraðgerðir til að athuga hvort gildi voru sönn eða ósönn. Þú tókst kannski eftir því að við vorum að endurtaka breytuna <em>nyr_stadur</em> margoft þegar við bárum hana saman við önnur gildi. Innan Python samfélagsins er oft talað um <em>DRY</em> regluna, <em>Don´t repeat yourself</em>, eða <em>Ekki endurtaka þig</em>.</p>
 <p>Með því að nota lista (oft kallað <em>fylki</em>) getum við fækkað þessum endurtekningum á breytunni <em>nyr_stadur</em>.</p>
 <p>En hvað eru listar?</p>
 <p>Listi er ein breyta sem geymir mörg gildi. Rétt eins og þú getur sett allskyns vörur á innkaupalistann áður en þú ferð út í búð. Hvert gildi er aðskilið með <em>,</em> (kommu). Það er hægt að geyma hvaða gildi sem er á listanum, þau þurfa ekki að vera af sömu tegund. Til að búa til lista þá notarðu hornklofa til að geyma listann, <em>[]</em>.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;þetta er einhver texti&#39;</span><span class="p">,</span> <span class="s1">&#39;78.9&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;þetta er einhver texti&#39;</span><span class="p">,</span> <span class="s1">&#39;78.9&#39;</span><span class="p">]</span>
 <span class="go">[&#39;Jón&#39;, 2, &#39;þetta er einhver texti&#39;, &#39;78.9&#39;]</span>
 </pre></div>
 </div>
 <p>Ef við viljum geyma listann í breytu þá skilgreinum við hana.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">safnid_mitt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">safnid_mitt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">safnid_mitt</span>
 <span class="go">[1, 2, 3, 4, 5]</span>
 </pre></div>
 </div>
 <p>Við getum líka athugað hvort listinn innihaldi eitthvað gildi með því að nota samanburðaraðgerðina <em>in</em>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;jón&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;jón&#39;</span><span class="p">,</span> <span class="s1">&#39;ásgerður&#39;</span><span class="p">,</span> <span class="s1">&#39;flóki&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;jón&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;jón&#39;</span><span class="p">,</span> <span class="s1">&#39;ásgerður&#39;</span><span class="p">,</span> <span class="s1">&#39;flóki&#39;</span><span class="p">]</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;björk&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;jón&#39;</span><span class="p">,</span> <span class="s1">&#39;ásgerður&#39;</span><span class="p">,</span> <span class="s1">&#39;flóki&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;björk&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;jón&#39;</span><span class="p">,</span> <span class="s1">&#39;ásgerður&#39;</span><span class="p">,</span> <span class="s1">&#39;flóki&#39;</span><span class="p">]</span>
 <span class="go">False</span>
 </pre></div>
 </div>
 <p>Eða athugað hvort breytan okkar (sem er listi) innihaldi eitthvað gildi.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">safnid_mitt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">safnid_mitt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="ow">in</span> <span class="n">safnid_mitt</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Kíkjum núna aftur á kóðann sem við skrifuðum í <a class="reference internal" href="../chapter2/and-or-conditions.html#and-or"><span>Ef að og eða</span></a> og athugum hvort við getum breytt honum með því að nota lista.</p>
+<p>Kíkjum núna aftur á kóðann sem við skrifuðum í <a class="reference internal" href="../chapter2/and-or-conditions.html#and-or"><span class="std std-ref">Ef að og eða</span></a> og athugum hvort við getum breytt honum með því að nota lista.</p>
 <p>Afritið skrána og vistið hana sem <em>verkefni8.py</em>.</p>
 <p><em>Dæmi</em></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
@@ -244,7 +248,7 @@ TypeError: argument of <span class="nb">type</span> <span class="s1">&#39;int&#3
 </div>
 <p>Hér athugum við hvort listinn [0, 1] sé með gildið úr <em>nyr_stadur.id</em> og það er satt.</p>
 <p>Öll gildin á listanum hafa sætisnúmer. Rétt eins og í flugvél þá fær hver farþegi sitt sætisnúmer. Sætisnúmerin á listum byrja á <em>0</em> en ekki <em>1</em>. Prófum að búa til flugvél með farþegasætum og setjum nokkra farþega þar inn. Til að athuga í hvaða sætisnúmeri farþegarnir eru notum við aðgerðina <em>index</em>, á íslensku <em>atriðaskrá</em>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jónatan&#39;</span><span class="p">,</span> <span class="s1">&#39;Sandra&#39;</span><span class="p">,</span> <span class="s1">&#39;Eyrún&#39;</span><span class="p">,</span> <span class="s1">&#39;Finnur&#39;</span><span class="p">,</span> <span class="s1">&#39;Kristín&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jónatan&#39;</span><span class="p">,</span> <span class="s1">&#39;Sandra&#39;</span><span class="p">,</span> <span class="s1">&#39;Eyrún&#39;</span><span class="p">,</span> <span class="s1">&#39;Finnur&#39;</span><span class="p">,</span> <span class="s1">&#39;Kristín&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Jónatan&#39;</span><span class="p">)</span>
 <span class="go">0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;Sandra&#39;</span><span class="p">)</span>
@@ -254,28 +258,28 @@ TypeError: argument of <span class="nb">type</span> <span class="s1">&#39;int&#3
 </pre></div>
 </div>
 <p>Ef við notum sætisnúmerið þá getum við athugað hvaða farþegi situr þar.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="go">&#39;Finnur&#39;</span>
 </pre></div>
 </div>
 <p>Hér setjum við hornklofann strax á eftir listanum til að gefa til kynna hvaða sætisnúmer við viljum fá gildið úr.</p>
 <p>Annað sem við getum gert er að bæta við gildum á listann. Við getum notað aðgerðirnar <em>append()</em> og <em>insert()</em></p>
 <p>Aðgerðin <em>append()</em> setur nýja gildið aftast á listann.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Stefanía&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Stefanía&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span>
 <span class="go">[&#39;Jónatan&#39;, &#39;Sandra&#39;, &#39;Eyrún&#39;, &#39;Finnur&#39;, &#39;Kristín&#39;, &#39;Stefanía&#39;]</span>
 </pre></div>
 </div>
 <blockquote>
 <div>Aðgerðin <em>insert()</em> setur gildi í það sæti sem við viljum og ýtir restinni til hliðar.</div></blockquote>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Eiríkur&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Eiríkur&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span>
 <span class="go">[&#39;Jónatan&#39;, &#39;Sandra&#39;, &#39;Eyrún&#39;, &#39;Finnur&#39;, &#39;Eiríkur&#39;, &#39;Kristín&#39;, &#39;Stefanía&#39;]</span>
 </pre></div>
 </div>
 <p>Við getum líka geymt aðra lista inn í listum. Ef við notum flugvélina aftur sem dæmi þá gætum við t.d. búið til lista sem geymir tvær sætaraðir.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span> <span class="o">=</span>  <span class="p">[]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span> <span class="o">=</span>  <span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vinstri</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jónatan&#39;</span><span class="p">,</span> <span class="s1">&#39;Sandra&#39;</span><span class="p">,</span> <span class="s1">&#39;Eyrún&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">haegri</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Finnur&#39;</span><span class="p">,</span> <span class="s1">&#39;Eiríkur&#39;</span><span class="p">,</span> <span class="s1">&#39;Kristín&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flugvel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vinstri</span><span class="p">)</span>
@@ -294,8 +298,8 @@ TypeError: argument of <span class="nb">type</span> <span class="s1">&#39;int&#3
 <span id="assignment-8"></span><h2>Verkefni 8<a class="headerlink" href="#verkefni-8" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Búðu til lista með nokkrum blokkum (notaðu auðkenni þeirra)</li>
-<li>Bjóddu notandanum upp á að slá inn auðkenni blokkar (sjá <a class="reference internal" href="../chapter2/input.html#input"><span>Inntak</span></a>)</li>
-<li>Settu nýja blokk (sjá <a class="reference internal" href="set-block.html#assignment-7"><span>Verkefni 7</span></a>) af tegundinni sem var slegin inn fyrir framan, aftan og hliðina á Steve (nota <em>x ás</em> og <em>z ás</em>)</li>
+<li>Bjóddu notandanum upp á að slá inn auðkenni blokkar (sjá <a class="reference internal" href="../chapter2/input.html#input"><span class="std std-ref">Inntak</span></a>)</li>
+<li>Settu nýja blokk (sjá <a class="reference internal" href="set-block.html#assignment-7"><span class="std std-ref">Verkefni 7</span></a>) af tegundinni sem var slegin inn fyrir framan, aftan og hliðina á Steve (nota <em>x ás</em> og <em>z ás</em>)</li>
 </ul>
 </div>
 </div>

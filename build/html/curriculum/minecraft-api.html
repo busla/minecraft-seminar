@@ -32,9 +32,12 @@
   
         <link rel="author" title="About these documents"
               href="../about.html"/>
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../index.html"/>
         <link rel="up" title="Kennsluefni" href="../curriculum.html"/>
-        <link rel="next" title="Python námskeið Kóder.is" href="../seminar.html"/>
+        <link rel="next" title="Minecraft námskeið Kóder.is" href="../seminar.html"/>
         <link rel="prev" title="Segð (expression)" href="chapter5/hide-and-seek.html"/> 
 
   
@@ -91,14 +94,15 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter3/intro.html">Dagur 3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter4/intro.html">Dagur 4</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter5/intro.html">Dagur 5</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Minecraft API</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Minecraft API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#aukenni-allra-blokka-i-minecraft">Auðkenni allra blokka í Minecraft</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#eiginleikar-blokka">Eiginleikar blokka</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../seminar.html">Python námskeið Kóder.is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seminar.html">Minecraft námskeið Kóder.is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thermo.html">Python námskeið Kóder.is</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">Um námskeiðið</a></li>
 </ul>
 
@@ -136,7 +140,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/curriculum/minecraft-api.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/curriculum/minecraft-api.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -156,15 +160,15 @@
 <p>Minecraft Pi tólin eru geymd í möppunni <em>mcpi</em>. Tólin hafa síðan klasa sem allir hafa nokkrar aðgerðir til að stjórna Minecraft.</p>
 <p>Klasarnir sem við getum notað eru <em>Minecraft</em>, <em>Block</em>, <em>Event</em> og <em>Vec3</em>.</p>
 <p>Hver klasi hefur svo nokkrar aðgerðir.</p>
-<p>Til að sækja klasana getum við notað <em>import</em> skipunina (sjá <a class="reference internal" href="chapter1/import-modules.html#our-tools"><span>Verkfærin okkar</span></a>). Við þurfum einnig að tilgreina möppuna og skrána sem klasinn er geymdur í.</p>
+<p>Til að sækja klasana getum við notað <em>import</em> skipunina (sjá <a class="reference internal" href="chapter1/import-modules.html#our-tools"><span class="std std-ref">Verkfærin okkar</span></a>). Við þurfum einnig að tilgreina möppuna og skrána sem klasinn er geymdur í.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 </pre></div>
 </div>
 <p>Hér erum við að sækja <em>Minecraft</em> klasann í möppunni <em>mcpi</em> sem er geymdur í skránni <em>minecraft.py</em>.</p>
 <p>Við getum einnig sótt klasann <em>Block</em> sem er geymdur í skránni <em>block.py</em></p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.block</span> <span class="kn">import</span> <span class="n">Block</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.block</span> <span class="k">import</span> <span class="n">Block</span>
 </pre></div>
 </div>
 <p>Taktu eftir að við sleppum <em>.py</em> endingunni þegar við vísum í skrána sem klasinn er geymdur í.</p>
@@ -184,7 +188,7 @@
 <code class="descname">create</code><span class="sig-paren">(</span><em>address = &quot;localhost&quot;</em>, <em>port = 4711</em><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.Minecraft.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Býr til tengingu við Minecraft leik á þeirri hýsitölvu sem er skilgreind. Localhost er þín eigin tölva. Þú getur einnig skilgreint IP töluna á annari tölvu sem þú ert tengdur til að spila Minecraft í heimi með öðrum spilurum.</p>
 <p><em>Dæmi:</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;192.168.1.1&quot;</span><span class="p">,</span> <span class="mi">4711</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -195,7 +199,7 @@
 <code class="descname">postToChat</code><span class="sig-paren">(</span><em>skilaboð</em><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.Minecraft.postToChat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sendir texta á skjáinn í leiknum.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">postToChat</span><span class="p">(</span><span class="s2">&quot;Veiii.. minecraft er skemmtilegt&quot;</span><span class="p">)</span>
 </pre></div>
@@ -207,7 +211,7 @@
 <code class="descname">getBlock</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.Minecraft.getBlock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sækir tegund blokkarinnar á gefnu hniti og skilar tilbaka auðkenni blokkarinnar.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">getBlock</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 <span class="go">0</span>
@@ -225,7 +229,7 @@
 <dd><p>Setur nýja blokk af tegundinni <em>block.id</em> á hnitið.</p>
 <p><em>Dæmi</em></p>
 <p>Setur <em>STONE</em> á hnitið <em>3, 7, 9</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">setBlock</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -241,7 +245,7 @@
 <code class="descname">player</code><a class="headerlink" href="#minecraft.Minecraft.player" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tilviksbreyta með upplýsingum um Steve og aðgerðum til að stjórna honum, sjá <a class="reference internal" href="#minecraft.CmdPlayer" title="minecraft.CmdPlayer"><code class="xref py py-class docutils literal"><span class="pre">CmdPlayer</span></code></a></p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
 </pre></div>
@@ -273,7 +277,7 @@
 <code class="descname">getPos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.CmdPlayer.getPos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sækir staðsetninguna á Steve í leiknum sem Vec3</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
 </pre></div>
@@ -285,7 +289,7 @@
 <code class="descname">setPos</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#minecraft.CmdPlayer.setPos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Færir Steve um stað í Minecraft með því að nota brotatölur sem x, y, z hnit.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="k">import</span> <span class="n">Minecraft</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">,</span> <span class="mf">10.3</span><span class="p">)</span>
 </pre></div>
@@ -580,7 +584,7 @@ SNOW_BLOCK:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../seminar.html" class="btn btn-neutral float-right" title="Python námskeið Kóder.is" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../seminar.html" class="btn btn-neutral float-right" title="Minecraft námskeið Kóder.is" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="chapter5/hide-and-seek.html" class="btn btn-neutral" title="Segð (expression)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

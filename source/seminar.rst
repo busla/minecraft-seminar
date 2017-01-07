@@ -1,7 +1,7 @@
-Python námskeið Kóder.is
-========================
+Minecraft námskeið Kóder.is
+===========================
 
-Verkefni á Python námskeiði Kóder.is. Verkefnin eru í erfiðleikaröð.
+Verkefni á Minecraft námskeiði Kóder.is. Verkefnin eru í erfiðleikaröð.
 
 
 .. toctree::

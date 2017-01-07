@@ -32,6 +32,9 @@
   
         <link rel="author" title="About these documents"
               href="../../about.html"/>
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
         <link rel="up" title="Dagur 1" href="intro.html"/>
         <link rel="next" title="Breytur" href="variables.html"/>
@@ -87,7 +90,7 @@
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../curriculum.html">Kennsluefni</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 1</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="">Verkfærin okkar</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Verkfærin okkar</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#verkefni-1">Verkefni 1</a></li>
 </ul>
 </li>
@@ -102,7 +105,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../seminar.html">Python námskeið Kóder.is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seminar.html">Minecraft námskeið Kóder.is</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo.html">Python námskeið Kóder.is</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">Um námskeiðið</a></li>
 </ul>
 
@@ -142,7 +146,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/curriculum/chapter1/import-modules.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/curriculum/chapter1/import-modules.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -203,19 +207,19 @@
 <p>Til að nota hráefni saman af sitthvorri gerðinni þurfum þau að vera eins. Í forritunarmálum eru aðgerðir til staðar sem sjá um að breyta einni tegund yfir í aðra.</p>
 <p>Dæmi:</p>
 <p>7 er heil tala en &#8216;7&#8217; (einnig hægt að nota tvöfaldar gæsalappir <em>&#8220;7&#8221;</em>) er texti. Við getum notað aðgerðina <em>int()</em>, sem merkir <em>integer</em> (á latínu <em>heil</em>), til að breyta strengnum &#8216;7&#8217; yfir í tölu.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">6</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;7&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">6</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;7&#39;</span><span class="p">)</span>
 <span class="go">13</span>
 </pre></div>
 </div>
 <p>Við getum einnig notað aðgerðina <em>str()</em>, sem merkir <em>string</em>, <em>(ísl: strengur)</em>, til að breyta tölunni 6 yfir í strenginn &#8220;6&#8221;, og límt strengina saman.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;7&#39;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;7&#39;</span>
 <span class="go">&#39;67&#39;</span>
 </pre></div>
 </div>
 <p>Aðgerðirnar <em>int()</em> og <em>str()</em> eru innbyggðar aðgerðir sem eru aðgengileg þegar Python túlkurinn er ræstur.</p>
 <p>Eins og sést þá birtist svarið strax á skjánum. Við getum líka geymt svarið ef við viljum kannski nota það síðar. Við geymum svör í <em>breytu</em>.</p>
 <p><em>Dæmi</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tala</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">7</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tala</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">7</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tala</span>
 <span class="go">14</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tala</span> <span class="o">+</span> <span class="mi">2</span>
@@ -228,13 +232,13 @@
 <p>Tólið sjálft getur framkvæmt fjölda aðgerða. Grafa smiðsins getur t.d. farið áfram, afturábak, lyft og lækkað skóflunni o.s.f.v.</p>
 <p>Prófum að sækja verkfærið <em>random</em> og nota <em>randrange</em> aðgerðina sem býr til slembitölu milli tveggja talna. Prófum að velja slembitölu milli 1 og 10.</p>
 <p>Dæmi:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">random</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="go">7</span>
 </pre></div>
 </div>
 <p>Til að þurfa ekki að nota nafnið á verkfærinu í hvert skipti þá getum við sótt aðgerðina beint:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randrange</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="go">7</span>
 </pre></div>
