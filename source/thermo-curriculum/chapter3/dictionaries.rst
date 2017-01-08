@@ -83,7 +83,7 @@ Við gætum notað lista sem geymir eitt orðasafn í hverju sæti.
 .. _thermo-assignment-11:
     
 Verkefni 11
-__________
+____________
 
 * Skilgreindu breytu með lista af nöfnum á rými þar sem skynjarar eru staðsettir (stofa, baðherbergi, eldhús)
 * Notaðu *for* lykkju til að búa til 10 orðasöfn og bættu hverju safni við í listann.

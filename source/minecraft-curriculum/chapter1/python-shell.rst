@@ -1,4 +1,4 @@
-.. __minecraft-shell:
+.. _minecraft-shell:
 
 Python skelin
 =============

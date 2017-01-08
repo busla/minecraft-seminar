@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Klasar (classes) &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur 4" href="intro.html"/>
+        <link rel="next" title="GPIO (Gagnapinnar)" href="gpio.html"/>
+        <link rel="prev" title="Föll (functions)" href="functions.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about.html">Um námskeiðið</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/intro.html">Dagur 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/intro.html">Dagur 3</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 4</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="functions.html">Föll (functions)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Klasar (classes)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verkefni-13">Verkefni 13</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gpio.html">GPIO (Gagnapinnar)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../thermo-curriculum.html">Skynjarar</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur 4</a> &raquo;</li>
+      
+    <li>Klasar (classes)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/thermo-curriculum/chapter4/classes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="klasar-classes">
+<span id="thermo-classes"></span><h1>Klasar (classes)<a class="headerlink" href="#klasar-classes" title="Permalink to this headline">¶</a></h1>
+<p>Það er gott að hugsa um <a class="reference internal" href="../chapter3/dictionaries.html#thermo-dictionaries"><span class="std std-ref">Orðasöfn</span></a> þegar við lærum um klasa. Gildi eru geymd í hólfum sem hafa eitthvað nafn.
+Hér er gildið <em>&#8220;Jón Levy&#8221;</em> geymt í hólfinu <em>&#8220;nafn&#8221;</em>. Breytan <em>safn</em> getur svo haft mörg mismunandi hólf.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">safn</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nafn&#39;</span><span class="p">:</span> <span class="s1">&#39;Jón Levy&#39;</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">safn</span><span class="p">[</span><span class="s1">&#39;nafn&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Þá má hugsa um klasa sem samansafn af föllum og breytum sem við notum með heilstæðum hætti. Klasinn sjálfur gerir hins vegar ekki neitt heldur er hann teikning (samanber teikning af húsi) sem er hægt að nota til að framkvæma aðgerðir. Hann er síðan notaður til að búa til hluti, rétt eins og hægt er að nota sömu teikningu af húsi til að smíða mörg stök af húsinu.</p>
+<p>Húsið hefur eiginleika (properties). Það hefur lit, hæð, breidd, fjölda glugga, fjölda herbergja o.s.f.v.</p>
+<p>Hægt er að framkvæma aðgerðir á húsinu (methods/functions). Það er hægt að <em>opna()</em> hurðir og glugga, <em>mála()</em> veggina, <em>kveikja-á-ofnum()</em>, o.s.f.v.</p>
+<p>Skilgreinum nú teikningu af húsi. Búðu til skrána <em>verkefni13.py</em>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">House</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">doors</span><span class="p">,</span> <span class="n">windows</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doors</span> <span class="o">=</span> <span class="n">doors</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">windows</span> <span class="o">=</span> <span class="n">windows</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+
+    <span class="k">def</span> <span class="nf">paint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Húsið hefur fengið nýjan lit: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">))</span>
+        <span class="k">return</span>
+
+
+    <span class="k">def</span> <span class="nf">add_window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">windows</span> <span class="o">+=</span> <span class="n">num</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Við bættum við glugga, nú eru þeir {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">windows</span><span class="p">))</span>
+        <span class="k">return</span>
+
+
+<span class="n">h1</span> <span class="o">=</span> <span class="n">House</span><span class="p">(</span><span class="s1">&#39;rauður&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="n">House</span><span class="p">(</span><span class="s1">&#39;blár&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">h3</span> <span class="o">=</span> <span class="n">House</span><span class="p">(</span><span class="s1">&#39;grænn&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span>
+
+
+<span class="n">h1</span><span class="o">.</span><span class="n">paint</span><span class="p">(</span><span class="s1">&#39;blár&#39;</span><span class="p">)</span>
+<span class="n">h2</span><span class="o">.</span><span class="n">add_window</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Þessi klasi hefur tvö föll, <em>paint()</em> og <em>add_window()</em>. Athugaðu að við notum ekki orðið <em>fall</em> þegar við skilgreinum aðgerðir í klösum, heldur <em>aðferð</em> <em>(method)</em>. Ástæðan fyrir þessu er sú að innan sama kóða getum við verið að nota föll sem eru ekki hluti af klösum og svo aðferðir sem eru hluti af klösum. Föll og aðferðir gera nákvæmlega það sama. Taka inn færibreytur og skila einhverri niðurstöðu. Það sem aðferðir gera hins vegar er að breyta eingöngu stakinu sem var búið til.</p>
+<p>Í kóðanum fyrir ofan kölluðum við í:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#....</span>
+
+<span class="n">h1</span><span class="o">.</span><span class="n">paint</span><span class="p">(</span><span class="s1">&#39;blár&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Þetta breytir ekki litnum á <em>h2</em> né <em>h3</em> stakinu. Aðferðir í klösum eru eingöngu keyrðar á stakinu sem kallar í þær.</p>
+<p>Efst í klasanum er aðferð sem nefnist <em>__init__()</em>. Allir klasar hafa þessa aðferð því í hana er kallað um leið og stak er búið til. Þegar við bjuggum til <em>h1</em>, <em>h2</em> og <em>h3</em> stökin þá var kallað í <em>__init__()</em>. Þar skilgreinum við einnig færibreytur sem við viljum nota sem eiginleika.</p>
+<p>Í <em>__init__()</em> fallinu vistum við svo gildin úr færibreytunum í nýjum breytum sem við setjum <em>self</em> fyrir framan. Það vísar í stakið sem verið er að búa til. Þessar <em>self</em> breytur getum við svo notað hvar sem er í stakinu.</p>
+<p>Þegar við skilgreinum klasa þá er gott að geyma þá í sér skrá. Búðu til skrána <em>house.py</em> og settu klasann þangað inn. Restina skaltu geyma í <em>verkefni13.py</em>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">House</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">doors</span><span class="p">,</span> <span class="n">windows</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doors</span> <span class="o">=</span> <span class="n">doors</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">windows</span> <span class="o">=</span> <span class="n">windows</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+
+    <span class="k">def</span> <span class="nf">paint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="k">return</span> <span class="s1">&#39;Húsið hefur fengið nýjan lit: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">add_window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">windows</span> <span class="o">+=</span> <span class="n">num</span>
+        <span class="k">return</span> <span class="s1">&#39;Við bættum við glugga, nú eru þeir {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">windows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Efst í <em>verkefni13.py</em> skaltu sækja <em>House</em> klasann með <em>import</em> skipuninni. Skoðaðu <a class="reference internal" href="../chapter1/import-modules.html#thermo-our-tools"><span class="std std-ref">Verkfærin okkar</span></a> til upprifjunar.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># settu import skipun hér.</span>
+
+<span class="n">h1</span> <span class="o">=</span> <span class="n">House</span><span class="p">(</span><span class="s1">&#39;rauður&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">h2</span> <span class="o">=</span> <span class="n">House</span><span class="p">(</span><span class="s1">&#39;blár&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">h3</span> <span class="o">=</span> <span class="n">House</span><span class="p">(</span><span class="s1">&#39;grænn&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">h1</span><span class="o">.</span><span class="n">paint</span><span class="p">(</span><span class="s1">&#39;blár&#39;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">h2</span><span class="o">.</span><span class="n">add_window</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="section" id="verkefni-13">
+<span id="thermo-assignment-13"></span><h2>Verkefni 13<a class="headerlink" href="#verkefni-13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Opnaðu <a class="reference internal" href="functions.html#thermo-assignment-12"><span class="std std-ref">Verkefni 12</span></a> og afritaðu kóðann í skrána <em>hitakerfi.py</em></li>
+<li>Notaðu föllin í kóðanum sem aðferðir í klasa sem þú skilgreinir</li>
+<li>Í skránni <em>verkefni13.py</em> skaltu nota <em>import</em> skipunina til að sækja klasann og búa til nokkur hitastök.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gpio.html" class="btn btn-neutral float-right" title="GPIO (Gagnapinnar)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="functions.html" class="btn btn-neutral" title="Föll (functions)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

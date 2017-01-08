@@ -78,18 +78,26 @@ Verkefni 2
 Búðu til eftirfarandi tré af möppum og skrám í heima-möppunni þinni (~) með Terminal (skelinni).
 
 yfirmappa/
-├── a/
-│   ├── skra1.txt
-│   ├── skra2.txt
-│   ├── skra3.txt
-│   └── skra4.txt
-├── b/
-│   ├── skra5.txt
-│   └── b1/
-│       ├── skra6.txt
-│       └── skra7.txt
-└── c/
-    ├── skra8.txt
-    ├── skra9.txt
-    ├── skra10.txt
-    └── skra11.txt
+    a/
+        skra1.txt
+
+        skra2.txt
+
+        skra3.txt
+
+        skra4.txt
+    b/
+        skra5.txt
+
+        b1/
+            skra6.txt
+
+            skra7.txt
+    c/
+        skra8.txt
+
+        skra9.txt
+
+        skra10.txt
+        
+        skra11.txt

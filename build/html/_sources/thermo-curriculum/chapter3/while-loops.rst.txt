@@ -1,7 +1,7 @@
 .. _thermo-while-loops:
 
 While lykkjur
-============
+==============
 
 lykkjur eru aðgerðir sem við notum til að fara yfir lista, orðasöfn eða aðra hluti sem geyma safn af gögnum sem við viljum nálgast. Ef við þyrftum t.d. að leita að nafni í símaskránni þá myndum við eflaust nota lykkjur. Einnig er hægt að nota lykkjur sem endurtaka sig þar til einhverju skilyrði er mætt.
 
@@ -75,6 +75,7 @@ Hvað myndi gerast hér? Þessi lykkja myndi aldrei hætta því samanburðurinn
 
 
 .. code-block:: python
+    
     while True:
         x = input('Sláðu inn hita í °F: ')
 

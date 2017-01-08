@@ -1,4 +1,9 @@
 Styrktaraðilar
 ==============
 
-Styrktaraðilar hér
+Styrktaraðilar Kóder eru:
+
+* CCP
+* Reykjavíkurborg
+* Nexus
+* Karen Olga Ársælsdóttir

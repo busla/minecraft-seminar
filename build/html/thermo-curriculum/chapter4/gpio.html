@@ -30,15 +30,12 @@
   
 
   
-        <link rel="author" title="About these documents"
-              href="../../about.html"/>
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
         <link rel="up" title="Dagur 4" href="intro.html"/>
-        <link rel="next" title="Föll (functions)" href="functions.html"/>
-        <link rel="prev" title="Dagur 4" href="intro.html"/> 
+        <link rel="prev" title="Klasar (classes)" href="classes.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -90,15 +87,16 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about.html">Um námskeiðið</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/intro.html">Dagur 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/intro.html">Dagur 3</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 4</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">GPIO (Gagnapinnar)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Föll (functions)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classes.html">Klasar (classes)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GPIO (Gagnapinnar)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Dagur 5</a></li>
 </ul>
 </li>
 </ul>
@@ -154,6 +152,22 @@
 <img alt="../../_images/gpio-pins1.png" src="../../_images/gpio-pins1.png" />
 <img alt="../../_images/gpio-led1.png" src="../../_images/gpio-led1.png" />
 <img alt="../../_images/gpio-pinout.png" src="../../_images/gpio-pinout.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+
+
+<span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">LOW</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Kveikt&quot;</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">HIGH</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Slökkt&quot;</span><span class="p">)</span>
+<span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">LOW</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -163,10 +177,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="functions.html" class="btn btn-neutral float-right" title="Föll (functions)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="intro.html" class="btn btn-neutral" title="Dagur 4" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="classes.html" class="btn btn-neutral" title="Klasar (classes)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

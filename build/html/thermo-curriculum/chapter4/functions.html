@@ -30,15 +30,13 @@
   
 
   
-        <link rel="author" title="About these documents"
-              href="../../about.html"/>
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
         <link rel="up" title="Dagur 4" href="intro.html"/>
-        <link rel="next" title="Dagur 5" href="../chapter5/intro.html"/>
-        <link rel="prev" title="GPIO (Gagnapinnar)" href="gpio.html"/> 
+        <link rel="next" title="Klasar (classes)" href="classes.html"/>
+        <link rel="prev" title="Dagur 4" href="intro.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -90,15 +88,19 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about.html">Um námskeiðið</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/intro.html">Dagur 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter3/intro.html">Dagur 3</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 4</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="gpio.html">GPIO (Gagnapinnar)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Föll (functions)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Föll (functions)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verkefni-12">Verkefni 12</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Dagur 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classes.html">Klasar (classes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpio.html">GPIO (Gagnapinnar)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -152,6 +154,7 @@
   <div class="section" id="foll-functions">
 <span id="thermo-functions"></span><h1>Föll (functions)<a class="headerlink" href="#foll-functions" title="Permalink to this headline">¶</a></h1>
 <p>Fall er safn af skipulögðum og endurnýjanlegum kóða sem er notaður til að framkvæma eina eða fleiri aðgerðir.</p>
+<p>Búðu til skrána <em>verkefni12.py</em>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prenta_texta</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Það er kalt úti&#39;</span><span class="p">)</span>
 
@@ -201,6 +204,95 @@
 <span class="k">print</span><span class="p">(</span><span class="n">reikna_fahrenheit</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
+<p>Stór og flókin föll sem framkvæma margar aðgerðir er erfitt að lesa. Mörg föll sem hvert fyrir sig framkvæmir eina aðgerð og gerir það vel er bæði lesanlegri og gerir okkur mun auðveldar fyrir að finna villur. Þær verða einnig endurnýtanlegri þar sem þú gætir þurft á einni ákveðinni aðgerð að halda síðar. Ef mörgum aðgerðum er blandað saman í sama fallið er ólíklegra að þú getir endurnýtt fallið annars staðar í kóðanum.</p>
+<p><em>Dæmi:</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reikna_hitastig</span><span class="p">(</span><span class="n">hiti</span><span class="p">,</span> <span class="n">tegund</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">tegund</span> <span class="o">==</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">hiti</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">elif</span> <span class="n">tegund</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">hiti</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Óþekkt hitategund: &quot;{}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tegund</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">reikna_hitastig</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reikna_celsius</span><span class="p">(</span><span class="n">hiti</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">hiti</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+
+<span class="k">def</span> <span class="nf">reikna_fahrenheit</span><span class="p">(</span><span class="n">hiti</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">hiti</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+
+<span class="k">def</span> <span class="nf">reikna_hitastig</span><span class="p">(</span><span class="n">hiti</span><span class="p">,</span> <span class="n">tegund</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">tegund</span> <span class="o">==</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">reikna_fahrenheit</span><span class="p">(</span><span class="n">hiti</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">tegund</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">reikna_celsius</span><span class="p">(</span><span class="n">hiti</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Óþekkt hitategund: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tegund</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">reikna_hitastig</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Við erum búin að einangra útreikningana í sér föllum sem gerir okkur auðveldara fyrir síðar að endurnota þau. Þetta er meiri kóði en notandinn áttar sig betur á hvað er á seyði.</p>
+<p>Hvað gerist ef við prófum að sleppa því að senda tegundina sem færibreytu?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reikna_celsius</span><span class="p">(</span><span class="n">hiti</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">hiti</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+
+<span class="k">def</span> <span class="nf">reikna_fahrenheit</span><span class="p">(</span><span class="n">hiti</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">hiti</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+
+<span class="k">def</span> <span class="nf">reikna_hitastig</span><span class="p">(</span><span class="n">hiti</span><span class="p">,</span> <span class="n">tegund</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">tegund</span> <span class="o">==</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">reikna_fahrenheit</span><span class="p">(</span><span class="n">hiti</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">tegund</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">reikna_celsius</span><span class="p">(</span><span class="n">hiti</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Óþekkt hitategund: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tegund</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">reikna_hitastig</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+
+
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;verkefni12.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">18</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">reikna_hitastig</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">reikna_hitastig</span><span class="p">()</span> <span class="n">missing</span> <span class="mi">1</span> <span class="n">required</span> <span class="n">positional</span> <span class="n">argument</span><span class="p">:</span> <span class="s1">&#39;tegund&#39;</span>
+</pre></div>
+</div>
+<p>Lesum skilaboðin. Fallið <em>reikna_hitastig()</em> vantar 1 nauðsynlega færibreytu sem kallast <em>&#8220;tegund&#8221;</em>.</p>
+<p>Þegar við skilgreinum færibreytur í föllum getum við gefið þeim sjálfgefið gildi. Hér fyrir neðan fær færibreytan <em>tegund</em> gildið <em>&#8220;c&#8221;</em> ef sleppt er að senda hana í fallið. Ef við sendum <em>&#8220;f&#8221;</em> í fallið þá er færibreytan yfirskrifuð.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reikna_celsius</span><span class="p">(</span><span class="n">hiti</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">hiti</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+
+<span class="k">def</span> <span class="nf">reikna_fahrenheit</span><span class="p">(</span><span class="n">hiti</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">hiti</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span>
+
+<span class="k">def</span> <span class="nf">reikna_hitastig</span><span class="p">(</span><span class="n">hiti</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">tegund</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">tegund</span> <span class="o">==</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">reikna_fahrenheit</span><span class="p">(</span><span class="n">hiti</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">tegund</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">reikna_celsius</span><span class="p">(</span><span class="n">hiti</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Óþekkt hitategund: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tegund</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">reikna_hitastig</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="section" id="verkefni-12">
+<span id="thermo-assignment-12"></span><h2>Verkefni 12<a class="headerlink" href="#verkefni-12" title="Permalink to this headline">¶</a></h2>
+<p>Markmið: Að kalla í eitt fall sem býr til gagnasafn af hitaupplýsingum með endurnýtanlegum kóða.</p>
+<ul class="simple">
+<li>Skilgreindu fall sem skilar þér dagsetningunni og tímanum núna.</li>
+<li>Skilgreindu fall sem velur skynjara úr lista með hlutkesti.</li>
+<li>Skilgreindu fall sem býr til slembitölu sem nota má sem hitastig.</li>
+<li>Skilgreindu fall sem skilar þér gagnasafni með 100 stökum af hitaupplýsingum</li>
+</ul>
+</div>
 </div>
 
 
@@ -210,10 +302,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../chapter5/intro.html" class="btn btn-neutral float-right" title="Dagur 5" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="classes.html" class="btn btn-neutral float-right" title="Klasar (classes)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gpio.html" class="btn btn-neutral" title="GPIO (Gagnapinnar)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral" title="Dagur 4" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

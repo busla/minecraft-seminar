@@ -1,10 +1,12 @@
+from house import House
 
-def reikna_celsius(hiti):
-    return hiti * 1.8 + 32
+h1 = House('rauður', 2, 10, 25, 10)
+h2 = House('blár', 5, 2, 50, 7)
+h3 = House('grænn', 3, 100, 40, 4)
+print(h1)
+print(h2)
+print(h3)
 
-def reikna_fahrenheit(hiti):
-    return (hiti - 32) / 1.8
 
-
-print(reikna_celsius(100))
-print(reikna_fahrenheit(100))
+print(h1.paint('blár'))
+print(h2.add_window(2))

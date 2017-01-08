@@ -13,3 +13,4 @@ Kennsluefni fyrir Minecraft námskeið Kóder.is
     minecraft-curriculum/chapter4/intro
     minecraft-curriculum/chapter5/intro
     minecraft-curriculum/minecraft-api
+    minecraft-curriculum/assignments

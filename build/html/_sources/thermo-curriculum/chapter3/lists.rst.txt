@@ -1,7 +1,7 @@
 .. _thermo-lists:
 
 Listar
-======
+==========
 
 Listi er ein breyta sem geymir mörg gildi. Rétt eins og þú getur sett allskyns vörur á innkaupalistann áður en þú ferð út í búð. Hvert gildi er aðskilið með *,* (kommu). Það er hægt að geyma hvaða gildi sem er á listanum, þau þurfa ekki að vera af sömu tegund. Til að búa til lista þá notarðu hornklofa til að geyma listann, *[]*.
 
@@ -191,7 +191,7 @@ Búum til lista með *list()* aðgerðinni.
 .. _thermo-assignment-10:
 
 Verkefni 10
-__________
+____________
 
 * Notaðu *for* lykkju til að bæta við 10 slembitölum í lista
 * Prentaðu út hæstu töluna í listanum. Notaðu netið til að finna lausn.

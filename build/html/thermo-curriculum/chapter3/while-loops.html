@@ -30,8 +30,6 @@
   
 
   
-        <link rel="author" title="About these documents"
-              href="../../about.html"/>
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
@@ -90,6 +88,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about.html">Um námskeiðið</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter2/intro.html">Dagur 2</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 3</a><ul class="current">
@@ -103,7 +102,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter4/intro.html">Dagur 4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Dagur 5</a></li>
 </ul>
 </li>
 </ul>
@@ -207,6 +205,18 @@
 </div>
 <p>Í hvert skipti sem lykkjan endurtekur sig er athugað hvort breytan <em>i</em> sé með gildið <em>10</em>. Ef hún er það ekki skaltu hækka <em>i</em> um einn.</p>
 <p>Í síðasta kafla þá lentum við í vandræðum þegar notandinn sló inn bókstafi í stað talna. Lögum það með því að setja <em>input()</em> í lykkju.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn hita í °F: &#39;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span> <span class="c1"># T(°C) = (T(°F) - 32) / 1.8</span>
+    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span> <span class="c1"># geymum villuna í breytunni error</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Aðeins tölur eru leyfðar. Fékk villuna {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hitinn er {}°C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">celsius</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
 <div class="section" id="verkefni-8">
 <span id="thermo-assignment-8"></span><h2>Verkefni 8<a class="headerlink" href="#verkefni-8" title="Permalink to this headline">¶</a></h2>
 <p>Undantekningar (exceptions) hafa eina skipun í viðbót. Notaðu Google til að finna hana og finndu not fyrir hana í kóðanum hér fyrir ofan.</p>

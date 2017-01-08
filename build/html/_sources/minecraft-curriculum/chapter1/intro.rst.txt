@@ -7,9 +7,11 @@ Dagur 1
     :maxdepth: 1
     :titlesonly:
 
+    python-shell
     import-modules    
     variables
     terminal
+    post-to-chat
 
     
     
