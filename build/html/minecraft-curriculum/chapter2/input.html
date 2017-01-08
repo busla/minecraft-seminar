@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Inntak &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur 2" href="intro.html"/>
+        <link rel="next" title="Dagur 3" href="../chapter3/intro.html"/>
+        <link rel="prev" title="Ef að og eða" href="and-or-conditions.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 2</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="teleport.html">Teleport</a></li>
+<li class="toctree-l3"><a class="reference internal" href="if-else-conditions.html">Hvað ef?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="and-or-conditions.html">Ef að og eða</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Inntak</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verkefni-6">Verkefni 6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/intro.html">Dagur 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Dagur 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../minecraft-api.html">Minecraft API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../minecraft-curriculum.html">Minecraft</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur 2</a> &raquo;</li>
+      
+    <li>Inntak</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/minecraft-curriculum/chapter2/input.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="inntak">
+<span id="minecraft-input"></span><h1>Inntak<a class="headerlink" href="#inntak" title="Permalink to this headline">¶</a></h1>
+<p>Til að senda Steve á nýjan stað þá þurfum við að endurræsa kóðann okkar í hvert skipti.</p>
+<p>Hvað ef við gætum bara stimplað inn tölur á skjánum og Steve fer svo af stað? Það er lítið mál. Við notum aðgerðina <em>input</em> til þess að bjóða upp á innslátt. Búið fyrst til nýja skrá og nefnið hana <em>verkefni6.py</em>.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">innslattur</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn texta: &#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">innslattur</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Aðgerðin <em>input()</em> er innbyggð í Python. Hún sendir texta á skjáinn og bíður eftir að notandinn slái inn gildi. Þegar breytan <em>innslattur</em> hefur fengið gildi frá notandanum heldur forritið okkar áfram og prentar út gildið. Við getum beðið notandann um að slá nokkur gildi.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir x: &#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir y: &#39;</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir z: &#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Þessi gildi getum við svo notað til að framkvæma þær aðgerðir sem við viljum. Prófum að senda Steve á hnit sem notandinn slær inn. Passið ykkur að hafa gildin ekki stærri en <em>127</em> því Minecraft heimurinn er ekki endalaus.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir x: &#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir y: &#39;</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir z: &#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Afhverju fengum við villu?</p>
+<p>Öll gildi sem við sláum inn er <em>strengur</em>. Ef við viljum nota þau í t.d. útreikningum þá þurfum við að breyta strengnum í <em>integer</em> (heila tölu) eða <em>float</em> (brotatölu). Í skilgreiningunni á <a class="reference internal" href="../minecraft-api.html#minecraft.CmdPlayer.setPos" title="minecraft.CmdPlayer.setPos"><code class="xref py py-meth docutils literal"><span class="pre">setPos()</span></code></a> kemur fram að aðgerðin tekur brotatölu. Ástæðan fyrir því að við getum líka notað heila tölu er sú að Python 3 breytir <em>integer</em> yfir í <em>float</em> ef þess er krafist. Það gengur hins vegar ekki í hina áttina, þ.e., það er ekki hægt að breyta <em>float</em> yfir í <em>integer</em> án þess að nota aðgerðir sem t.d. námunda brotatöluna upp eða niður.</p>
+<p>En áfram með smjörið. Breytum strengnum yfir í tölu.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir x: &#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir y: &#39;</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir z: &#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Við getum líka breytt strengnum á öðrum stað.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir x: &#39;</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir y: &#39;</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir z: &#39;</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Þetta lítur flókið út. Fullt af svigum. Eins og í almennum reikningi þá byrjum við fyrst að reikna út gildin í innsta sviganum og finnum okkur út á við. Við byrjum á að fá gildið frá notandanum og breytum því svo í <em>integer</em> áður en breytan <em>x</em> fær gildið.</p>
+<p>Bætum við annari aðgerð til að flækja hlutina enn meira.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mcpi.minecraft</span> <span class="kn">import</span> <span class="n">Minecraft</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">Minecraft</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir x: &#39;</span><span class="p">)))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir y: &#39;</span><span class="p">)))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn gildi fyrir z: &#39;</span><span class="p">)))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+<span class="n">mc</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">setPos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Fyrst fáum við strenginn, breytum honum í heila tölu og svo í brotatölu. Það er lítill tilgangur með þessu því að heila talan <em>7</em> breytist einfaldlega í <em>7.0</em>.</p>
+<div class="section" id="verkefni-6">
+<span id="assignment-6"></span><h2>Verkefni 6<a class="headerlink" href="#verkefni-6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Spurðu notandann hvort hann vilji senda Steve á nýja hnitið. Ef hann vill það ekki þá fer hann ekki neitt. Skoða vel <a class="reference internal" href="if-else-conditions.html#minecraft-if-else"><span class="std std-ref">Hvað ef?</span></a>.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../chapter3/intro.html" class="btn btn-neutral float-right" title="Dagur 3" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="and-or-conditions.html" class="btn btn-neutral" title="Ef að og eða" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

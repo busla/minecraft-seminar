@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Listar &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur 3" href="intro.html"/>
+        <link rel="next" title="Orðasöfn" href="dictionaries.html"/>
+        <link rel="prev" title="For lykkjur" href="for-loops.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/intro.html">Dagur 2</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 3</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="while-loops.html">While lykkjur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="for-loops.html">For lykkjur</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Listar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#append">append()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pop">pop()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#insert">insert()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove">remove()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extend">extend()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#index">index()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sort">sort()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reverse">reverse()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verkefni-10">Verkefni 10</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html">Orðasöfn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/intro.html">Dagur 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Dagur 5</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../thermo-curriculum.html">Skynjarar</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur 3</a> &raquo;</li>
+      
+    <li>Listar</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/thermo-curriculum/chapter3/lists.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="listar">
+<span id="thermo-lists"></span><h1>Listar<a class="headerlink" href="#listar" title="Permalink to this headline">¶</a></h1>
+<p>Listi er ein breyta sem geymir mörg gildi. Rétt eins og þú getur sett allskyns vörur á innkaupalistann áður en þú ferð út í búð. Hvert gildi er aðskilið með <em>,</em> (kommu). Það er hægt að geyma hvaða gildi sem er á listanum, þau þurfa ekki að vera af sömu tegund. Til að búa til lista þá notarðu hornklofa til að geyma listann, <em>[]</em>.</p>
+<p>Búðu til skrána <em>verkefni10.py</em>.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Í listanum hér fyrir ofan erum við að geyma streng, integer, boolean og float</p>
+<p>Við getum líka athugað hvort listinn innihaldi eitthvað gildi með því að nota samanburðaraðgerðina <em>in</em>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">]</span>
+<span class="k">if</span> <span class="s1">&#39;Jón&#39;</span> <span class="ow">in</span> <span class="n">listi</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Jón er í listanum&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Jón er ekki í listanum&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Við getum líka prentað út samanburðaraðgerðina sjálfa:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Jón&#39;</span> <span class="ow">in</span> <span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Við getum prentað út gildið í ákveðnu sæti.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="s1">&#39;Sámur&#39;</span><span class="p">,</span> <span class="s1">&#39;Friðrik&#39;</span><span class="p">,</span> <span class="s1">&#39;Grundafjörður&#39;</span><span class="p">,</span> <span class="s1">&#39;Sigmundur Davíð&#39;</span><span class="p">,</span> <span class="s1">&#39;Drullumall&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Við getum notað <em>slice()</em> aðgerðina til að prenta aðeins hluta úr listanum, þ.e. sætisnúmer <em>[frá:til]</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="s1">&#39;Sámur&#39;</span><span class="p">,</span> <span class="s1">&#39;Friðrik&#39;</span><span class="p">,</span> <span class="s1">&#39;Grundafjörður&#39;</span><span class="p">,</span> <span class="s1">&#39;Sigmundur Davíð&#39;</span><span class="p">,</span> <span class="s1">&#39;Drullumall&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># print(listi[:2]) skilar sömu niðurstöðu</span>
+</pre></div>
+</div>
+<p>Eða talið frá síðasta sætinu</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="s1">&#39;Sámur&#39;</span><span class="p">,</span> <span class="s1">&#39;Friðrik&#39;</span><span class="p">,</span> <span class="s1">&#39;Grundafjörður&#39;</span><span class="p">,</span> <span class="s1">&#39;Sigmundur Davíð&#39;</span><span class="p">,</span> <span class="s1">&#39;Drullumall&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># prenta gildið í síðasta sætinu</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># prenta gildið í næstsíðasta sætinu</span>
+</pre></div>
+</div>
+<p>Listar hafa fjölda aðgerða.</p>
+<div class="section" id="append">
+<span id="list-append"></span><h2>append()<a class="headerlink" href="#append" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># breyta með tómum lista</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Nýtt gildi&#39;</span><span class="p">)</span> <span class="c1"># bætir við gildi aftast í listann</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Jón&#39;</span><span class="p">)</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pop">
+<span id="list-pop"></span><h2>pop()<a class="headerlink" href="#pop" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">]</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># fjarlægja síðasta gildið úr listanum</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">]</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># fjarlægja gildi í sætinu 0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="insert">
+<span id="list-insert"></span><h2>insert()<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">]</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Nýtt gildi&#39;</span><span class="p">)</span> <span class="c1"># bæta við gildi í sæti 1 og ýta restinni áfram um eitt sæti.</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove">
+<span id="list-remove"></span><h2>remove()<a class="headerlink" href="#remove" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">]</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Jón&#39;</span><span class="p">)</span> <span class="c1"># fjarlægja gildi úr listanum</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extend">
+<span id="list-extend"></span><h2>extend()<a class="headerlink" href="#extend" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">]</span>
+<span class="n">listi2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Sámur&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mf">58.459</span><span class="p">]</span>
+<span class="n">listi1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">listi2</span><span class="p">)</span> <span class="c1"># sameina listi2 við listi1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="index">
+<span id="list-index"></span><h2>index()<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">78.9</span><span class="p">,</span> <span class="s1">&#39;Sámur&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mf">58.459</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mf">78.9</span><span class="p">))</span> <span class="c1"># í hvaða sæti er gildið</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sort">
+<span id="list-sort"></span><h2>sort()<a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="s1">&#39;Sámur&#39;</span><span class="p">,</span> <span class="s1">&#39;Friðrik&#39;</span><span class="p">,</span> <span class="s1">&#39;Grundafjörður&#39;</span><span class="p">,</span> <span class="s1">&#39;Sigmundur Davíð&#39;</span><span class="p">,</span> <span class="s1">&#39;Drullumall&#39;</span><span class="p">]</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reverse">
+<span id="list-reverse"></span><h2>reverse()<a class="headerlink" href="#reverse" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="s1">&#39;Sámur&#39;</span><span class="p">,</span> <span class="s1">&#39;Friðrik&#39;</span><span class="p">,</span> <span class="s1">&#39;Grundafjörður&#39;</span><span class="p">,</span> <span class="s1">&#39;Sigmundur Davíð&#39;</span><span class="p">,</span> <span class="s1">&#39;Drullumall&#39;</span><span class="p">]</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># endurraðar listanum í öfugri röð</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Við getum einnig sett lista inn í lista.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jón&#39;</span><span class="p">,</span> <span class="s1">&#39;Sámur&#39;</span><span class="p">,</span> <span class="s1">&#39;Friðrik&#39;</span><span class="p">]</span>
+<span class="n">listi2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grundafjörður&#39;</span><span class="p">,</span> <span class="s1">&#39;Sigmundur Davíð&#39;</span><span class="p">,</span> <span class="s1">&#39;Drullumall&#39;</span><span class="p">]</span>
+<span class="n">listi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">listi2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">listi1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Búum til lista með <em>list()</em> aðgerðinni.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">listi</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;Þetta er í annað sinn á innan við mánuði sem rúta með ferðamönnum fer út af veginum á Mosfellsheiði. 20. desember valt rúta með átján farþegum. Þar slasaðist heldur enginn alvarlega.&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verkefni-10">
+<span id="thermo-assignment-10"></span><h2>Verkefni 10<a class="headerlink" href="#verkefni-10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Notaðu <em>for</em> lykkju til að bæta við 10 slembitölum í lista</li>
+<li>Prentaðu út hæstu töluna í listanum. Notaðu netið til að finna lausn.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dictionaries.html" class="btn btn-neutral float-right" title="Orðasöfn" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="for-loops.html" class="btn btn-neutral" title="For lykkjur" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

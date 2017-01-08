@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>While lykkjur &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur 3" href="intro.html"/>
+        <link rel="next" title="For lykkjur" href="for-loops.html"/>
+        <link rel="prev" title="Dagur 3" href="intro.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/intro.html">Dagur 2</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 3</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">While lykkjur</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verkefni-8">Verkefni 8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="for-loops.html">For lykkjur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lists.html">Listar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dictionaries.html">Orðasöfn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/intro.html">Dagur 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Dagur 5</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../thermo-curriculum.html">Skynjarar</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur 3</a> &raquo;</li>
+      
+    <li>While lykkjur</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/thermo-curriculum/chapter3/while-loops.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="while-lykkjur">
+<span id="thermo-while-loops"></span><h1>While lykkjur<a class="headerlink" href="#while-lykkjur" title="Permalink to this headline">¶</a></h1>
+<p>lykkjur eru aðgerðir sem við notum til að fara yfir lista, orðasöfn eða aðra hluti sem geyma safn af gögnum sem við viljum nálgast. Ef við þyrftum t.d. að leita að nafni í símaskránni þá myndum við eflaust nota lykkjur. Einnig er hægt að nota lykkjur sem endurtaka sig þar til einhverju skilyrði er mætt.</p>
+<p>Oftast notum við tvær tegundir af lykkjum, <em>while</em> eða <em>for</em> lykkjur. Í þessum kafla förum við í <em>while</em> lykkjur.</p>
+<p>Búið til nýja skrá og nefnið hana <em>verkefni8.py</em>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">teljari</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">teljari</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">teljari</span><span class="p">)</span>
+    <span class="n">teljari</span> <span class="o">=</span> <span class="n">teljari</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Í þessum kóða búum við til breytuna <em>teljari</em>. Við gefum henni gildið <em>0</em> og er því breytan af tegundinni <em>integer</em> (heil tala). Þýðum nú lykkjuna yfir á mannamál.</p>
+<p><em>Á meðan</em> teljari er minni en talan <em>10</em>, prentaðu út teljarann og hækkaðu svo teljarann um <em>1</em>.</p>
+<p>Hér er önnur leið til að leggja saman teljarann:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">teljari</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">teljari</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">teljari</span><span class="p">)</span>
+    <span class="n">teljari</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Þessi aðgerð endurtekur sig svo lengi sem teljari er minni en einn. Það sem <em>while</em> aðgerðin er að gera er að endurtaka sig svo lengi sem eitthvað er <em>satt</em>. Um leið og það verður <em>rangt</em> þá stoppar aðgerðin.</p>
+<p>Við gætum t.d. gert:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">while</span> <span class="bp">True</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;endurtekningin endalausa&#39;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Á meðan <em>satt</em> er <em>satt</em> prentaðu textann og farðu að sofa í 1 sekúndu. Ef þú vilt framkvæma einhverja aðgerð í ákveðin tíma þá gæti hentað ágætlega að nota <em>while</em> lykkju og nota aðgerðina <em>sleep()</em> til að ákveða tímalengdina.</p>
+<p>Hvað myndi gerast hér? Þessi lykkja myndi aldrei hætta því samanburðurinn breytist aldrei, <em>satt</em> verður alltaf <em>satt</em>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ýttu á CTRL+C til að stöðva lykkjuna.</p>
+</div>
+<p>Þótt þetta líti út fyrir að vera tilgangslaust þá eru tilfelli þar sem við getum nýtt okkur endalausa lykkju. Til að stöðva lykkjuna notum við skipunina <em>break</em>.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span> <span class="c1"># gerir það sama og *while True == True*</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Þessi texti mun endurtaka sig 10 sinnum&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Í hvert skipti sem lykkjan endurtekur sig er athugað hvort breytan <em>i</em> sé með gildið <em>10</em>. Ef hún er það ekki skaltu hækka <em>i</em> um einn.</p>
+<p>Í síðasta kafla þá lentum við í vandræðum þegar notandinn sló inn bókstafi í stað talna. Lögum það með því að setja <em>input()</em> í lykkju.</p>
+<div class="section" id="verkefni-8">
+<span id="thermo-assignment-8"></span><h2>Verkefni 8<a class="headerlink" href="#verkefni-8" title="Permalink to this headline">¶</a></h2>
+<p>Undantekningar (exceptions) hafa eina skipun í viðbót. Notaðu Google til að finna hana og finndu not fyrir hana í kóðanum hér fyrir ofan.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="for-loops.html" class="btn btn-neutral float-right" title="For lykkjur" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral" title="Dagur 3" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

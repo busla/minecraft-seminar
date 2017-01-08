@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Inntak &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../../about.html"/>
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur 2" href="intro.html"/>
+        <link rel="next" title="Dagur 3" href="../chapter3/intro.html"/>
+        <link rel="prev" title="Ef að og eða" href="and-or-conditions.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur 2</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="if-else-conditions.html">Hvað ef?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="and-or-conditions.html">Ef að og eða</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Inntak</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verkefni-7">Verkefni 7</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/intro.html">Dagur 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Dagur 5</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../thermo-curriculum.html">Skynjarar</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur 2</a> &raquo;</li>
+      
+    <li>Inntak</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/thermo-curriculum/chapter2/input.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="inntak">
+<span id="thermo-input"></span><h1>Inntak<a class="headerlink" href="#inntak" title="Permalink to this headline">¶</a></h1>
+<p>Aðgerðin <em>input()</em> er innbyggð í Python. Hún tekur texta sem færibreytu og bíður eftir að notandinn slái inn gildi. Þegar breytan <em>innslattur</em> hefur fengið gildi frá notandanum heldur forritið okkar áfram.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn hita í celsíus: &#39;</span><span class="p">)</span>
+<span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;verkefni5.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span><span class="s1">&#39;t multiply sequence by non-int of type &#39;</span><span class="nb">float</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>Afhverju fengum við villu?</p>
+<p>Öll gildi sem við sláum inn er <em>strengur</em>. Python breytir ekki texta yfir í tölu sjálfkrafa þótt við sláum inn tölustafi. Ef við viljum nota strenginn í t.d. útreikningum þá þurfum við að breyta strengnum í <em>integer</em> (heila tölu) eða <em>float</em> (brotatölu). Við skulum breyta strengnum í <em>float</em> ef notandinn skyldi slá inn brotatölu.</p>
+<p>Áfram með smjörið. Breytum strengnum yfir í tölu og bætum við betri lýsingu í úprentun.</p>
+<p><em>Dæmi</em></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn hita í celsíus: &#39;</span><span class="p">)</span>
+<span class="n">fahrenheit</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span> <span class="c1"># T(°F) = T(°C) × 1.8 + 32</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hitinn er {} í fahrenheit&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Til að sleppa við óþarflega marga aukastafi þá getum við stjórnað fjöldanum með <em>round()</em> aðgerðinni.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn hita í °C: &#39;</span><span class="p">)</span>
+<span class="n">fahrenheit</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hitinn er {}°F&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">fahrenheit</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Snúum þessu nú við og breytum °F í °C</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn hita í °F: &#39;</span><span class="p">)</span>
+<span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span> <span class="c1"># T(°C) = (T(°F) - 32) / 1.8</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hitinn er {}°C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">celsius</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Hvað ef ég slæ bókstafi inn í staðinn fyrir tölur? Prófum að slá inn &#8220;veit það ekki&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;testing.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span> <span class="c1"># T(°C) = (T(°F) - 32) / 1.8</span>
+<span class="ne">ValueError</span><span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">convert</span> <span class="n">string</span> <span class="n">to</span> <span class="nb">float</span><span class="p">:</span> <span class="s1">&#39;veit það ekki&#39;</span>
+</pre></div>
+</div>
+<p>Við fáum við villuna`ValueError` því að textinn inniheldur ekki tölur og ómögulegt að breyta honum yfir í <em>float</em>.</p>
+<p>Í Python er hægt að reyna að gera hluti og biðjast fyrirgefninar ef það tekst ekki, svokölluð <em>undantekning</em> (exception), til að koma í veg fyrir að forritið brotni ekki í sundur.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn hita í °F: &#39;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span> <span class="c1"># T(°C) = (T(°F) - 32) / 1.8</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hitinn er {}°C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">celsius</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Aðeins tölur eru leyfðar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Við getum líka bætt við <em>else</em> í lokin sem verður eingöngu keyrt ef <em>try</em> aðgerðin gengur upp:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Sláðu inn hita í °F: &#39;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1.8</span> <span class="c1"># T(°C) = (T(°F) - 32) / 1.8</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Aðeins tölur eru leyfðar&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hitinn er {}°C&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">celsius</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>En forritið okkar stöðvast ef við sláum inn bókstafi. Myndum við ekki vilja láta forritið endurtaka beiðnina um að slá inn tölur ef notandinn slær inn bókstafi?</p>
+<p>Við leysum það vandamál í kaflanum um <em>lykkjur</em></p>
+<div class="section" id="verkefni-7">
+<span id="thermo-assignment-7"></span><h2>Verkefni 7<a class="headerlink" href="#verkefni-7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Skilgreindu tvær breytur sem taka við innslætti frá notanda. Önnur breytan tekur við hita og hin tekur bókstafinn <em>C</em> eða <em>F</em>.</li>
+<li>Notaðu <em>if/else</em> til að athuga hvort eigi að breyta úr celsíus í fahrenheit eða öfugt.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../chapter3/intro.html" class="btn btn-neutral float-right" title="Dagur 3" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="and-or-conditions.html" class="btn btn-neutral" title="Ef að og eða" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
