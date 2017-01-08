@@ -181,7 +181,11 @@ ____________
 
 Markmið: Að kalla í eitt fall sem býr til gagnasafn af hitaupplýsingum með endurnýtanlegum kóða.
 
-* Skilgreindu fall sem skilar þér dagsetningunni og tímanum núna.
-* Skilgreindu fall sem velur skynjara úr lista með hlutkesti.
-* Skilgreindu fall sem býr til slembitölu sem nota má sem hitastig.
-* Skilgreindu fall sem skilar þér gagnasafni með 100 stökum af hitaupplýsingum
+* Skilgreindu fallið *finna_dags()* sem skilar þér dagsetningunni og tímanum núna.
+* Skilgreindu fallið *velja_skynjara()* sem velur skynjara úr lista með hlutkesti.
+* Skilgreindu fallið *finna_hita()* sem býr til slembitölu sem nota má sem hitastig.
+* Skilgreindu fallið *hitavel()* (hitavél) sem skilar þér gagnasafni með 100 stökum af hitaupplýsingum
+* Notaðu teljarann í lykkjunni í *hitavel()* fallinu til að setja "id" gildi á hvert hitastak
+* Safnaðu hverju hitastaki í lista í hverri lykkju.
+* *hitavel()* skal skila lista með 100 hitastökum
+

@@ -119,6 +119,27 @@ Efst í *verkefni13.py* skaltu sækja *House* klasann með *import* skipuninni. 
 Verkefni 13
 ____________
 
-* Opnaðu :ref:`thermo-assignment-12` og afritaðu kóðann í skrána *hitakerfi.py*
-* Notaðu föllin í kóðanum sem aðferðir í klasa sem þú skilgreinir
+Markmið: Búa til klasa sem hefur aðferðir til að sýsla með hitastig
+
+* Búðu til skrána *hitakerfi.py*:
+    
+    * Skilgreindu klasann *Hitakerfi* sem tekur enga færibreytu en hefur eftirfarandi:
+
+      * Eiginleikar (properties):
+
+        * dagsetning
+        * id
+        * hitastig
+        * skynjari
+
+      * Aðferðir (methods):
+
+        * reikna_fahrenheit()
+        * setja_dagsetningu()
+        * velja_skynjara()
+        * setja_id()
+        * finna_hita()
+
+          * Skoðaðu *uuid* módúluna, hún gæti nýst þér til að setja einkvæmt auðkenni á hvert hitastak.
+          
 * Í skránni *verkefni13.py* skaltu nota *import* skipunina til að sækja klasann og búa til nokkur hitastök. 

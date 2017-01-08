@@ -11,4 +11,5 @@ Kennsluefni fyrir skynjara námskeið Kóder.is
     thermo-curriculum/chapter1/intro
     thermo-curriculum/chapter2/intro
     thermo-curriculum/chapter3/intro
-    thermo-curriculum/chapter4/intro    
+    thermo-curriculum/chapter4/intro
+    thermo-curriculum/assignments
