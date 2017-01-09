@@ -31,7 +31,7 @@ Búið til nýja skrá sem heitir *verkefni5.py* og vistið hana.
     elif (xd + xb) < 32:
         print('Ríkisstjórnin er fallinn')
 
-    elif (xs + xv + xv) >= 32:
+    elif (xs + xv + xr) >= 32:
         print('Hrein vinstri stjórn')
 
     elif (xd + xa + xc) >= 32:
