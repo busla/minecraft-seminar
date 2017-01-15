@@ -175,7 +175,7 @@ Við getum einnig sett lista inn í lista.
 
     listi1 = ['Jón', 'Sámur', 'Friðrik']
     listi2 = ['Grundafjörður', 'Sigmundur Davíð', 'Drullumall']
-    listi.append(listi2)
+    listi1.append(listi2)
     print(listi1)
 
 

@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
         <link rel="up" title="Dagur 4" href="intro.html"/>
-        <link rel="next" title="Lausnir verkefna á skynjaranámskeiði" href="../assignments.html"/>
+        <link rel="next" title="Kafli 5" href="../chapter5/intro.html"/>
         <link rel="prev" title="Klasar (classes)" href="classes.html"/> 
 
   
@@ -98,6 +98,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">GPIO (Gagnapinnar)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Kafli 5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assignments.html">Lausnir verkefna á skynjaranámskeiði</a></li>
 </ul>
 </li>
@@ -151,44 +152,770 @@
             
   <div class="section" id="gpio-gagnapinnar">
 <h1>GPIO (Gagnapinnar)<a class="headerlink" href="#gpio-gagnapinnar" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo nano /boot/config.txt
-</pre></div>
-</div>
-<p>Bættu við <em>dtoverlay=w1–gpio</em> neðst í skrána.</p>
 <img alt="../../_images/gpio-pins1.png" src="../../_images/gpio-pins1.png" />
 <img alt="../../_images/gpio-pinout.png" src="../../_images/gpio-pinout.png" />
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<p>Bættu við <em>dtoverlay=w1–gpio</em> neðst í skrána.
+.. code-block:: bash</p>
+<blockquote>
+<div>$ sudo nano /boot/config.txt</div></blockquote>
+<p>Hlöðum inn tvo rekla (<em>drivers</em>) til að túlka gögnin frá skynjurunum.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">modprobe</span> <span class="n">w1</span><span class="o">-</span><span class="n">gpio</span>
+<span class="n">sudo</span> <span class="n">modprobe</span> <span class="n">w1</span><span class="o">-</span><span class="n">therm</span>
+</pre></div>
+</div>
+<p>Þegar skynjari finnst er búinn til mappa með sama nafni og auðkenni hans.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /sys/bus/w1/devices
+$ ls
+$ <span class="nb">cd</span> 28*
+$ cat w1_slave
+</pre></div>
+</div>
+<p>Brjótum þetta niður og staðfærum yfir í Python. Byrjum á að hlaða inn reklana.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="n">mod_probe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Bætum við öðru falli sem finnur skynjarann:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
 
-<span class="n">base_dir</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
-<span class="n">device_folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base_dir</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">device_file</span> <span class="o">=</span> <span class="n">device_folder</span> <span class="o">+</span> <span class="s1">&#39;/w1_slave&#39;</span>
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">read_temp_raw</span><span class="p">():</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">device_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="n">mod_probe</span><span class="p">()</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Búum til fallið <em>start()</em> sem sér um að kalla í nauðsynleg föll til að undirbúa lestur.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">))</span>
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Bætum við fallinu <em>read_sensor()</em> til að lesa af skynjaranum.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">lines</span>
 
-<span class="k">def</span> <span class="nf">read_temp</span><span class="p">():</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">read_temp_raw</span><span class="p">()</span>
-    <span class="k">while</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="o">!=</span> <span class="s1">&#39;YES&#39;</span><span class="p">:</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-        <span class="n">lines</span> <span class="o">=</span> <span class="n">read_temp_raw</span><span class="p">()</span>
-    <span class="n">equals_pos</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;t=&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">equals_pos</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">temp_string</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">equals_pos</span><span class="o">+</span><span class="mi">2</span><span class="p">:]</span>
-        <span class="n">temp_c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">temp_string</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span>
-        <span class="n">temp_f</span> <span class="o">=</span> <span class="n">temp_c</span> <span class="o">*</span> <span class="mf">9.0</span> <span class="o">/</span> <span class="mf">5.0</span> <span class="o">+</span> <span class="mf">32.0</span>
-        <span class="k">return</span> <span class="n">temp_c</span><span class="p">,</span> <span class="n">temp_f</span>
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
 
-<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">read_temp</span><span class="p">())</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">))</span>
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Bætum við fallinu <em>get_temp_from_data()</em> til að sækja hitastig úr textastrengnum sem skynjarinn skilar okkur.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum</span>
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Í listanum eru tvö sæti. Við viljum síðustu 5 tölurnar í síðara sætinu.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum</span>
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Í listanum eru tvö sæti. Við viljum síðustu 6 tölurnar í síðara sætinu.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">6</span><span class="p">:]</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum</span>
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Í listanum eru tvö sæti. Við viljum síðustu 5 tölurnar í síðara sætinu.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum</span>
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Þetta gæti orðið hættulegt því við vitum ekki hvernig tölurnar breytast. Það væri öruggara að skipta upp strengnum á <em>=</em> merkinu og sækja allt hægra meginn við merkið.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp_list</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span> <span class="c1"># Splittum strengnum á = merkinu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Sækjum síðari hlutann strengsins.</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">temp</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum</span>
+
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Sækjum celsius og fahrenheit föllinn okkar frá því í síðasta kafla og aðlögum þau að nýja kóðanum okkar.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+
+<span class="k">def</span> <span class="nf">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="k">def</span> <span class="nf">calculate_fahrenheit</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">temp</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp_list</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">temp</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum. Hitastigið er í celsius * 1000</span>
+
+    <span class="n">celsius</span> <span class="o">=</span> <span class="n">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="c1"># Deilum með 1000 til að fá rétta tölu í celsius</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">calculate_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span> <span class="c1"># Sendum rétt celsius hitastig í fahrenheit fallið til.</span>
+
+    <span class="n">db_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;fahrenheit&#39;</span><span class="p">:</span> <span class="n">fahrenheit</span><span class="p">,</span> <span class="s1">&#39;celsius&#39;</span><span class="p">:</span> <span class="n">celsius</span><span class="p">}</span> <span class="c1"># Búum til orðasafn úr gögnunum.</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">db_data</span><span class="p">)</span>
+
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Setjum dagsetningu og tíma með færslunni.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="c1"># Sækjum datetime módúluna</span>
+
+<span class="k">def</span> <span class="nf">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="k">def</span> <span class="nf">calculate_fahrenheit</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">temp</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp_list</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">temp</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum. Hitastigið er í celsius * 1000</span>
+
+    <span class="n">celsius</span> <span class="o">=</span> <span class="n">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="c1"># Deilum með 1000 til að fá rétta tölu í celsius</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">calculate_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span> <span class="c1"># Sendum rétt celsius hitastig í fahrenheit fallið til.</span>
+
+    <span class="n">db_data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;fahrenheit&#39;</span><span class="p">:</span> <span class="n">fahrenheit</span><span class="p">,</span>
+        <span class="s1">&#39;celsius&#39;</span><span class="p">:</span> <span class="n">celsius</span><span class="p">,</span>
+        <span class="s1">&#39;datetime&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="c1"># Setjum dagsetningu og tíma með færslunni.</span>
+    <span class="p">}</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">db_data</span><span class="p">)</span>
+
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Fjölmargir gagnagrunnar eru í boði til að geyma þessar upplýsingar. Í þessu verkefni munum við nota gagnagrunninn <em>TinyDB</em>. Fyrir flóknari gögn og stærra verkefni yrði æskilegra að nota öflugri grunna.</p>
+<p>Byrjum á að sækja TinyDB með <em>pip</em>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip3 install tinydb --user
+</pre></div>
+</div>
+<p>Hlöðum inn TinyDB módúlunni í kóðann okkar.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">tinydb</span> <span class="kn">import</span> <span class="n">TinyDB</span><span class="p">,</span> <span class="n">Query</span> <span class="c1"># Sækjum TinyDB módúluna</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">TinyDB</span><span class="p">(</span><span class="s1">&#39;db.json&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="k">def</span> <span class="nf">calculate_fahrenheit</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">temp</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp_list</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">temp</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="c1"># Prentum út gögn frá skynjara</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum. Hitastigið er í celsius * 1000</span>
+
+    <span class="n">celsius</span> <span class="o">=</span> <span class="n">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="c1"># Deilum með 1000 til að fá rétta tölu í celsius</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">calculate_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span> <span class="c1"># Sendum rétt celsius hitastig í fahrenheit fallið til.</span>
+
+    <span class="n">db_data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;fahrenheit&#39;</span><span class="p">:</span> <span class="n">fahrenheit</span><span class="p">,</span>
+        <span class="s1">&#39;celsius&#39;</span><span class="p">:</span> <span class="n">celsius</span><span class="p">,</span>
+        <span class="s1">&#39;datetime&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span> <span class="c1"># Breytum datetime gagnatípunni í streng.</span>
+    <span class="p">}</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">db_data</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">db_data</span><span class="p">)</span>
+
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Forritið okkar les aðeins einu sinni af skynjaranum í stað þess að lesa af honum endalaust. Lögum það.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">tinydb</span> <span class="kn">import</span> <span class="n">TinyDB</span><span class="p">,</span> <span class="n">Query</span> <span class="c1"># Sækjum TinyDB módúluna</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">TinyDB</span><span class="p">(</span><span class="s1">&#39;db.json&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="k">def</span> <span class="nf">calculate_fahrenheit</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">temp</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp_list</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">temp</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span> <span class="c1"># Nú les forritið okkar endalaust af skynjaranum.</span>
+        <span class="c1"># Prentum út gögn frá skynjara</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum. Hitastigið er í celsius * 1000</span>
+
+        <span class="n">celsius</span> <span class="o">=</span> <span class="n">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="c1"># Deilum með 1000 til að fá rétta tölu í celsius</span>
+        <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">calculate_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span> <span class="c1"># Sendum rétt celsius hitastig í fahrenheit fallið til.</span>
+
+        <span class="n">db_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;fahrenheit&#39;</span><span class="p">:</span> <span class="n">fahrenheit</span><span class="p">,</span>
+            <span class="s1">&#39;celsius&#39;</span><span class="p">:</span> <span class="n">celsius</span><span class="p">,</span>
+            <span class="s1">&#39;datetime&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span> <span class="c1"># Köstum gildinu úr datetime gagnatípunni yfir í streng.</span>
+        <span class="p">}</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="n">db_data</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">db_data</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+
+<span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -200,7 +927,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../assignments.html" class="btn btn-neutral float-right" title="Lausnir verkefna á skynjaranámskeiði" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../chapter5/intro.html" class="btn btn-neutral float-right" title="Kafli 5" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="classes.html" class="btn btn-neutral" title="Klasar (classes)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

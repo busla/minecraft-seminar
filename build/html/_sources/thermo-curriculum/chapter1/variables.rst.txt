@@ -29,7 +29,7 @@ Akkúrat. Við fáum villu því að breyturnar *tala* og *texti* geyma ekki sam
 Breytum tölu í streng og prentum út. Notum aðgerðina *print()* í seinni aðgerðinni.
 
 >>> str(tala) + texti
-5Ég heiti Jón.
+Ég heiti Jón.
 
 >>> print(str(tala) + texti)
 

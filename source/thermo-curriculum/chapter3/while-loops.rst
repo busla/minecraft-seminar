@@ -3,7 +3,7 @@
 While lykkjur
 ==============
 
-lykkjur eru aðgerðir sem við notum til að fara yfir lista, orðasöfn eða aðra hluti sem geyma safn af gögnum sem við viljum nálgast. Ef við þyrftum t.d. að leita að nafni í símaskránni þá myndum við eflaust nota lykkjur. Einnig er hægt að nota lykkjur sem endurtaka sig þar til einhverju skilyrði er mætt.
+Lykkjur eru aðgerðir sem við notum til að fara yfir lista, orðasöfn eða aðra hluti sem geyma safn af gögnum sem við viljum nálgast. Ef við þyrftum t.d. að leita að nafni í símaskránni þá myndum við eflaust nota lykkjur. Einnig er hægt að nota lykkjur sem endurtaka sig þar til einhverju skilyrði er mætt.
 
 Oftast notum við tvær tegundir af lykkjum, *while* eða *for* lykkjur. Í þessum kafla förum við í *while* lykkjur.
 
