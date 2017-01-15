@@ -31,7 +31,7 @@ Hlöðum inn tvo rekla (*drivers*) til að túlka gögnin frá skynjurunum.
     $ cat w1_slave
 
 
-Brjótum þetta niður og staðfærum yfir í Python. Byrjum á að hlaða inn reklana.
+Brjótum þetta niður og staðfærum yfir í Python. Búðu til skrána *verkefni14.py* og byrjum á að hlaða inn reklana.
 
 .. code-block:: python
     

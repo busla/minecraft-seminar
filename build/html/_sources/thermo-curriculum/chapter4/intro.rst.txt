@@ -10,3 +10,4 @@ Dagur 4
     functions
     classes
     gpio
+    tinydb

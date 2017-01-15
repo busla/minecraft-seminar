@@ -9,3 +9,4 @@ Verkefni á skynjaranámskeiði Kóder.is.
 
     assignments/verkefni12
     assignments/verkefni13
+    assignments/verkefni14

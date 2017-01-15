@@ -25,7 +25,6 @@ def calculate_fahrenheit(temp=None):
 def get_temp_from_data(data):
     temp_list = data[1].split('=')
     temp = temp_list[1]
-    print(temp)
     return temp
 
 # Lesa af skynjara

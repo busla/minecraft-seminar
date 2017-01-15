@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Verkefni 14 - lausn &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Lausnir verkefna á skynjaranámskeiði" href="../assignments.html"/>
+        <link rel="prev" title="Verkefni 13 - lausn" href="verkefni13.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../about.html">Um námskeiðið</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter1/intro.html">Dagur 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter2/intro.html">Dagur 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter3/intro.html">Dagur 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter4/intro.html">Dagur 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter5/intro.html">Kafli 5</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../assignments.html">Lausnir verkefna á skynjaranámskeiði</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="verkefni12.html">Verkefni 12 - lausn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="verkefni13.html">Verkefni 13 - lausn</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Verkefni 14 - lausn</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../thermo-curriculum.html">Skynjarar</a> &raquo;</li>
+      
+          <li><a href="../assignments.html">Lausnir verkefna á skynjaranámskeiði</a> &raquo;</li>
+      
+    <li>Verkefni 14 - lausn</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/thermo-curriculum/assignments/verkefni14.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="verkefni-14-lausn">
+<span id="thermo-assignment-14-solution"></span><h1>Verkefni 14 - lausn<a class="headerlink" href="#verkefni-14-lausn" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">tinydb</span> <span class="kn">import</span> <span class="n">TinyDB</span><span class="p">,</span> <span class="n">Query</span> <span class="c1"># Sækjum TinyDB módúluna</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">TinyDB</span><span class="p">(</span><span class="s1">&#39;db.json&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1000.0</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="k">def</span> <span class="nf">calculate_fahrenheit</span><span class="p">(</span><span class="n">temp</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">temp</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">temp</span> <span class="o">*</span> <span class="mf">1.8</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">return</span> <span class="bp">None</span>
+
+<span class="c1"># Sækja hitastig úr gögnum</span>
+<span class="k">def</span> <span class="nf">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">temp_list</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">temp</span>
+
+<span class="c1"># Lesa af skynjara</span>
+<span class="k">def</span> <span class="nf">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+<span class="c1"># Finna af skynjara</span>
+<span class="k">def</span> <span class="nf">find_sensor</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="s1">&#39;/sys/bus/w1/devices/&#39;</span>
+    <span class="n">data_file</span> <span class="o">=</span> <span class="s1">&#39;w1_slave&#39;</span>
+
+    <span class="k">if</span> <span class="n">sensor_id</span><span class="p">:</span>
+        <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">sensor_id</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="s1">&#39;28*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Enginn skynjari fannst!&#39;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sensor</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">data_file</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor</span>
+
+
+<span class="c1"># Hlaða inn rekla</span>
+<span class="k">def</span> <span class="nf">mod_probe</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-gpio&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;modprobe w1-therm&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">mod_probe</span><span class="p">()</span>
+    <span class="c1">#sensor = find_sensor(&#39;28-0000058e596b&#39;)</span>
+    <span class="n">sensor</span> <span class="o">=</span> <span class="n">find_sensor</span><span class="p">()</span>
+
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="c1"># Prentum út gögn frá skynjara</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">read_sensor</span><span class="p">(</span><span class="n">sensor</span><span class="p">)</span> <span class="c1"># Setja gögn frá skynjara í breytu</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">get_temp_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Sækja hitastig úr gögnum. Hitastigið er í celsius * 1000</span>
+
+        <span class="n">celsius</span> <span class="o">=</span> <span class="n">calculate_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="c1"># Deilum með 1000 til að fá rétta tölu í celsius</span>
+        <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">calculate_fahrenheit</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span> <span class="c1"># Sendum rétt celsius hitastig í fahrenheit fallið til.</span>
+
+        <span class="n">db_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;fahrenheit&#39;</span><span class="p">:</span> <span class="n">fahrenheit</span><span class="p">,</span>
+            <span class="s1">&#39;celsius&#39;</span><span class="p">:</span> <span class="n">celsius</span><span class="p">,</span>
+            <span class="s1">&#39;datetime&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span> <span class="c1"># Breytum datetime gagnatípunni í streng.</span>
+        <span class="p">}</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="n">db_data</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">db_data</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+
+<span class="n">start</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="verkefni13.html" class="btn btn-neutral" title="Verkefni 13 - lausn" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
