@@ -6,7 +6,13 @@ Keyrðu hitaforritið úr *verkefni14* og láttu það ganga í dágóðan tíma
 
 Búðu til skrána *verkefni15.py*. Í henni munum við skrifa kóða til að sækja gögn úr grunninum.
 
+Áður en við byrjum skulum við sækja TinyDB sem er gagnagrunnurinn sem við munum nota.
 
+.. code-block:: python
+
+    pip install tinydb --user
+
+    
 Byrjum á að sækja allar færslur:
 
 .. code-block:: python

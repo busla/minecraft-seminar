@@ -2,9 +2,13 @@
 
 from flask import Flask, jsonify
 from tinydb import TinyDB
+from flask_cors import CORS, cross_origin
+
 
 
 app = Flask(__name__)
+CORS(app)
+
 db = TinyDB('db.json')
 
 @app.route('/entries')
