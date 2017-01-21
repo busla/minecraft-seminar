@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Innbyggð Verkfæri og DOM &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur fjögur" href="intro.html"/>
+        <link rel="next" title="Dagur fimm" href="../day5/intro.html"/>
+        <link rel="prev" title="Föll, hlutir og listar" href="functionsnstuff.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../webdesign-curriculum.html">Vefhönnun</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur eitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day2/intro.html">Dagur tvö</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur þrjú</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur fjögur</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hvaderjs.html">Hvað er Javascript?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variablesnstuff.html">Breytur, lykkjur og flæði</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functionsnstuff.html">Föll, hlutir og listar</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Innbyggð Verkfæri og DOM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dom-saekja-gogn">DOM Sækja gögn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dom-breyta-gognum">DOM Breyta gögnum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dom-bua-til-tog">DOM búa til tög</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur fimm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/intro.html">Efni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects.html">Verkefni á vefhönnunarnámskeið</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../webdesign-curriculum.html">Vefhönnun</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur fjögur</a> &raquo;</li>
+      
+    <li>Innbyggð Verkfæri og DOM</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/webdesign-curriculum/day4/innbyggdverkfaeri.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="innbygg-verkfaeri-og-dom">
+<h1>Innbyggð Verkfæri og DOM<a class="headerlink" href="#innbygg-verkfaeri-og-dom" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dom-saekja-gogn">
+<h2>DOM Sækja gögn<a class="headerlink" href="#dom-saekja-gogn" title="Permalink to this headline">¶</a></h2>
+<p>DOM stendur fyrir Document Object Modeling. Í stuttum samandrætti er DOM það sem þú notar í Javascript til sækja gögn frá síðunni þinni til að breya þeim, eða bæta við gögnum á síðuna þína og margt fleirra. Í fyrstu munum við fara yfir hvernig við sækjum gögn. Gefum okkur það að html kóðinn okkar hérna fyrir neðan er síðan okkar. Við ætlum að breyta textanum sem er í h1 taginu, við bætum við id á hann sem heitir header og það gerir okkur kleyft að finna hann mjög auðveldlega í javascript.</p>
+<p><em>HTML</em></p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Námskröfur<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;header&quot;</span><span class="p">&gt;</span> Koder.is <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><em>Javascript</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//geymum upplýsingar um tagið í breytunni tag</span>
+<span class="kd">var</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">);</span>
+<span class="nx">tag</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Koder.com&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Þið ættuð öll að þekkja hvernig html skjalið virkar, en nú eru komnir eitthvað nýtt í Javascript skjalið. Það fyrsta sem þið takið eftir er document.getElementById() alltaf þegar þú ætlar að nota eitthverja DOM skipun verður fyrst að kalla í document. Svo komum við að skipuninni getElementById sem sækjir tag sem hefur idið sem þú setur á milli svigana. Þá myndi þessi kóði sækja tagið h1 sem hefur ideið header. Þá erum við að geyma upplýsingar um tagið h1 í breytunni tag, þá getum við byrjað að vinna með tagið, ef við gerum tag.innerHTML = eitthver texti þá getum við breytt textanum sem er geymdur inni í taginu. Hann myndi þá breytast frá &#8220;Koder.is&#8221; í &#8220;Koder.com&#8221;.</p>
+<p>Næsta aðferð sem við ætlum að nota til að sækja gögn er document.getElementsByTagName sem sækjir upplýsingar um öll tög af einhverju tagi. Þetta myndi skila sér til baka sem lista þannig við gætum unnið með mörg gögn í einu. Sem er mjög hentugt til að breyta classa eða texta af eitthverjum sérstökum tögum.</p>
+<p><em>HTML</em></p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Námskröfur<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Texti 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Texti 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Texti 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Texti 4<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><em>Javascript</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">// Breytan tog geymir upplýsingar um öll li töginn</span>
+<span class="kd">var</span> <span class="nx">tog</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">tog</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">tog</span><span class="p">[</span><span class="nx">a</span><span class="p">].</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Breyttum öllum textanum&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Fyrst í Javascript kóðanum sækjum við öll tög af tegundunni li, með skipununni getElementsByTagName. Það sækjir öll tög og skilar þeim sem lista, sama þótt það sé bara eitt tag. Svo keyrist for loopa sem fer í gegnum öll stök í listanum og breytir textanum þeirra með innerHTML. Takið eftir því að maður þarf fyrst að finna stakið með tog[] og í svigunum númerið á stakinu.</p>
+<p>Síðasta skipunin í DOM sem við ætlum að nota til að sækja gögn er document.getElementsByClassName, það sækjir öll tög sem hafa einhvern css klassa fastan við sig. Það mun líka skila gögnunum sem lista og þörfum við að meðhöndla þau þannig. Þetta virka mjög líkt og getElementsByTagName fyrir utan að það sækjir eftir klössum.</p>
+<p><em>HTML</em></p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Námskröfur<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span> Halló Heimur <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span> Halló Heimur <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span> Halló Heimur <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span> Halló Heimur <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><em>Javascript</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tog</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">tog</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">tog</span><span class="p">[</span><span class="nx">a</span><span class="p">].</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Box númer &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Javascript kóðin fyrir ofan sækjir öll tög sem eru með klassan main og geymir þau í lista í breytunni tog. Svo keyrist for lykkja sem fer frá null og í lengdina á listanum tog. Í hvert skifti sem hún keyrir breytir hún einum af stökunum í listanum tog, og breytir textanum í stakinu í &#8220;Box númer &#8221; og númerið á for lykkjunni.</p>
+</div>
+<div class="section" id="dom-breyta-gognum">
+<h2>DOM Breyta gögnum<a class="headerlink" href="#dom-breyta-gognum" title="Permalink to this headline">¶</a></h2>
+<p><strong>innerHTML</strong></p>
+<p>Í öllum sýni dæmunum fyrir ofan erum við alltaf að nota innerHTML, en hvað gerir það? Það sækjir textan sem er inni í taginu, svo getur þú unnið úr upplýsingunum eða jafnvel breytt þeim. innerHTML er eiginleiki.</p>
+<p><em>innerHTML Dæmi</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Sækjum tagið</span>
+<span class="kd">var</span> <span class="nx">tog</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">);</span>
+
+<span class="c1">//Skrifum út textan sem er inni í taginu</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tog</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+
+<span class="c1">//Breytum textanum inni í taginu</span>
+<span class="nx">tog</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Breyttur texti&quot;</span><span class="o">:</span>
+</pre></div>
+</div>
+<p><strong>className</strong></p>
+<p>className er eiginleiki sem er hægt að kalla á til að sækja upplýsingar um klassana sem eru tengdir við tagið, og líka til að breyta þeim. Þá geturu skoðað hvort eitthvað tag hefur klassa, þú getur breytt klassa eða jafnvel bætt klassa við annan klassa.</p>
+<p><em>className</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//sækjum tagið</span>
+<span class="kd">var</span> <span class="nx">tog</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">);</span>
+
+<span class="c1">//skrifar út klassa sem eru tengdir taginu</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tog</span><span class="p">.</span><span class="nx">className</span><span class="p">);</span>
+
+<span class="c1">//Bætir klassanum flott við tagið</span>
+<span class="nx">tag</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s2">&quot;flott&quot;</span><span class="p">;</span>
+
+<span class="c1">//Segir að klassarnir séu bara þeir sem eru á milli gæsalappanna</span>
+<span class="nx">tag</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&quot;h1 d22 gulur&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><strong>id</strong></p>
+<p>id er eiginleiki sem hægt er að kalla á til að sækja upplýsingar um idið sem tagið er með og líka breyta því.</p>
+<p><em>id</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Sækjir tagið</span>
+<span class="kd">var</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">);</span>
+
+<span class="c1">//skrifar út idið sem tagið header breytan tag er með</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tag</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+<span class="c1">//breytir idinu í rkv</span>
+<span class="nx">tag</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">&quot;rkv&quot;</span><span class="p">;</span>
+
+<span class="c1">//Takið eftir ef þessi kóði myndi keyra aftur myndi hann ekki virka,</span>
+<span class="c1">//því þá myndi hann sækja í header id og ekkert myndi skilast</span>
+</pre></div>
+</div>
+<p><strong>addEventListener</strong></p>
+<p>addEventListener er eiginleiki sem þú getur bætt við tagið þitt, það bætir við event listener, sem hlustar á eitthvað gerast. Því þetta getur orðið smá flókið ætlum við bara að læra á einn hlut sem það getur hlustað eftir. Það er Click, semsagt þetta mun bíða og hlusta þangað til eitthver klikkar á tagið ef svo gerist keyrir hann fall sem er innan í.</p>
+<p><em>addEventListener</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Sækjir tagið</span>
+<span class="kd">var</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">);</span>
+
+<span class="c1">//bætir addEventListener á tagið</span>
+<span class="nx">tag</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Núna í hvert skifti sem það er klikkað á tagið mun það skrifa út tvær línur. Það mun skrifa this.innerHTML þá er this að benda á hlutinn sem var klikkað á sem er tagið. Þá mun það skrifa út textan sem er í taginu, og idið sem tagið er með.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Bæta við mun fleirri DOM properties
+Veit ekki alveg hver ég á að velja</p>
+</div>
+</div>
+<div class="section" id="dom-bua-til-tog">
+<h2>DOM búa til tög<a class="headerlink" href="#dom-bua-til-tog" title="Permalink to this headline">¶</a></h2>
+<p>Í Javascript þarftu ekki alltaf að sækja tilbúin tög, heldur getur þú búið til þín eigin tög. Eftir að þú býrð til þitt eigið tag mun það ekki hafa neitt þannig þú þarft að gefa því klassa, texta og allt sem það þarf til að virka. Það er kóði sem mun allur skrifast í Javascript. Eftir að þú ert búin að láta tagið fá allt sem það þarf, þurfum við að setja það á síðuna, Þá finnum við tagið sem það á að vera í og setjum það inn í tagið. Hérna fyrir neðan verða betri útskýringar um hvernig við bætum því við</p>
+<p><em>Búa til tög dæmi</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Býr til tagið div</span>
+<span class="kd">var</span> <span class="nx">tag</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+
+<span class="c1">//Bæti við klassa og texta</span>
+<span class="nx">tag</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Þetta er div&quot;</span><span class="p">;</span>
+<span class="nx">tag</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&quot;div3&quot;</span><span class="p">;</span>
+
+<span class="c1">//Ná í tag sem er með id body</span>
+<span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">);</span>
+
+<span class="c1">//Setjum tagið inn í body tagið</span>
+<span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">tag</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Fyrsta sem við gerum er að búa til breytu tag sem geymir gildin af nýju tagi af tegundinni div. Skipunin document.createElement() býr til nýtt tag af tegundinni sem þú setur inn í svigana. Eftir að við búum til tagið bætum við texta og klassa í það. Svo sækjum við annað tag sem er með &#8220;body&#8221; id. Svo notum við appendChild skipunina sem öll tög hafa. Semsagt ef þú vilt setja eitthvað tag inn í vefsíðuna verður hún að vera á milli einhverja stærra taga. Svo þú finnur tagið sem þú vilt að haldi utanum þitt tag og bætir við taginu sem child þar inn.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">Ruglandi útskýringar, þarf betra</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../day5/intro.html" class="btn btn-neutral float-right" title="Dagur fimm" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="functionsnstuff.html" class="btn btn-neutral" title="Föll, hlutir og listar" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

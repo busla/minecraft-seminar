@@ -29,6 +29,7 @@ Prentum út allar færslur línu fyrir línu.
     for item in db.all():
         print(item)
 
+
 Sækjum færslur sem standast samanburðarfullyrðingar.
 
 .. code-block:: python

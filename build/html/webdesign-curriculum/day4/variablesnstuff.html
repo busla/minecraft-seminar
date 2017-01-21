@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Breytur, lykkjur og flæði &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur fjögur" href="intro.html"/>
+        <link rel="next" title="Föll, hlutir og listar" href="functionsnstuff.html"/>
+        <link rel="prev" title="Hvað er Javascript?" href="hvaderjs.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../webdesign-curriculum.html">Vefhönnun</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur eitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day2/intro.html">Dagur tvö</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur þrjú</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur fjögur</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hvaderjs.html">Hvað er Javascript?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Breytur, lykkjur og flæði</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hva-er">Hvað er ;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breytur">Breytur</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tolu-reikningar">Tölu Reikningar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#strengja-vinnsla">Strengja vinnsla</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#if-else-if-else">if, else if, else</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#for-lykkjur">for lykkjur</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="functionsnstuff.html">Föll, hlutir og listar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="innbyggdverkfaeri.html">Innbyggð Verkfæri og DOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur fimm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/intro.html">Efni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects.html">Verkefni á vefhönnunarnámskeið</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../webdesign-curriculum.html">Vefhönnun</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur fjögur</a> &raquo;</li>
+      
+    <li>Breytur, lykkjur og flæði</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/webdesign-curriculum/day4/variablesnstuff.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="breytur-lykkjur-og-flaei">
+<h1>Breytur, lykkjur og flæði<a class="headerlink" href="#breytur-lykkjur-og-flaei" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hva-er">
+<h2>Hvað er ;<a class="headerlink" href="#hva-er" title="Permalink to this headline">¶</a></h2>
+<p>Semíkomma eða Semicolon á Ensku, er notað til að seigja forritunar þýðaranum, eða þá tölvunni hvenær lína endar. Þegar þú skilgreinir breytu, kallar í verkfæri eða reiknar og margt fleirra setur maður alltaf semíkommu eftir á. Þegar þú býrð til aðferð sjálfur þarftu tildæmis ekki að setja semíkommu, þetta lærist allt með tímanum, en er minna vandamál.</p>
+<p>Hvernig væri hægt að skrifa kóða</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Hérna veit talvan hvenær hver lína endar og leyfir þetta því</span>
+<span class="c1">//Þetta er samt ekki flottur kóði</span>
+<span class="kd">var</span> <span class="nx">tala</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">tala</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">tala</span> <span class="o">=</span> <span class="nx">tala</span> <span class="o">+</span> <span class="nx">tala</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tala</span><span class="p">);</span>
+
+<span class="c1">//Venjulega myndi hann vera svona</span>
+<span class="kd">var</span> <span class="nx">tala</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">tala</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">tala</span> <span class="o">=</span> <span class="nx">tala</span> <span class="o">+</span> <span class="nx">tala</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tala</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="breytur">
+<h2>Breytur<a class="headerlink" href="#breytur" title="Permalink to this headline">¶</a></h2>
+<p>Breytur eru hlutir sem geyma upplýsingar, tildæmis texta eða tölu og margt fleirra. Til að nota breytu kallar maður í nafn hennar og fær þá upplýsingar sem breytan geymir. Þú munt alltaf nota breytur, án þeirra væri mjög erfitt að skrifa kóða. Svo getur maður notað breytur á hrikalega marga hætti.</p>
+<p><strong>Breytu Dæmi</strong></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tala</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">texti</span> <span class="o">=</span> <span class="s2">&quot;32&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">Sannyrði</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>var &#8220;Nafn breytu&#8221; = &#8220;Gildi breytunnar&#8221;;</p>
+<p>Hérna fyrir ofan erum við með þrár breytur, til að skilgreina breytu í Javascript skrifar maður &#8220;var&#8221; svo nafn breytunar og hvað hún geymir. Fyrsta breytan í dæminu fyrir ofan geymir tölu eða int á ensku og þarf ekkert meir en að skrifa töluna sem hún geymir. Önnur breytan geymir texta eða string á ensku og til að segja breytuni að þetta sé texti geriru einfaldar gæsalappir í kringum textan eða tvöfaldar gæsalappir. Þriðja breytan geymir Sannyrði eða Bool á ensku, Sannyrði er annaðhvort true eða false og er mjög nothæf tengund af breytu. Breytur geta líka geymt marga hluti í einu og helling af öðrum hlutum sem við munum fara betur í á eftir.</p>
+<p><strong>Verkefni 1</strong></p>
+<p>Prufiði að búa til nokkrar breytur með texta, tölu og sannyrði. Nefnið þau viðeigandi.</p>
+</div>
+<div class="section" id="tolu-reikningar">
+<h2>Tölu Reikningar<a class="headerlink" href="#tolu-reikningar" title="Permalink to this headline">¶</a></h2>
+<p>Reikningur er mjög einfaldur hlutur í Javascript. Skellum okkur beint í dæmi.</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">plus</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// breytan geymir töluna 10</span>
+<span class="kd">var</span> <span class="nx">minus</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// breytan geymir töluna 2</span>
+<span class="kd">var</span> <span class="nx">sinnum</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// breytan geymir töluna 25</span>
+<span class="kd">var</span> <span class="nx">deiling</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">/</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// breytan geymir töluna 5</span>
+<span class="kd">var</span> <span class="nx">afgangur</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">%</span> <span class="mi">9</span><span class="p">;</span> <span class="c1">// breytan afgangur geymir afganginn á 20 / 9 sem er 2</span>
+</pre></div>
+</div>
+<p>Hérna erum við komin með fimm breytur, þið hafið notað flest þessi merki áður fyrir utan kannski &#8220;%&#8221; sem er modulus á ensku. Það er notað til að finna afgang á deilingu. Þú getur líka reiknað með breytum. Eins og er sýnt hér í dæminu fyrir neðan.</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//skilgreind breyta sem geymir tölunar 5</span>
+<span class="kd">var</span> <span class="nx">tala</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="c1">//Allir þessir reikningar myndu virka einsog í dæminu fyrir ofan</span>
+<span class="kd">var</span> <span class="nx">plus</span> <span class="o">=</span> <span class="nx">tala</span> <span class="o">+</span> <span class="nx">tala</span><span class="p">;</span> <span class="c1">// breytan geymir töluna 10</span>
+<span class="kd">var</span> <span class="nx">minus</span> <span class="o">=</span> <span class="nx">tala</span> <span class="o">-</span> <span class="nx">tala</span><span class="p">;</span> <span class="c1">// breytan geymir töluna 0</span>
+<span class="kd">var</span> <span class="nx">sinnum</span> <span class="o">=</span> <span class="nx">tala</span> <span class="o">*</span> <span class="nx">tala</span><span class="p">;</span> <span class="c1">// breytan geymir töluna 25</span>
+<span class="kd">var</span> <span class="nx">deiling</span> <span class="o">=</span> <span class="nx">tala</span> <span class="o">/</span> <span class="nx">tala</span><span class="p">;</span> <span class="c1">// breytan geymir töluna 1</span>
+<span class="kd">var</span> <span class="nx">afgangur</span> <span class="o">=</span> <span class="nx">tala</span> <span class="o">%</span> <span class="nx">tala</span><span class="p">;</span> <span class="c1">// breytan geymir 0 því enginn afgangur er á deilingunni 5 deilt með 5</span>
+</pre></div>
+</div>
+<p>Það er líka hægt að nota breytur til að reikna með. Hérna fyrir ofan skilgreinum við breytu með gildið 5 og notum hana til að reikna og geymum svo útkomuna í aðrari breytu.</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Styttri leiðir</span>
+<span class="kd">var</span> <span class="nx">tala</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">tala</span> <span class="o">=</span> <span class="nx">tala</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//Geymir sjálfan sig plús ein</span>
+<span class="nx">tala</span><span class="o">++</span><span class="p">;</span> <span class="c1">//Þæginlegri aðferð til að bæta einum við</span>
+<span class="nx">tala</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span> <span class="c1">//Bætir 20 við breytuna tala</span>
+<span class="c1">//Þetta er hægt með öll önnur merki þegar reiknað er starfræði í Javascript</span>
+<span class="c1">//Takið eftir að það er = fyrir aftan þannig breytan tala mun geyma útkomuna</span>
+<span class="nx">tala</span> <span class="o">-=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="nx">tala</span> <span class="o">*=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">tala</span> <span class="o">/=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="nx">tala</span> <span class="o">%=</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Hérna fyrir ofan eru sýndar nokkrar styttri leiðir til að reikna og vinna með tölur í Javascript. Þetta eru flest allt betri leiðir til að skrifa kóðan þinn því þá styttist hann og verður lesanlegri.</p>
+<p>Útskrift tölu</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tala1</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">tala2</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tala1</span> <span class="o">+</span> <span class="nx">tala2</span><span class="p">);</span> <span class="c1">//skrifar út summu talnanna</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">((</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">25</span> <span class="o">-</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Verkefni 1</strong></p>
+<p>Búðu til tvær tölu breytur og skrifaðu út margfeldi þeirra</p>
+<p><strong>Verkefni 2</strong></p>
+<p>Búðu til þrjár tölu breytur, geymdu summu þeirra í breytu af nafninu heild. Skrifaðu svo út gildi breytunnar heild.</p>
+<p><strong>Verkefni 3</strong></p>
+<p>Búðu til tvær tölu breytur með gildinn 274 og 29. Skrifaðu út afganginn af deilingunni 274/29.</p>
+</div>
+<div class="section" id="strengja-vinnsla">
+<h2>Strengja vinnsla<a class="headerlink" href="#strengja-vinnsla" title="Permalink to this headline">¶</a></h2>
+<p>Strengja vinnsla er ekki flókin í byrjun en getur orðið það fljótt. Til að líma tvo strengi saman geriru einfaldlega + merki á milli. Í flestum túngumálum gæti maður ekki plúsað saman streng og tölu en því Javascript er mjög sveiganlegt túngumál geturu gert það. Þá verður talan bara einfaldlega strengur.</p>
+<p>Með console.log() skipuninni geturu skrifað út strengi og tölur, og getur líka sameinað þá inní verkfærinu sjálfu.</p>
+<p>Dæmi um Strengja vinnslu</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Allt þetta skrifar út það sama bara á mismunandi hátt</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Ég er &quot;</span> <span class="o">+</span> <span class="mi">15</span> <span class="o">+</span> <span class="s2">&quot; ára gamall&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">texti1</span> <span class="o">=</span> <span class="s2">&quot;Ég er &quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">texti2</span> <span class="o">=</span> <span class="s2">&quot; ára gamall&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">aldur</span> <span class="o">=</span> <span class="s2">&quot;15&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">texti1</span> <span class="o">+</span> <span class="nx">aldur</span> <span class="o">+</span> <span class="nx">texti2</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">heild</span> <span class="o">=</span> <span class="nx">texti1</span> <span class="o">+</span> <span class="nx">aldur</span> <span class="o">+</span> <span class="nx">texti2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">heild</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Verkefni 1</strong></p>
+<p>Búðu til strengja breytu sem geymir gildið &#8220;Halló heimur!&#8221;, skrifaðu gildi breytunnar svo út.</p>
+<p><strong>Verkefni 2</strong></p>
+<p>Búðu til tvær strengja breytur og eina tölu breytu. Fyrsta strengja breytan inniheldur &#8220;Ég á afmæli &#8221;. Seinni strengja breytann inniheldur mánuðinum sem þú á afmæli á. Tölu breytan geymir dagin sem þú átt afmæli. Sameinaðu allar þessar breytur í fjórðu breytuna og skrifaðu svo gildi hennar út.</p>
+</div>
+<div class="section" id="if-else-if-else">
+<h2>if, else if, else<a class="headerlink" href="#if-else-if-else" title="Permalink to this headline">¶</a></h2>
+<p>if, else if og else eru skipanir sem þú notar til að tékka hvort eitthver skilirði séu sönn eða ósönn. Flæði þessara skipana er mjög einfalt, ef þú gerir if setningu geturu gert else if eða else skipun eftirá þannig ef fyrsta if setninginn skilar satt þá munu hinar ekki keyra og koll af kolli. Og ef fyrsta skilar ósatt mun næsta keyrast þangað til eitthver skipun skilar satt. Ef allar skipanirnar skila ósatt er hægt að setja else skipun sem mun alltaf keyra ef hinar skila allar ósatt.</p>
+<p>Dæmi um if, else if og else skipanir</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tala</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">tala</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;talan er 1&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">tala</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;talan er 2&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">tala</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;talan er 3&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;talan er ekki 1, 2 eða 3&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hérna í dæminu fyrir ofan köllum við í skipunina if. Eftir að við köllum á skipunina if gerum við sviga og inn í hann skilirðin. Svo slaufu sviga og inn í þá það sem mun gerast ef skilirðin eru rétt. Þegar þú notar þessar skipanir þarftu ekki að setja semíkommu, nema innan í skipununni sjálfri.</p>
+<p><strong>Hérna eru dæmi um vennslavirki/skilirði</strong></p>
+<p><em>&#8220;==&#8221;</em> -Ef hlutirnir eru jafnir</p>
+<p><em>&#8221;!=&#8221;</em> -Ef hlutirnir eru ekki jafnir</p>
+<p><em>&#8220;===&#8221;</em> -Ef hlutirnir eru jafnir og sama breytu týpa</p>
+<p><em>&#8220;&lt;&#8221;</em> -Ef fyrsti hluturinn er minni en seinni hluturinn</p>
+<p><em>&#8220;&gt;&#8221;</em> -Ef fyrsti hluturinn er stærri en seinni hluturinn</p>
+<p><em>&#8220;&lt;=&#8221;</em> -Ef fyrsti hluturinn er minni eða jafnt og seinni hluturinn</p>
+<p><em>&#8220;&gt;=&#8221;</em> -Ef fyrsti hluturinn er stærri eða jafnt og seinni hluturinn</p>
+<p>Dæmi um hvernig nokkrir vennslavirkjar virka</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tala1</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">tala2</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">Sannyrði</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">strengur</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">strengur</span> <span class="o">==</span> <span class="s2">&quot;Hello&quot;</span><span class="p">){</span>
+        <span class="c1">//Mun keyrast</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">Sannyrði</span><span class="p">){</span>
+        <span class="c1">//Mun keyrast</span>
+        <span class="c1">//Ef þú setur ! fyrir framan breytu með Sannyrði þíðir það ef hann er false</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">tala1</span> <span class="o">==</span> <span class="s2">&quot;5&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//Keyrist því þetta er sama gildi</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">tala1</span> <span class="o">===</span> <span class="s2">&quot;5&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//Keyrist ekki því það hefur ekki sömu breytutýpu</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">tala1</span> <span class="o">&lt;</span> <span class="nx">tala2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//Keyrist því tala2 er stærri en tala1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Verkefni 1</strong></p>
+<p>Búið til tvær tölu breytur, notiði if skipanir til að kíkja hver af þeim er stærri, og ef þær eru jafnar.</p>
+<p><strong>Verkefni 2</strong></p>
+<p>Búið til breytu með Sannyrði, notiði if skipanir til að finna út hvort hún sé sönn eða ósönn, skrifið þið svo út niðurstöðurnar.</p>
+<p><strong>Verkefni 3</strong></p>
+<p>Búið til þrjár tölu breytur, notiði if skipanir til að kíkja hvaða tala er hæst af þeim, gerið ykkur grein fyrir að það sé hægt að breyta tölunum en forritið mun alltaf þurfa skila réttri niðurstöðu.</p>
+</div>
+<div class="section" id="for-lykkjur">
+<h2>for lykkjur<a class="headerlink" href="#for-lykkjur" title="Permalink to this headline">¶</a></h2>
+<p>for lykkjur eða for loops sem það heitir á ensku, er skipun sem þið notið til að endurtaka einhvern kóða. Seigjum svo að þú viljir skrifa hundrað sinnum út einhvern texta, myndiru ekki handskrifa það heldur myndiru gera for lykkju. Í for lykkjum eru fjórir breytanlegir hlutir, á hvaða tölu byrjaru, á hvaða tölu endaru, skilirðin og hversu mikið bætist við eftir hverja keyrslu. Eins og með if skipanirnar þá skrifaru kóðan sem þú vilt að keyrist inni í for lykkjunni. Alltaf að reyna passa sig að gera ekki for lykkju sem keyrir endalaust.</p>
+<p>Dæmi um hvernig for lykkja sem keyrir 10 sinnum myndi virka</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span> <span class="c1">//kóðinn sem mun skrifast í hvert skifti</span>
+<span class="p">}</span><span class="c1">// &lt;- Þarft ekki að setja semíkommu</span>
+</pre></div>
+</div>
+<p>Þessi for lykkja keyrir 10 sinnum, maður byrjar á því að skilgreina breytu með byrjunargildinu, Svo hver skilirðinn eru þarna eru þau að forritið mun keyra á meðan a er minna eða jafnt og 10, 10 er þá endatalann. Svo síðast skrifaru hversu mikið bætist við a í hvert skifti, þarna bætum við bara einn við.</p>
+<p>Dæmi um hvernig öfug for lykkja sem keyrir 10 sinnum myndi virka</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Þessi lykkja gerir nákvamlega sama og lykkjan fyrir ofan fyrir utan það að hún keyrist öfugt og skrifar tvær línur 10 sinnum. Breytan sem þú skilgreinir í byrjun er oft notaður sem teljari og getur þú prentað hann út og vitað þá hvar þú ert, eða notað töluna á einhverjann hátt.</p>
+<p>Dæmi um hvernig þú myndir skrifa tölu frá 1 uppí 1000</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;=</span> <span class="mi">1000</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hérna erum við með for lykkju sem keyrir frá einum uppí þúsund, í hvert skifti sem hún keyrir mun hún prenta út breytuna a sem fer hækkandi.</p>
+<p>Dæmi um hvernig þú reiknar veldi með for lykkju</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tala</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">summa</span> <span class="o">=</span> <span class="nx">tala</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">){</span> <span class="c1">//for lykkjan keyrir 2 sinnum</span>
+        <span class="nx">summa</span> <span class="o">*=</span> <span class="nx">tala</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">summa</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Hérna keyrir þessi for loopa 2 sinnum, og í hvert skift margfaldar breytuna summa með breytunni tala, þetta forrit myndi setja breytuna tala í 3 veldi. Því þetta myndi reikna fyrst 5*5, svo í næsta 25*5, og skrifa svo útkomuna sem myndi verða 125. Svo gætir þú breytt endatölunni í hvaða veldi sem er og breytt breytunni tala í hvaða tölu þú vilt setja í veldi.</p>
+<p><strong>Verkefni 1</strong></p>
+<p>Búiði til for lykkju sem skrifar út &#8220;Hello world&#8221; 50 sinnum.</p>
+<p><strong>Verkefni 2</strong></p>
+<p>Búiði til for lykkju sem finnur summu allra heiltala frá 0 upp í 200</p>
+<p><strong>Verkefni 3</strong></p>
+<p>Búiði til for lykkju sem prentar allar oddatölur frá 1 upp í 100</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="functionsnstuff.html" class="btn btn-neutral float-right" title="Föll, hlutir og listar" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hvaderjs.html" class="btn btn-neutral" title="Hvað er Javascript?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

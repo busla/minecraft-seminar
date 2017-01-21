@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Skoðum Layout &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur þrjú" href="intro.html"/>
+        <link rel="next" title="Hvað er responsive?" href="hvaderresponsive.html"/>
+        <link rel="prev" title="Dagur þrjú" href="intro.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../webdesign-curriculum.html">Vefhönnun</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur eitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day2/intro.html">Dagur tvö</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur þrjú</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Skoðum Layout</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verkefni-3">Verkefni 3</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="hvaderresponsive.html">Hvað er responsive?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="floknariselectorar.html">Flóknari selectorar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day4/intro.html">Dagur fjögur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur fimm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/intro.html">Efni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects.html">Verkefni á vefhönnunarnámskeið</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../webdesign-curriculum.html">Vefhönnun</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur þrjú</a> &raquo;</li>
+      
+    <li>Skoðum Layout</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/webdesign-curriculum/day3/skodumlayout.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="skoum-layout">
+<h1>Skoðum Layout<a class="headerlink" href="#skoum-layout" title="Permalink to this headline">¶</a></h1>
+<p>Þegar við erum að byggja vefsíðu með HTML og CSS erum við lang oftast með í huga eitthverskonar uppsetingu sem við viljum hafa á síðunni. Það sem við ætlum að skoða núna eru nokkrar mismunandi uppsetningar á vefsíðum, en mikilvægt er að hafa í huga að þetta er algerlega opið og vefsíður þurfa alls ekki að fylgja hinni eða þessari uppsetingu frekar en þið viljið.</p>
+<p>Þessi kafli er meira miðaður að hönnun en nokkuð annað sem við förum yfir á þessu námskeiði</p>
+<p><strong>Heilagi kaleikurinn</strong></p>
+<p>Fyrsta uppsetingin sem við munum fjalla um er &#8220;Heilagi kaleikurinn&#8221;. Þessi uppseting er með fjóra megin hluta: haus, valmynd, hlið, aðalmynd og fót. Hausinn á að vera fastur efst og fóturinn á að vera fastur niðri. Síðan á valmyndin og hliðin að falla sitt hvoru megin við aðalmyndina.</p>
+<p>Mynd:</p>
+<img alt="../../_images/holy-grail.png" src="../../_images/holy-grail.png" />
+<p>Uppsetning HTML taganna getur þá farið eitthvað á þennan veginn:</p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hérna er texti<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+             Hérna kemur haus skjalsins
+         <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+                 Hérna kemur valmyndin
+             <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+                 Hérna er aðal efni vefsíðunnar
+             <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">aside</span><span class="p">&gt;</span>
+                 Hérna kemur hliðin
+             <span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+             Fótur vefsins fer hingað
+         <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Hérna eru síðan CSS stýlarnir sem blása lífi í uppsetninguna.</p>
+<div class="highlight-CSS"><div class="highlight"><pre><span></span><span class="nt">header</span><span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="verkefni-3">
+<h2>Verkefni 3<a class="headerlink" href="#verkefni-3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Búum til layout samkvæmt LINKUR AÐ MYND</li>
+<li>Skoðum layout þekktra vefsíðna</li>
+<li>Betrumbætum beinagrindina okkar</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hvaderresponsive.html" class="btn btn-neutral float-right" title="Hvað er responsive?" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral" title="Dagur þrjú" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

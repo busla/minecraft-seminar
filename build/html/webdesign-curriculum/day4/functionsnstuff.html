@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Föll, hlutir og listar &mdash; Python seminar for Minecraft 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur fjögur" href="intro.html"/>
+        <link rel="next" title="Innbyggð Verkfæri og DOM" href="innbyggdverkfaeri.html"/>
+        <link rel="prev" title="Breytur, lykkjur og flæði" href="variablesnstuff.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../webdesign-curriculum.html">Vefhönnun</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur eitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day2/intro.html">Dagur tvö</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur þrjú</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur fjögur</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hvaderjs.html">Hvað er Javascript?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variablesnstuff.html">Breytur, lykkjur og flæði</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Föll, hlutir og listar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#foll">Föll</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hlutir">Hlutir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#listar">Listar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="innbyggdverkfaeri.html">Innbyggð Verkfæri og DOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur fimm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/intro.html">Efni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects.html">Verkefni á vefhönnunarnámskeið</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Python seminar for Minecraft</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../webdesign-curriculum.html">Vefhönnun</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur fjögur</a> &raquo;</li>
+      
+    <li>Föll, hlutir og listar</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/webdesign-curriculum/day4/functionsnstuff.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="foll-hlutir-og-listar">
+<h1>Föll, hlutir og listar<a class="headerlink" href="#foll-hlutir-og-listar" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="foll">
+<h2>Föll<a class="headerlink" href="#foll" title="Permalink to this headline">¶</a></h2>
+<p>Föll eða functions á ensku líka kallað aðferðir, Console.log() er innbyggt fall í Javascript, það eru til helling af innbyggðum Javascript föllum sem við getum notað. Það er eitt að nota fall en það er annað að búa það til sem við ætlum að gera í þessum kafla.</p>
+<p><em>Dæmi um fall</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">ta1</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">ta2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="c1">//fallið</span>
+<span class="kd">function</span> <span class="nx">times</span><span class="p">(</span><span class="nx">tala1</span><span class="p">,</span><span class="nx">tala2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">tala1</span> <span class="o">*</span> <span class="nx">tala2</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">times</span><span class="p">(</span><span class="nx">ta1</span><span class="p">,</span><span class="nx">ta2</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Hérna fyrir ofan erum við með mjög einfalt fall, til að skilgreina að þú sért að búa til fall skrifaru function, svo kemur nafnið á fallinu sem í dæminu fyrir ofan myndi vera times. Svo geriru sviga, og inni í svigunum eru hlutir sem fallið tekur við. Semsagt ef þú kallar í þetta fall, vill fallið fá 2 hluti sem hún mun nota inni í fallinu. Við seigjum að breytann sum sé jafnt og fallið times með tveim breytum. Þá kölluð við á fallið með þessum tveim breytum sem return mun svo skila margfeldi þeirra.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Betri útskýringar á föllum og hvernig þær hegða sér.</p>
+</div>
+<p><em>Fall sem reiknar ummál kassa</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">lengd</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">breidd</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">Reiknaummal</span><span class="p">(</span><span class="nx">b</span><span class="p">,</span><span class="nx">l</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">l</span> <span class="o">+</span> <span class="nx">l</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">ummal</span> <span class="o">=</span> <span class="nx">Reiknaummal</span><span class="p">(</span><span class="nx">breidd</span><span class="p">,</span><span class="nx">lengd</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Þetta fall tekur inn tvær tölur, ein sem myndi vera breidd og önnur sem myndi vera lengd. Svo reiknar út ummálið af kassa með tölunum og skilar niðurstöðunni.</p>
+<p><em>Fall sem finnur út hvaða tala er hæst</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">tala1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">tala2</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">Staerri</span><span class="p">(</span><span class="nx">t1</span><span class="p">,</span><span class="nx">t2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">t1</span> <span class="o">&gt;</span> <span class="nx">t2</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="s2">&quot;Tala eitt er stærri en tala tvö&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">t1</span> <span class="o">&lt;</span> <span class="nx">t2</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="s2">&quot;Tala tvö er stærri en tala eitt&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="s2">&quot;Þær eru jafn stórar&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Staerri</span><span class="p">(</span><span class="nx">tala1</span><span class="p">,</span><span class="nx">tala2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Þetta fall tekur inn tvær tölur og finnur út hvor þeirra er stærri. Fallið skilar svo streng þannig hægt sé að kalla þetta í console.log fallinu.</p>
+<p><strong>Verkefni 1</strong></p>
+<p>Búiði til fall sem margfaldar tölu með 20</p>
+<p><strong>Verkefni 2</strong></p>
+<p>Búiði til fall sem tekur inn tvær tölur, og skrifar svo út allar tölur sem eru á milli þessara talna.</p>
+<p><strong>Verkefni 3</strong></p>
+<p>Búiði til fall sem sameinar tvo strengi.</p>
+</div>
+<div class="section" id="hlutir">
+<h2>Hlutir<a class="headerlink" href="#hlutir" title="Permalink to this headline">¶</a></h2>
+<p>Í Javascript geturu búið til hluti eða Objects á ensku. Flestir hlutir sem þú myndir búa til hafa einhverja eiginleika og hluti sem þeir geta gert.</p>
+<p><em>Dæmi um hlut/Object</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">persona</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">fyrstanafn</span> <span class="o">:</span> <span class="s2">&quot;Henry&quot;</span><span class="p">,</span>
+        <span class="nx">eftirnafn</span> <span class="o">:</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span>
+        <span class="nx">aldur</span> <span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="nx">haed</span> <span class="o">:</span> <span class="mi">180</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Hérna erum við með hlut sem heitir person og geymir fjórar breytur. Hver breyta sem hann geymir hefur sitt eigið nafn þannig þetta er einsog breyta sem hefur fjórar aðrar breytur inni í sér. Eftir hvern eiginleika sem þú býrð til seturu kommu eftir hann ef þú ætlar að hafa fleirri eiginleika. Þannig síðasti eiginleikinn myndi ekki hafa kommu.</p>
+<p><em>Kalla á eigindi eða breyta eigindi</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Myndi skrifa út fyrstanafn sem væri Henry</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persona</span><span class="p">.</span><span class="nx">fyrstanafn</span><span class="p">);</span>
+<span class="c1">//breytir fyrstanafn í Jóhannes</span>
+<span class="nx">persona</span><span class="p">.</span><span class="nx">fyrstanafn</span> <span class="o">=</span> <span class="s2">&quot;Jóhannes&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><em>Hlutir geta líka geymt í sér föll, einsog ef við myndum búa til hlut sem væri maður, gæti hann verið með fall sem myndi seigja nafnið hans.</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">persona</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">fyrstanafn</span> <span class="o">:</span> <span class="s2">&quot;Birkir&quot;</span><span class="p">,</span>
+        <span class="nx">eftirnafn</span> <span class="o">:</span> <span class="s2">&quot;Gunni&quot;</span><span class="p">,</span>
+        <span class="nx">aldur</span> <span class="o">:</span> <span class="mi">15</span><span class="p">,</span>
+        <span class="nx">haed</span> <span class="o">:</span> <span class="mi">190</span><span class="p">,</span>
+        <span class="nx">segjanafn</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">fyrstanafn</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">eftirnafn</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persona</span><span class="p">.</span><span class="nx">seigjanafn</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Hérna bættum við fallinu segjanafn við hlutinn persona, ef við ætlum að nota eitthvað af eigindum sem voru skilgreind fyrir framan þurfum við að nota this.fyrstanafn, þá er this að benda á hlutinn sem við erum inni í sem myndi vera persona, og þá væri this.fyrstanafn bara einfaldlega persona.fyrstanafn.</p>
+<p><strong>Verkefni 1</strong></p>
+<p>Búiði til hlut/object sem er bíl, hann þarf að hafa eigindin tegund, bílnúmer, fjöldi farþega og litur. Skrifiði svo út öll eigindin í consoleinu.</p>
+<p><strong>Verkefni 2</strong></p>
+<p>Búiði til hlut/object sem er dýr, það þarf að hafa eigindin nafn, tegund, þyngd og fjöldi fóta. Hluturinn þarf að hafa fall sem seigir allar upplýsingar um sjálfan sig.</p>
+</div>
+<div class="section" id="listar">
+<h2>Listar<a class="headerlink" href="#listar" title="Permalink to this headline">¶</a></h2>
+<p>Listar eða á ensku Arrays eru breytur sem hafa þann kost að geta geymt margar breytur inni í sér. Þær eru mjög hentugar til að geyma fljölda upplýsingar í einni breytu. Listar hafa líka þann valmöguleika á að geyma marga lista sem geyma hver og einn margar breytur, en þá er þetta orðið dálítið flókið. Listar eru búnir til einsog aðrar breytur en þeir geyma fylki af tölum sem þú skilgreinir með hornsvigum. Svo greiniru milli hvers staks með kommu. Hvert stak í lista hefur sína stöðu í röðinni sem er kallað index á ensku. Maður notar það til á einhverja sérstaka tölu í listanum. Fyrsta talan hefur indexið 0, og svo næsta 1 og svo koll af kolli.</p>
+<p><em>Hvernig listi sem inniheldur bara tölur virkar</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Index talna  0 1 2 3 4 5 6 7  8  9  10   11</span>
+<span class="kd">var</span> <span class="nx">listi</span>  <span class="o">=</span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">543</span><span class="p">,</span><span class="mi">3333</span><span class="p">];</span>
+<span class="c1">//Með þessum indexum getum við callað í tölurnar</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">listi</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span> <span class="c1">//Hvað myndi þetta birta?</span>
+</pre></div>
+</div>
+<p>Kóðinn fyrir ofan er mjög einfalt dæmi um hvernig listar virkja. Listar eru mjög nothæfir, í næsta dæmi ætlum við að skoða hvernig við getum skoðað öll stök í einhverjum lista, með hjálp for lykkjunnar sem við lærðum.</p>
+<p><em>Skoða öll stök í lista</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Listinn</span>
+<span class="kd">var</span> <span class="nx">listi</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">listi</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">listi</span><span class="p">[</span><span class="nx">a</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Það sem þessi kóði gerir er að skrifa út öll stökin í listanum, en hvernig fer hann að því? Hann byrjar á að skrifa for lykkju sem keyrir frá 0 og þangað til lengdin á listanum er ekki stærri en a, þannig þetta keyrir jafn oft og lengd listarins og byrjar á 0. Þá getum við einfaldlega skrifað út eftir hverja keyrslu stakið í lista sem lykkjan er á. .length er innbyggt verkfæri í javascript sem verður farið betur í kaflanum &#8220;Innbyggð verkfæri&#8221;.</p>
+<p><em>Summa allra staka í lista</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">listi</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">listi</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">listi</span><span class="p">[</span><span class="nx">a</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Þessi kóði gerir nákvamlega sama og fyrri kóðinn, fyrir utan að hann plúsar öll stökinn við breytuna summa og skilar svo út gildi summu þegar for lykkjan er búin að keyrast.</p>
+<p><em>Listi af strengjum</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Index strengja  0        1       2            3          4</span>
+<span class="kd">var</span> <span class="nx">listi</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Javascript&quot;</span><span class="p">,</span><span class="s2">&quot;er&quot;</span><span class="p">,</span><span class="s2">&quot;geðveikt&quot;</span><span class="p">,</span><span class="s2">&quot;skemmtilegt&quot;</span><span class="p">,</span><span class="s2">&quot;tungumál&quot;</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">listi</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">listi</span><span class="p">[</span><span class="nx">a</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Seigjum að við séum með lista sem inniheldur ekki neinu, og við ætluðum að bæta við hann öllum sléttum tölum frá 1-100. Þá getum við notað mjög þæginlega aðferð sem heitir push. Þá mun ýta einhverju gildi inn í listan sem við veljum.</p>
+<p><em>Listi af sléttum tölum</em></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//skilgreinum tómann lista</span>
+<span class="kd">var</span> <span class="nx">slettar</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">slettar</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">slettar</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Við byrjum á að skilgreina tómann lista sem heitir slettar. Svo keyrum við for lykkju frá 1 upp í 100, ef breytan a sem fer hækkandi um einn eftir hverja keyrslu er deilanleg með tveimur og gefur engann afgang þá setjum við hana í listann. Þá geriru nafnið á listanum sem eru slettar svo .push sem er innbyggð aðferð í javascript, svo inni í svigunum hvað þú vilt setja í arrayinn, sem væri í þessu tilfelli breytan a ef hún er deilanleg með tveimur. Svo skrifum við út slettar sem mun bara skila öllum listanum.</p>
+<p><strong>Verkefni 1</strong></p>
+<p>Búiði til lista sem geymir einhverjar tölur af ykkar vali, skrifið svo út allar þessar tölur með for lykkju.</p>
+<p><strong>Verkefni 2</strong></p>
+<p>Búiði til lista með tölunum 1-10, skrifið listann út í öfugri röð með for lykkju.</p>
+<p><strong>Verkefni 3</strong></p>
+<p>Skrifiði for lykkju sem setur allar tölur frá 0-1000 í lista, finnið svo summu allra gilda í listanum.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="innbyggdverkfaeri.html" class="btn btn-neutral float-right" title="Innbyggð Verkfæri og DOM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="variablesnstuff.html" class="btn btn-neutral" title="Breytur, lykkjur og flæði" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
