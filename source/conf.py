@@ -57,7 +57,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Python seminar for Minecraft'
+project = 'Koder seminars'
 #copyright = '2016, Jón Levy'
 author = 'Jon Levy'
 
