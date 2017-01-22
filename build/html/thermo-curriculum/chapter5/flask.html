@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Kafli 5 &mdash; Python seminar for Minecraft 1 documentation</title>
+  <title>Kafli 5 &mdash; Koder seminars 1 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Python seminar for Minecraft 1 documentation" href="../../index.html"/>
+    <link rel="top" title="Koder seminars 1 documentation" href="../../index.html"/>
         <link rel="up" title="Kafli 5" href="intro.html"/>
         <link rel="next" title="Lausnir verkefna á skynjaranámskeiði" href="../assignments.html"/>
         <link rel="prev" title="Kafli 5" href="intro.html"/> 
@@ -54,7 +54,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home"> Python seminar for Minecraft
+            <a href="../../index.html" class="icon icon-home"> Koder seminars
           
 
           
@@ -114,7 +114,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../index.html">Python seminar for Minecraft</a>
+        <a href="../../index.html">Koder seminars</a>
       </nav>
 
 
@@ -152,15 +152,18 @@
   <div class="section" id="kafli-5">
 <h1>Kafli 5<a class="headerlink" href="#kafli-5" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">flask</span> <span class="o">--</span><span class="n">user</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">flask</span><span class="o">-</span><span class="n">cors</span> <span class="o">--</span><span class="n">user</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span><span class="p">,</span> <span class="n">cross_origin</span>
 <span class="kn">from</span> <span class="nn">tinydb</span> <span class="kn">import</span> <span class="n">TinyDB</span>
 
-
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">CORS</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
 <span class="n">db</span> <span class="o">=</span> <span class="n">TinyDB</span><span class="p">(</span><span class="s1">&#39;db.json&#39;</span><span class="p">)</span>
 
 <span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/entries&#39;</span><span class="p">)</span>
