@@ -8,6 +8,7 @@ GPIO (Gagnapinnar)
 
 
 Bættu við *dtoverlay=w1–gpio* neðst í skrána.
+
 .. code-block:: bash
     
     $ sudo nano /boot/config.txt
@@ -123,7 +124,7 @@ Búum til fallið *start()* sem sér um að kalla í nauðsynleg föll til að u
         mod_probe()
         #sensor = find_sensor('28-0000058e596b')
         sensor = find_sensor()
-        print(read_sensor(sensor))
+        print(find_sensor(sensor))
 
     start()
 
