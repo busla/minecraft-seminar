@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hvað er Javascript? &mdash; Koder seminars 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Koder seminars 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur fjögur" href="intro.html"/>
+        <link rel="next" title="Breytur, lykkjur og flæði" href="variablesnstuff.html"/>
+        <link rel="prev" title="Dagur fjögur" href="intro.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Koder seminars
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../webdesign-curriculum.html">Vefhönnun</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur eitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day2/intro.html">Dagur tvö</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur þrjú</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur fjögur</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Hvað er Javascript?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variablesnstuff.html">Breytur, lykkjur og flæði</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functionsnstuff.html">Föll, hlutir og listar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="innbyggdverkfaeri.html">Innbyggð Verkfæri og DOM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur fimm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/intro.html">Efni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects.html">Verkefni á vefhönnunarnámskeið</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Koder seminars</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../webdesign-curriculum.html">Vefhönnun</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur fjögur</a> &raquo;</li>
+      
+    <li>Hvað er Javascript?</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/webdesign-curriculum/day4/hvaderjs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hva-er-javascript">
+<h1>Hvað er Javascript?<a class="headerlink" href="#hva-er-javascript" title="Permalink to this headline">¶</a></h1>
+<p>Javascript er forritunartungumál, það er oftast notað með vefsíðum. Fólk hefur gert allskyns hluti með Javascript meðal annars leiki og veföpp en er oftast notað fyrir flott effects á síðum. Þú notar Javascript til að breyta hlutum á síðum, færa þá, fela þá, stækka þá og helling af öðrum hlutum. Flest allar síður sem eru til nota Javascript, enda er það eitt af vinsælustu forritunartungumálum heimsins.</p>
+<p>Ef þú ætlar að skrifa Javascript kóða í HTML skránni þinni þarftu að búa til script tag og skrifar svo kóðan þinn inn í script tagið. Það er líka til mun þæginlegri aðferð, með því að hafa sér skrá fyrir Javascript kóðann og tengja hann svo við síðuna, eins og við gerðum með css. Svo skrifar maður  kóða beint í skránna. Þegar þú býrð til Javascript skrá vistaru hana sem .js skrá.</p>
+<p>Svona myndi maður búa til script tagið</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> Koder <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+                 <span class="c1">//Hérna myndiru skrifa Javascript Kóða</span>
+                <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Hérna erum fyrir neðan erum við búnir að tengja html skránna við Javascript skrá, kannski takiði eftir því að maður bendir ekki alveg eins á skrár og í css, þar er notað href en með Javascript notar maður src. Svo seigjum við tegundina á skránni með type, en það er valkostur. Þegar þú ert að nota script tagið til þess að benda á Javascript skrá máttu hafa hana í head eða body, en ekki báðum. Í flestum tilfellum er betra að hafa hana neðst nirði í body því þá hlaðast hún inn síðast sem getur komið í veg fyrir villur ef kóðinn bendir á eitthvað sem er ekki búið að hlaðast.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> Koder <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/javascript.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Comment</strong></p>
+<p>Það er mjög góður vani að kommenta kóðan þinn, komment er texti sem þú skrifar en hefur enginn áhrif á kóðan, hann er bara skrifaður til að úskýra hluti og virkni þeirra. Til að búa til Komment skrifaru // Og svo textann sem þú vilt hafa kommentaðan. Ef þú ert að &#8220;debugga&#8221; einsog það er kallað á ensku, sem er bara að fara yfir kóða og finna villur er mjög gott að commenta kóða út til að kíkja hvort hann valdi villunni.</p>
+<p>Dæmi um hvernig Comment virkar</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Þetta er Komment</span>
+<span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Javascript er geðveikt!&quot;</span><span class="p">);</span><span class="c1">// &lt;- Þarna er kóði, en þetta er Komment</span>
+</pre></div>
+</div>
+<p><strong>console.log()</strong></p>
+<p>console.log() er verkfæri sem er innbyggt í Javascript. Það skýrir sig líklega sjálft, en það er notað til að skrifa í consoleið, Til að komast inn í console á vefsíðunni þinnu þarftu að opna hana með einhverjum vafra, hægri klikka á síðuna og velja inspect. Þá koma nokkrir flipar og console er einn af þeim. console.log() verkfærið skrifar það út sem þú setur á milli svigana.</p>
+<p>Dæmi um hvernig console.log() skipuninn virkar</p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span><span class="c1">//Til að skilgreina að þú ert að skrifa texta geriru tvöfaldar eða einfaldar gæsalappir</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Þarf að sýna á mynd hvernig maður finnur console</p>
+</div>
+<p><strong>Verkefni 1.</strong></p>
+<p>Bættu Javascript skrá við síðuna þína. Inni í Javascript skránni þinn notaru console.log() skipunina og átt að skrifa út &#8220;Við náðum að tengjast&#8221;, athuga að þú þarft að nota inspect til að sjá hvað var skrifað í consoleið</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="variablesnstuff.html" class="btn btn-neutral float-right" title="Breytur, lykkjur og flæði" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral" title="Dagur fjögur" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

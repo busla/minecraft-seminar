@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CSS Selectors &mdash; Koder seminars 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Koder seminars 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Dagur tvö" href="intro.html"/>
+        <link rel="next" title="CSS Pseudo-selectors" href="csspseudoselectors.html"/>
+        <link rel="prev" title="Hvað er CSS?" href="hvadercss.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Koder seminars
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../minecraft-curriculum.html">Minecraft</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../thermo-curriculum.html">Skynjarar</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../webdesign-curriculum.html">Vefhönnun</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../day1/intro.html">Dagur eitt</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Dagur tvö</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hvadercss.html">Hvað er CSS?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CSS Selectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="csspseudoselectors.html">CSS Pseudo-selectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cssstyling.html">CSS stýlar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../day3/intro.html">Dagur þrjú</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day4/intro.html">Dagur fjögur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../day5/intro.html">Dagur fimm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/intro.html">Efni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects.html">Verkefni á vefhönnunarnámskeið</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Koder seminars</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../webdesign-curriculum.html">Vefhönnun</a> &raquo;</li>
+      
+          <li><a href="intro.html">Dagur tvö</a> &raquo;</li>
+      
+    <li>CSS Selectors</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/webdesign-curriculum/day2/cssselectors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="css-selectors">
+<h1>CSS Selectors<a class="headerlink" href="#css-selectors" title="Permalink to this headline">¶</a></h1>
+<p><strong>Hvað eru CSS selectorar?</strong></p>
+<p>Núna ætlum við að fjalla stutt um það sem kallast <em>CSS Selectors</em>. Þegar að við erum að vinna með CSS og ætlum að láta eitthvað HTML <em>element</em> líta út á eitthvern sérstakann hátt þurfum við að sjálfsögðu að vita hvernig við eigum eiginlega að tilgreina hvaða HTML tag, eða hvaða týpu af HTML tögum við ætlum að stýla. Þarna koma þessir <em>CSS selectorar</em> inn okkur til mikillar aðstoðar.</p>
+<p><strong>Almenn málfræði CSS klasa (Þegar vísað er í &#8220;class&#8221; eigindið):</strong></p>
+<div class="highlight-CSS"><div class="highlight"><pre><span></span><span class="nc">.className</span><span class="p">{</span>
+    <span class="nb">width</span><span class="o">:</span><span class="m">50%</span><span class="p">;</span>
+    <span class="nb">border-right</span><span class="o">:</span><span class="m">4px</span> <span class="nb">solid</span> <span class="nb">black</span><span class="p">;</span>
+    <span class="nb">padding-right</span><span class="o">:</span> <span class="m">17px</span><span class="p">;</span>
+    <span class="nb">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Það sem við ættum að taka eftir hérna er að þegar að við vísum í &#8220;class&#8221; eigindið á eitthverju HTML tagi notum við punkt, og skrifum þar á eftir titil eigindisin, sem er í þessu tilfelli einfaldlega <em>className</em>. Annað sem er mikilvægt að taka eftir hérna er að við notum slaufusviga til þess að halda síðan utanum stýlana sem við ætlum að setja á klasann sjálfann. Það er síðan innihald þessara slaufusviga sem ráða því hvaða stýla elementið okkar fær.</p>
+<p><strong>Almenn málfræði CSS klasa (Þegar vísað er í &#8220;id&#8221; eigindið):</strong></p>
+<div class="highlight-CSS"><div class="highlight"><pre><span></span><span class="nn">#className</span><span class="p">{</span>
+    <span class="nb">width</span><span class="o">:</span><span class="m">50%</span><span class="p">;</span>
+    <span class="nb">border-right</span><span class="o">:</span><span class="m">4px</span> <span class="nb">solid</span> <span class="nb">black</span><span class="p">;</span>
+    <span class="nb">padding-right</span><span class="o">:</span> <span class="m">17px</span><span class="p">;</span>
+    <span class="nb">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Þegar við vísum í &#8220;id&#8221; eigindið í stað &#8220;class&#8221; eigindisin virkar þetta alveg eins, nema hvað að við notum myllumerki <em>(e. hashtag)</em> og köllum síðan á stýlana sem við viljum að eigum við HTML tagið</p>
+<p><strong>Almenn málfræði CSS klasa (Þegar ekki er vísað í eigindi):</strong></p>
+<div class="highlight-CSS"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="p">{</span>
+    <span class="nb">width</span><span class="o">:</span><span class="m">50%</span><span class="p">;</span>
+    <span class="nb">border-right</span><span class="o">:</span><span class="m">4px</span> <span class="nb">solid</span> <span class="nb">black</span><span class="p">;</span>
+    <span class="nb">padding-right</span><span class="o">:</span> <span class="m">17px</span><span class="p">;</span>
+    <span class="nb">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Það er einnig hægt að vísa bara í titil HTML tagsins, en ef þetta er gert munu stýlarnir eiga við öll tög af þessari gerð</p>
+<p><strong>Nánar um eigindalausa CSS selectora</strong></p>
+<p>Þegar að við erum að vísa í eitthvað <em>element</em> án þess að tilgreina eitthvern &#8220;class&#8221; eða &#8220;ID&#8221; þá erum við að vísa í <em>elementið</em> án þess að nota eigindin. Þetta er mjög gagnlegt, en getur líka verið töluvert flókið.</p>
+<p>Gefum okkur þetta HTML tré:</p>
+<div class="highlight-HTML"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;headerLogo&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navContainer&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navItem&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#about&quot;</span><span class="p">&gt;</span>Leiðin<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navItem&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#organization&quot;</span><span class="p">&gt;</span>Búðirnar<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navItem&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#qualifications&quot;</span><span class="p">&gt;</span>Inntökuskylirði<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;navItem&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#hr&quot;</span><span class="p">&gt;</span>Samstarf við HR<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;contactLink navItem&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#contact&quot;</span><span class="p">&gt;</span>Hafa samband<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Ef við myndum þá vilja láta textan inni í linkunum inni í listanum vera <em>skáletraða</em> höfum við nokkrar aðferðir til þess að gera það.</p>
+<p>Sú fyrsta væri að kalla einfaldlega í klasann og setja stýlinn á það. Þessi aðferð myndi líta svona út:</p>
+<div class="highlight-CSS"><div class="highlight"><pre><span></span><span class="nc">.navItem</span><span class="p">{</span>
+    <span class="nb">font-style</span><span class="o">:</span> <span class="nb">italic</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Önnur leiðin væri að sjálfsöðu að stýla bara öll &lt;li&gt; tög á þennan hátt.</p>
+<div class="highlight-CSS"><div class="highlight"><pre><span></span><span class="nt">li</span><span class="p">{</span>
+    <span class="nb">font-style</span><span class="o">:</span> <span class="nb">italic</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Vandamálið við þessa aðferð er samt að þá verða öll &lt;li&gt; tög á síðunni okkar <em>skáletruð</em> og það er ólíklega það sem við viljum.</p>
+<p>Ef við viljum eingöngu miða á &lt;li&gt; tög sem eru inni í navigation-menu, myndum við gera það svona.</p>
+<div class="highlight-CSS"><div class="highlight"><pre><span></span><span class="nt">header</span> <span class="nt">nav</span> <span class="nt">ul</span> <span class="nt">li</span><span class="p">{</span>
+    <span class="nb">font-style</span><span class="o">:</span> <span class="nb">italic</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Núna erum við í raun og veru að segja &#8220;allur texti inni í &lt;li&gt; tögum sem eru inni í &lt;ul&gt; tögum sem eru inni í &lt;nav&gt; tögum sem eru inni í &lt;header&gt; tögum eiga að vera <em>skáletruð</em>&#8220;</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Bæta inn í þetta link þar sem að við tölum um nested HTML tög og hvernig það virkar.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="csspseudoselectors.html" class="btn btn-neutral float-right" title="CSS Pseudo-selectors" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hvadercss.html" class="btn btn-neutral" title="Hvað er CSS?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -11,6 +11,7 @@ Velkominn á kennsluvef Kóder.is
     
     minecraft-curriculum    
     thermo-curriculum    
+    webdesign-curriculum
 
 Indices and tables
 ==================
