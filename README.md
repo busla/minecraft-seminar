@@ -1,5 +1,5 @@
 # Kennsluefni Kóder.is.
-Þessi kóðageymsla *(repository)* inniheldur tvö námskeið Kóder.is, *Vefforritun*, *Skynjarar* og *Minecraft*. Nafnið gefur til kynna að það innihaldi eingöngu Minecraft en svo er ekki. Unnið er að því að sameina öll námskeið í eina kóðageymslu.
+Þessi kóðageymsla *(repository)* inniheldur þrjú námskeið Kóder.is, *Vefforritun*, *Skynjarar* og *Minecraft*. Nafnið gefur til kynna að það innihaldi eingöngu Minecraft en svo er ekki. Unnið er að því að sameina öll námskeið í eina kóðageymslu.
 
 Kennsluefnið er skrifað með [Sphinx](http://www.sphinx-doc.org/en/1.5.1/).
 
